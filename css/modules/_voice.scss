@@ -1,0 +1,74 @@
+@use "../default/variables" as v;
+.voice {
+  background-color: #fef1fc;
+  .container {
+    padding: v.$padding-xl v.$padding-l;
+    .catch {
+      h2, h3 {
+        text-align: center;
+      }
+      h2 {
+        font-size: v.$h2;
+        color: v.$sub-color;
+      }
+      h3 {
+        font-size: v.$h3;
+        color: v.$catch-sub-color;
+      }
+    }
+    .cards-container {
+      display: flex;
+      flex-direction: row;
+      margin-top: v.$margin-xl;
+      .card {
+        margin: 0 v.$margin-lm;
+        padding: v.$padding-lm;
+        border-radius: v.$min-radius;
+        box-shadow: v.$box-shadow;
+        background-color: v.$white;
+        .heading {
+          display: grid;
+          grid-template-columns: auto 1fr;
+          column-gap: 0.8rem;;
+          place-content: center;
+          margin-bottom: v.$margin-m;
+          .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+          }
+          .inner {
+            padding-top: 0.2rem;
+            .desc {
+              font-size: v.$medium-text;
+            };
+          }
+        }
+        &:nth-of-type(1) .icon {
+          background: v.$gradation-green;
+        }
+        &:nth-of-type(2) .icon {
+          background: v.$gradation-blue;
+        }
+        &:nth-child(3) .icon {
+          background: v.$gradation-orange;
+        }
+        h4 {
+          margin-bottom: v.$margin-m;
+        }
+        &:nth-of-type(1) h4 {
+          color: v.$catch-sub-color;
+        }
+        &:nth-of-type(2) h4 {
+          color: v.$heading-color;
+        }
+        &:nth-of-type(3) h4 {
+          color: v.$accent-color;
+        }
+        p {
+          color: v.$gray;
+        }
+      }
+    }
+  }
+}

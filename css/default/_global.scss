@@ -1,0 +1,57 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+a {
+  color: #000;
+  text-decoration: none;
+}
+ul, li {
+  list-style: none;
+}
+h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+p {
+  letter-spacing: 0.15em;
+  line-height: 2;
+}
+@font-face {
+  font-family: 'apricotJapanesefont';
+  src: url('../../fonts/apricotJapanesefont.woff2') format('woff2'),
+  url('apricotJapanesefont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "APJapanesefontH";
+  src: url("../../fonts/APJapanesefontH.woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "APJapanesefontHT";
+  src: url("../../fonts/APJapanesefontHT.woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Natsume";
+  src: url("../../fonts/Natsume.woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}

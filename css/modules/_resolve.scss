@@ -1,0 +1,42 @@
+@use "../default/variables" as v;
+.resolve {
+  height: 80vh;
+  position: relative;
+  .container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    z-index: 2;
+    .img-box {
+      flex: 0.3 1 300px;
+      min-height: 100%;
+      display: grid;
+      place-content: center;;
+      img {
+        max-height: 100%;
+      }
+    }
+    .content {
+      .catch {
+        padding-top: v.$margin-xl;
+        letter-spacing: 0.1em;
+        text-align: center;
+        font-family: v.$font-anzu;
+        h2 {
+          font-size: v.$h2;
+        }
+        p {
+          font-size: v.$h2;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+  // .svg-resolve {
+  //   position: absolute;
+  //   top: -30%;
+  //   z-index: 1;
+  // }
+}

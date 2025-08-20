@@ -1,0 +1,156 @@
+@use "../default/variables" as v;
+.header {
+  position: relative;
+  overflow-y: visible;
+  .svg-1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    max-width: 300px;
+    z-index: -1;
+  }
+  .svg-2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 500px;
+    z-index: -2;
+  }
+  .svg-3 {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    z-index: -2;
+    max-width: 300px;
+  }
+  .svg-4 {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    z-index: -2;
+    max-width: 300px;
+  }
+  .container {
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 96px;
+      padding: 0 4%;
+      .logo {
+        position:relative;
+        display: grid;
+        place-items: center;
+        span {
+          letter-spacing: 0.2em;
+          font-weight: 600;
+        }
+        span:first-child {
+          font-size: v.$h6;
+          font-family: v.$noto-sans;
+          color: v.$logo-sub-color;
+        }
+        span + span {
+          font-size: v.$h3;
+          font-family: v.$m-plus-round;
+          color: v.$logo-color;
+        }
+      }
+      ul {
+        display: flex;
+        column-gap: 2em;
+        align-items: center;
+        li {
+          position: relative;
+          a {
+            display: block;
+            font-family: v.$noto-sans;
+            font-size: v.$medium-text;
+            font-weight: 600;
+            letter-spacing: 0.2em;
+            color: v.$logo-color;
+          }
+        }
+        li:not(:first-child)::before {
+          content: '|';
+          position: absolute;
+          top: -2px;
+          left: -16px;
+          color: v.$gray;
+        }
+        li:last-child::before {
+          top: 25%;
+        }
+        .primary-btn {
+          padding: v.$padding-m v.$padding-mm;
+          
+          border-radius: 50px;
+          background-color: v.$white;
+          
+          a {
+            color: v.$catch-color;
+          }
+        }
+      }
+    }
+    .first-view {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+      width: 100%;
+      transform: translate(-10%,-35%);
+      svg {
+        max-width: 800px;
+        max-height: 800px;
+      }
+    }
+    
+    .text {
+      position: relative;
+      z-index: 2;
+      margin: 12rem 0 0 4rem;
+      padding: 0 3em;
+      .catch {
+        h1 {
+          margin-bottom: 0.5em;
+          font-size: v.$h1;
+          font-family: v.$rocknroll;
+          font-weight: 500;
+          color: #333;
+          text-shadow: 1px 1px 0px #1B19CE;
+        }
+        p {
+          font-size: v.$h6;
+          font-family: v.$rocknroll;
+          font-weight: 400;
+          color: v.$dk-gray;
+          text-shadow: 1px 1px 0px #1B19CE;
+        }
+      }
+      .cta-container {
+        display: flex;
+        justify-content: flex-start;
+        column-gap: 2em;
+        padding: 2em 0;
+        a {
+          flex: 0 0 200px;
+          padding: 0.8em 1em;
+          border-radius: 40px;
+          background: linear-gradient(139deg,rgba(235, 219, 255, 1) 0%, rgba(102, 186, 255, 1) 28%, rgba(0, 115, 255, 1) 100%);
+          font-family: v.$noto-sans;
+          font-weight: 600;
+          color: v.$white;
+          text-align: center;
+          letter-spacing: 0.15em;
+          box-shadow: 0px 5px 10px 2px rgba(35,121,227,0.08);
+          text-shadow: 1px 1px 0px #1B19CE;
+        }
+      }
+    }
+  }
+}
+
+
+

@@ -1,0 +1,33 @@
+@use "../default/variables" as v;
+.about {
+  position: relative;
+  .container {
+    display: flex;
+    flex-direction: column;
+    .item{
+      margin-top: v.$margin-l;
+      .catch {
+        font-family: v.$font-anzu;
+        font-size: v.$h2;
+      }
+      .text {
+        padding-left: v.$padding-l;
+        font-family: v.$font-anzu;
+        font-size: v.$h5;
+        p {
+          letter-spacing: 0.1em;
+          line-height: 1.5;
+        }
+        ul {
+          li{
+            letter-spacing: 0.1em;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
+    .item:nth-of-type(2) {
+      align-self: flex-end;
+    };
+  }
+}

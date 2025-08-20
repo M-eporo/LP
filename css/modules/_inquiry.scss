@@ -1,0 +1,79 @@
+@use "../default/variables" as v;
+.inquiry {
+  .container {
+    padding: v.$padding-xl v.$padding-l;
+    .catch {
+      h2, h3 {
+        text-align: center;
+      }
+      h2 {
+        font-size: v.$h2;
+        color: v.$sub-color;
+      }
+      h3 {
+        font-size: v.$h3;
+        color: v.$catch-sub-color;
+      }
+    }
+    .drawer-container {
+      max-width: 750px;
+      margin: v.$margin-xl auto 0;
+      //border: 1px solid #000;
+      .drawer {
+        .drawer-item {
+          margin-bottom: v.$margin-lm;
+          border-top: 1px solid #ccc;
+          border-bottom: 1px solid #ccc;
+          &:nth-child(3n+1) {
+            color: v.$heading-color;
+            .heading::after {
+              border-bottom-color: v.$heading-color;
+              border-right-color: v.$heading-color;
+            }
+          }
+          &:nth-child(3n+2) {
+            color: v.$catch-sub-color;
+            .heading::after {
+              border-bottom-color: v.$catch-sub-color;
+              border-right-color: v.$catch-sub-color;
+            }
+          }
+          &:nth-child(3n+3) {
+            color: v.$accent-color;
+            .heading::after {
+              border-bottom-color: v.$accent-color;
+              border-right-color: v.$accent-color;
+            }
+          }
+          .heading, .content {
+            padding: v.$padding-m v.$padding-mm;
+          }
+          .heading {
+            position: relative;
+            cursor: pointer;
+          }
+          .heading::after {
+            position: absolute;
+            right: 2rem;
+            content: "";
+            width: 16px;
+            height: 16px;
+            border-right: 3px solid #000;
+            border-bottom: 3px solid #000;
+            transform: rotate(45deg);
+          }
+          .heading:nth-child(3n+1)::after {
+            border-color: v.$catch-sub-color;
+          }
+          .heading:nth-child(3n+2)::after {
+            border-color: v.$catch-sub-color;
+          }
+          
+          .heading:nth-child(3n+3)::after {
+            border-color: v.$accent-color;
+          }
+        }
+      }
+    }
+  }
+}

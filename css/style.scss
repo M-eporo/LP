@@ -1,0 +1,15 @@
+@use "default/global";
+@use "modules/header";
+@use "modules/problems";
+@use "modules/resolve";
+@use "modules/about";
+@use "modules/feature";
+@use "modules/program";
+@use "modules/voice";
+@use "modules/inquiry";
+@use "modules/office";
+@use "modules/cta";
+
+//npx sass css/style.scss css/style.css
+//npx sass --watch css/style.scss:css/style.css
+//npm run sass
