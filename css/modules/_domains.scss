@@ -1,0 +1,309 @@
+@use "../default/variables" as v;
+.domains {
+  position: relative;
+  font-family: v.$m-plus-round;
+  background-color: #f8f4ef; /* ベース（ベージュ） */
+  background: repeating-linear-gradient(
+      90deg,
+      transparent 0 50px,
+      rgb(255 127 0 / 5%) 50px 56px,
+      transparent 56px 63px,
+      rgb(255 127 0 / 5%) 63px 69px,
+      transparent 69px 116px,
+      rgb(255 206 0 / 5%) 116px 166px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 50px,
+      rgb(255 127 0 / 5%) 50px 56px,
+      transparent 56px 63px,
+      rgb(255 127 0 / 5%) 63px 69px,
+      transparent 69px 116px,
+      rgb(255 206 0 / 5%) 116px 166px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      transparent 0 5px,
+      rgb(143 77 63 / 5%) 5px 10px
+    ),
+    repeating-linear-gradient(
+      45deg,
+      transparent 0 5px,
+      rgb(143 77 63 / 5%) 5px 10px
+    );
+    mask-image: 
+    radial-gradient(55px 50px at 50px 50px, #000 99%, #0000 101%),
+    linear-gradient(#000, #000),
+    radial-gradient(55px 50px at 50px 50px, #000 99%, #0000 101%)
+    ;
+    mask-repeat: repeat no-repeat, no-repeat, repeat no-repeat;
+    mask-size: 100px 100px, 100% calc(100% - 100px), 100px 100px;
+    mask-position: 0 0, 0 50px ,0 calc(100% - 0px);
+    background-attachment: fixed;
+  .container {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 160px 0 240px;
+    .catch {
+      .domains-title {
+        font-size: 40px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .catch-text {
+        margin-top: 24px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+    .domain-wrap {
+      position: relative;
+      counter-reset: domains;
+      display: grid;
+      grid-template-columns: repeat(11,1fr);
+      justify-items: center;
+      row-gap: 25px;
+      max-width: 500px;
+      max-height: 500px;
+      margin: 64px auto;
+      
+      &::before {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 370px;
+        height: 370px;
+        // border: 3px dotted #fbf492;
+        border-radius: 50%;
+        background: conic-gradient(
+          v.$red 0 20%,
+          v.$accent-color 20% 40%,
+          v.$catch-sub-color 40% 60%,
+          v.$heading-color 60% 80%,
+          v.$purple 80% 100%
+        );
+        -webkit-mask: radial-gradient(
+          farthest-side,
+          transparent calc(100% - 6px),
+          #000 calc(100% - 6px)
+        );
+        mask: radial-gradient(
+          farthest-side,
+          transparent calc(100% - 6px),
+          #000 calc(100% - 6px)
+        );
+          
+        ;
+        // -webkit-mask-composite: intersect;
+        mask-composite: intersect;
+      }
+
+      &::after {
+        position: absolute;
+        content: "";
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 400px;
+        height: 400px;
+        border: 3px dotted v.$yellow;
+        border-radius: 50%;
+      }
+
+      .domain {
+        position: relative;
+        display: grid;
+        place-items: center;
+        width: 150px;
+        aspect-ratio: 1/1;
+        border: 10px solid v.$red;
+        border-radius: 50%;
+        background-color: #fff;
+        color: v.$red;
+        z-index: 1;
+        .text {
+          position: relative;
+          text-align: center;
+          font-size: 18px;
+          font-weight: bold;
+          z-index: 3;
+          text-shadow: 2px 2px 1px #fff;
+        }
+        &::before {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          counter-increment: domains;
+          content: "0" counter(domains);
+          display: grid;
+          place-items: center;
+          font-size: 82px;
+          font-weight: bold;
+          font-family: v.$noto-sans;
+          color: #eee;
+          z-index: 2;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 142.5px;
+          aspect-ratio: 1/1;
+          border: 2px solid #fff;
+          border-radius: 50%;
+        }
+      }
+
+      .domain.first {
+        grid-column: 5/8;
+      }
+      .domain.second {
+        grid-column: 2/6;
+        justify-self: start;
+        border-color: v.$purple;
+        color: v.$purple;
+      }
+      .domain.third {
+        grid-column: 7/11;
+        justify-self: end;
+        border-color: v.$accent-color;
+        color: v.$accent-color;
+      }
+      .domain.fourth {
+        grid-column: 4/6;
+        justify-self: end;
+        border-color: v.$heading-color;
+        color: v.$heading-color;
+      }
+      .domain.fifth {
+        grid-column: 7/9;
+        justify-self: start;
+        border-color: v.$catch-sub-color;
+        color: v.$catch-sub-color;
+      }
+    }
+
+    .list-wrap {
+      max-width: 760px;
+      margin: 0 auto;
+      .list {
+        counter-reset: list;
+        // background-color: #fff;
+        // border-radius: 32px;
+        // padding: 24px;
+        .list-item {
+          position: relative;
+          counter-increment: list;
+          display: grid;
+          &:not(first-child) {
+            margin-top: 16px;
+          }
+          &::before {
+            content: "0" counter(list);
+            position: absolute;
+            top: 0;
+            left: 0;
+            display: inline-grid;
+            place-content: center;
+            width: 50px;
+            aspect-ratio: 1/1;
+            border: 4px solid v.$red;
+            border-radius: 50%;
+            background-color: #fff;
+            font-size: 18px;
+            font-weight: bold;
+            font-family: v.$noto-sans;
+            color: v.$red;
+          }
+
+          &:not(:last-child)::after {
+            content: "";
+            position: absolute;
+            top: 50px;
+            left: 23px;
+            display: inline-block;
+            width: 4px;
+            height: 100%;
+            // background-color: #000;
+            background: linear-gradient(180deg, v.$red 0%, v.$purple 30%);
+          }
+
+          &:nth-child(2) {
+
+            &::before {
+              border-color: v.$purple;
+              color: v.$purple;
+            }
+            &::after {
+              background: linear-gradient(180deg, v.$purple 0%, v.$accent-color 90%);
+            }
+            .list-title {
+              color: v.$purple;
+            }
+          }
+          &:nth-child(3) {
+
+            &::before {
+              border-color: v.$accent-color;
+              color: v.$accent-color;
+            }
+            &::after {
+              background: linear-gradient(180deg, v.$accent-color 0%, v.$heading-color 80%);
+            }
+            .list-title {
+              color: v.$accent-color;
+            }
+          }
+          &:nth-child(4) {
+
+            &::before {
+              border-color: v.$heading-color;
+              color: v.$heading-color;
+            }
+            &::after {
+              background: linear-gradient(180deg, v.$heading-color 0%, v.$catch-sub-color 80%);
+            }
+            .list-title {
+              color: v.$heading-color;
+            }
+          }
+          &:nth-child(5) {
+
+            &::before {
+              border-color: v.$catch-sub-color;
+              color: v.$catch-sub-color;
+            }
+
+            .list-title {
+              color: v.$catch-sub-color;
+            }
+          }
+
+          .list-title {
+            padding: 8px 0 8px 60px;
+            font-size: 22px;
+            font-weight: bold;
+            color: v.$red;
+          }
+          .list-text {
+            width: calc(100% - 60px);
+            margin-left: auto;
+            padding: 16px;
+            font-size: 16px;
+            font-weight: bold;
+            color: v.$dk-gray;
+            background-color: #fff;
+            border-radius: 16px;
+          }
+        }
+      }
+    }
+    
+  }
+}

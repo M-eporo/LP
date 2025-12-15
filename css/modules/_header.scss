@@ -36,8 +36,10 @@
       align-items: center;
       justify-content: space-between;
       width: 100%;
+      max-width: 1400px;
       height: 96px;
       padding: 0 4%;
+      margin: 24px auto 0;
       .logo {
         position:relative;
         display: grid;
@@ -57,7 +59,7 @@
           color: v.$logo-color;
         }
       }
-      ul {
+      .nav {
         display: flex;
         column-gap: 2em;
         align-items: center;
@@ -66,7 +68,7 @@
           a {
             display: block;
             font-family: v.$noto-sans;
-            font-size: v.$medium-text;
+            font-size: v.$h6;
             font-weight: 600;
             letter-spacing: 0.2em;
             color: v.$logo-color;
@@ -116,31 +118,31 @@
         h1 {
           margin-bottom: 0.5em;
           font-size: v.$h1;
-          font-family: v.$rocknroll;
-          font-weight: 500;
+          font-family: v.$noto-sans;
+          font-weight: 600;
           color: #333;
           text-shadow: 1px 1px 0px #1B19CE;
         }
         p {
-          font-size: v.$h6;
-          font-family: v.$rocknroll;
-          font-weight: 400;
+          font-size: v.$h3;
+          font-family: v.$noto-sans;
+          font-weight: 600;
           color: v.$dk-gray;
-          text-shadow: 1px 1px 0px #1B19CE;
         }
       }
       .cta-container {
         display: flex;
         justify-content: flex-start;
-        column-gap: 2em;
+        gap: 2em;
         padding: 2em 0;
         a {
-          flex: 0 0 200px;
-          padding: 0.8em 1em;
-          border-radius: 40px;
+          min-width: 200px;
+          padding: 14px 24px;
+          border-radius: 100vh;
           background: linear-gradient(139deg,rgba(235, 219, 255, 1) 0%, rgba(102, 186, 255, 1) 28%, rgba(0, 115, 255, 1) 100%);
           font-family: v.$noto-sans;
           font-weight: 600;
+          font-size: 18px;
           color: v.$white;
           text-align: center;
           letter-spacing: 0.15em;

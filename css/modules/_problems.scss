@@ -2,25 +2,50 @@
 .problems {
   position: relative;
   margin-top: 250px;
-  padding: v.$padding-xl v.$padding-l;
-  background-image: radial-gradient(#caf6cd 2px, transparent 2px);
-  background-size: 25px 25px;
-  //background-color: #2379e3;
-  overflow: visible;
+  padding: 72px 0 250px;
+  // background-image: radial-gradient(#caf6cd 2px, transparent 2px);
+  background: url("../../images/bg-problem.png");
+  background-repeat: repeat;
+  background-position: center bottom;
+  overflow: hidden;
   .container {
+    position: relative;
     width: 100%;
-    border-radius: 20px;
+    max-width: 1160px;
+    margin: 0 auto;
     .catch {
       text-align: center;
+      font-family: v.$m-plus-round;
       h2 {
-        font-size: v.$h2;
-        font-family: v.$noto-sans;
+        display: inline-grid;
+        grid-template-columns: 50px 1fr 50px;
+        align-items: center;
+        font-size: 48px;
         letter-spacing: 0.1em;
         color: v.$chacoal;
       }
+      h2::before,
+      h2::after {
+        content: "";
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+      }
+      h2::before {
+        background: url("../../images/SVG/line-left.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+      h2::after {
+        background: url("../../images/SVG/line-right.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+
+      }
       h3 {
-        font-size: v.$h4;
-        font-family: v.$noto-sans;
+        font-size: 40px;
         letter-spacing: 0.1em;
         color: v.$chacoal;
       }
@@ -30,23 +55,13 @@
       grid-template-columns: repeat(4,1fr);
       grid-template-rows: repeat(2, 1fr);
       justify-items: center;
+      column-gap: 40px;
       margin-top: v.$margin-xl;
       li {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 200px;
-        height: 200px;
-        padding: v.$padding-mm;
-        border: none;
-        clip-path: url("#blobClip");
+        width: 300px;
+        height: 300px;
+        // clip-path: url("#blobClip");
         overflow: visible;
-        font-size: v.$h6;
-        letter-spacing: 0.1em;
-        background: linear-gradient(133deg,rgba(255, 255, 255, 1) 0%, rgba(255, 135, 25, 1) 35%);
-        font-size: 14px;
-        color: v.$white;
-        transform: scale(1.4);
       }
       li:first-child {
         grid-column: 2/3;
@@ -57,17 +72,21 @@
         grid-row: 1;
       }
       li:nth-child(3) {
-        grid-column: 1/2;
+        grid-column: 1/3;
         grid-row: 2;
+        justify-self: start;
       }
       li:last-child {
-        grid-column: 4/5;
+        grid-column: 3/5;
         grid-row: 2;
+        justify-self: end;
       }
     }
-    img {
-      position: relative;
-      margin: -100px auto;
+    .center-img {
+      position: absolute;
+      bottom: -32px;
+      left: 50%;
+      transform: translate(-50%,0);
     }
   }
 }

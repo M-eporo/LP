@@ -1,72 +1,66 @@
 @use "../default/variables" as v;
 .voice {
   background-color: #fef1fc;
+  background: radial-gradient(
+  #f8e5f5 1.5px,
+  #faf6f6 1.5px,
+  );
+  background-size: 15px 15px;
+  background-repeat: repeat;
+  font-family: v.$m-plus-round;
   .container {
-    padding: v.$padding-xl v.$padding-l;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 160px 0;
     .catch {
-      h2, h3 {
+      .voice-title {
+        font-size: 40px;
+        font-weight: bold;
         text-align: center;
       }
-      h2 {
-        font-size: v.$h2;
-        color: v.$sub-color;
-      }
-      h3 {
-        font-size: v.$h3;
-        color: v.$catch-sub-color;
-      }
     }
-    .cards-container {
+    .item-container {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      gap: 24px;
       margin-top: v.$margin-xl;
-      .card {
-        margin: 0 v.$margin-lm;
-        padding: v.$padding-lm;
-        border-radius: v.$min-radius;
-        box-shadow: v.$box-shadow;
-        background-color: v.$white;
-        .heading {
-          display: grid;
-          grid-template-columns: auto 1fr;
-          column-gap: 0.8rem;;
-          place-content: center;
-          margin-bottom: v.$margin-m;
-          .icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-          }
-          .inner {
-            padding-top: 0.2rem;
-            .desc {
-              font-size: v.$medium-text;
-            };
-          }
+      .item {
+        display: flex;
+        align-items: center;
+        gap: 32px;
+        .icon {
+          width: 100px;
+          height: 100px;
         }
-        &:nth-of-type(1) .icon {
-          background: v.$gradation-green;
+        .voice-text {
+          position: relative;
+          width: 60%;
+          padding: 16px 24px;
+          border-radius: 32px;
+          background-color: #fff;
+          font-weight: semi-bold;
+          font-size: 16px;
+          color: v.$chacoal;
         }
-        &:nth-of-type(2) .icon {
-          background: v.$gradation-blue;
+        .voice-text::before {
+          content: "";
+          position: absolute;
+          width: 32px;
+          height: 24px;
+          top: 50%;
+          left: -24px;
+          transform: translateY(-50%) rotate(-90deg);
+          background-color: #fff;
+          clip-path: polygon(50% 0, 0% 100%, 100% 100%);
         }
-        &:nth-child(3) .icon {
-          background: v.$gradation-orange;
-        }
-        h4 {
-          margin-bottom: v.$margin-m;
-        }
-        &:nth-of-type(1) h4 {
-          color: v.$catch-sub-color;
-        }
-        &:nth-of-type(2) h4 {
-          color: v.$heading-color;
-        }
-        &:nth-of-type(3) h4 {
-          color: v.$accent-color;
-        }
-        p {
-          color: v.$gray;
+      }
+
+      .item:nth-child(even) {
+        flex-direction: row-reverse;
+        .voice-text::before {
+          left: initial;
+          right: -24px;
+          transform: translateY(-50%) rotate(90deg);
         }
       }
     }

@@ -1,60 +1,67 @@
 @use "../default/variables" as v;
 .program {
+  position: relative;
+  font-family: v.$m-plus-round;
+  background-color: #fafafa;
   .container {
-    padding: v.$padding-xl v.$padding-l;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 160px 0 240px;
     .catch {
-      h2, h3 {
-        text-align: center;
+      text-align: center;
+      .program-title {
+        font-size: 40px;
+        font-weight: bold;
       }
-      h2 {
-        font-size: v.$h2;
-        color: v.$sub-color;
-      }
-      h3 {
-        font-size: v.$h3;
-        color: v.$catch-sub-color;
+      .program-text {
+        font-size: 32px;
+        font-weight: bold;
       }
     }
     .box-container {
-      margin-top: v.$margin-xl;
+      display: grid;
+      gap: 94px;
+      margin-top: 94px;
       .box {
         position: relative;
-        width: 100%;
-        .inner {
-          h5 {
-            font-size: v.$h5;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        place-items: center;
+        gap: 32px;
+        .content {
+          .heading {
+            font-size: 24px;
+          }
+          .text {
+            padding-block: 20px;
+            border-bottom: 1px solid #000;
+          }
+          .list {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 16px;
+            margin-top: 20px;
+            .list-item {
+              padding: 12px 0;
+              span:last-child {
+                margin-left: 4px;
+                color: v.$dk-gray;
+              }
+            }
           }
           .button {
             display: block;
             width: 250px;
-            margin-top: v.$margin-lm;
+            margin: 32px auto;
             padding: v.$padding-m v.$padding-mm;
             border-radius: v.$min-radius;
             color: v.$white;
             text-align: center;
           }
-          li {
-            margin: v.$margin-m 0;
-            span:last-child {
-              margin-left: v.$margin-m;
-              color: v.$dk-gray;
-            }
-          }
         }
-        svg {
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          width: 1000px;
-          transform: translate(-50%, -50%) ;
-          z-index: -1;
-          opacity: 0.2;
-        }
-      }
-      & .box:nth-of-type(1) {
-        margin-left: 10%;
-        .inner {
-          h5 {
+
+        &:nth-of-type(1) {
+          .heading {
             color: v.$heading-sub-color;
           } 
           span:first-child {
@@ -64,33 +71,27 @@
             background-color: v.$sub-color;
           }
         }
-        svg {
-          left: 10%;
-        }
-      }
-      & .box:nth-of-type(2) {
-        margin-top: -200px;
-        margin-left: 70%;
-        .inner {
-          h5 {
-            color: v.$catch-color;
+
+        &:nth-of-type(2) {
+          .content {
+            order: 2;
+            .heading {
+              color: v.$catch-color;
+            }
+            span:first-child {
+              color: v.$catch-color;
+            }
+            .button {
+              background-color: v.$catch-color;
+            }
           }
-          span:first-child {
-            color: v.$catch-color;
-          }
-          .button {
-            background-color: v.$catch-color;
+          svg {
+            order: 1;
           }
         }
-        svg {
-          left: 10%;
-        }
-      }
-      & .box:nth-of-type(3) {
-        width: max-content;
-        margin: -50px auto 0;
-        .inner {
-          h5 {
+
+        &:nth-of-type(3) {
+          .heading {
             color: v.$accent-color;
           }
           h5 + p {
@@ -102,11 +103,6 @@
           .button {
             background-color: v.$accent-color;
           }
-        }
-        svg {
-          width: 300%;
-          left: 50%;
-          z-index: -2;
         }
       }
     }

@@ -1,36 +1,74 @@
 @use "../default/variables" as v;
 .resolve {
-  height: 80vh;
   position: relative;
+  padding: 100px 0;
   .container {
     position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 100%;
+    display: grid;
+    place-items: center;
+    max-width: 1160px;
+    margin: 0 auto;
     z-index: 2;
-    .img-box {
-      flex: 0.3 1 300px;
-      min-height: 100%;
-      display: grid;
-      place-content: center;;
-      img {
-        max-height: 100%;
-      }
+    .resolve-img {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display: block;
+      width: 300px;
+      z-index: -1;
     }
-    .content {
-      .catch {
-        padding-top: v.$margin-xl;
-        letter-spacing: 0.1em;
-        text-align: center;
-        font-family: v.$font-anzu;
-        h2 {
-          font-size: v.$h2;
+    .resolve-img.left-img {
+      left: 0;
+    }
+    .resolve-img.right-img {
+      right: 0;
+    }
+    .catch {
+      text-align: center;
+      font-family: v.$font-anzu;
+      font-weight: bold;
+      letter-spacing: 0;
+      line-height: 1.6;
+      .bubble {
+        position: relative;
+        display: inline-block;
+        width: 300px;
+        padding: 8px 36px;
+        border-radius: 100vh;
+        font-size: 42px;
+        font-weight: 500;
+        color: #fff;
+        background-color: #381c09;
+        letter-spacing: 0;
+        line-height: 1.6;
+      }
+      .bubble::after {
+        content: "";
+        position: absolute;
+        bottom: -24px;
+        left: 50%;
+        width: 50px;
+        height: 25px;
+        transform: translateX(-50%);
+        background-color: #381c09;
+        clip-path: polygon(50% 65%, 0 0, 100% 0);
+      }
+      .text {
+        margin-top: 64px;
+        span{
+          font-size: 64px;
+          margin-right: 0.1em;
+          color: #FF8719;
+          letter-spacing: 0;
+          line-height: 1.6;
         }
-        p {
-          font-size: v.$h2;
-          font-weight: 600;
-        }
+        font-size: 32px;
+      }
+      .text:last-child {
+        margin-top: 0;
+        font-size: 48px;
+        letter-spacing: 0;
+        line-height: 1.6;
       }
     }
   }
