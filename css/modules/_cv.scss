@@ -1,0 +1,86 @@
+@use "../default/variables" as v;
+.cv {
+  position: relative;
+  font-family: v.$m-plus-round;
+  background: url("../../images/bg_cv.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  z-index: 1;
+  .container {
+    position: relative;
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 160px 0 160px;
+    z-index: 3;
+    .content-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    
+      .text-wrap {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        color: #fff;
+        .em-text {
+          font-size: 24px;
+          font-weight: bold;
+          span{
+            font-size: 46px;
+          }
+        }
+        p {
+          font-size: 18px;
+          color: #fff;
+          line-height: 3;
+
+          &:last-child {
+            font-size: 28px;
+            font-weight: bold;
+          }
+        }
+      }
+      .btn {
+        margin-top: 24px;
+        padding: 16px 24px;
+        border-radius: 100vh;
+        background-color: #fff;
+        text-align: center;
+        font-size: 18px;
+        font-weight: bold;
+        color: #ffa1ae;
+      }
+
+    }
+    .svg-tri {
+      position: absolute;
+      bottom: 5%;
+      left: 0%;
+      width: 250px;
+      transform: rotate(30deg);
+      z-index: -2;
+    }
+    .svg-tri2 {
+      top: 0;
+      right: 10%;
+      left: initial;
+      transform: rotate(-45deg);
+    }
+    .svg-tri3 {
+      bottom: 10%;
+      right: 7%;
+      left: initial;
+      transform: rotate(135deg);
+    }
+    .svg-tri4 {
+      top: 10%;
+      left: 5%;
+      transform: rotate(-135deg);
+    }
+  }
+
+  
+}

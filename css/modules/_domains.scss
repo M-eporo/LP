@@ -62,8 +62,9 @@
       counter-reset: domains;
       display: grid;
       grid-template-columns: repeat(11,1fr);
+      grid-template-rows: auto 200px auto;
       justify-items: center;
-      row-gap: 25px;
+      // row-gap: 25px;
       max-width: 500px;
       max-height: 500px;
       margin: 64px auto;

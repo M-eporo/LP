@@ -76,17 +76,17 @@
         grid-row: 2;
         justify-self: start;
       }
-      li:last-child {
-        grid-column: 3/5;
+      li:nth-child(4) {
+        grid-column: 4/5;
         grid-row: 2;
         justify-self: end;
       }
+      li:nth-child(5) {
+        grid-column: 2/4;
+        grid-row: 2;
+      }
+      
     }
-    .center-img {
-      position: absolute;
-      bottom: -32px;
-      left: 50%;
-      transform: translate(-50%,0);
-    }
+    
   }
 }

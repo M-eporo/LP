@@ -1,13 +1,35 @@
 @use "../default/variables" as v;
 .voice {
   background-color: #fef1fc;
-  background: radial-gradient(
-  #f8e5f5 1.5px,
-  #faf6f6 1.5px,
-  );
-  background-size: 15px 15px;
-  background-repeat: repeat;
+  // background: radial-gradient(
+  // #f8e5f5 1.5px,
+  // #faf6f6 1.5px,
+  // );
+  // background-size: 15px 15px;
+  // background-repeat: repeat;
   font-family: v.$m-plus-round;
+  position: relative;
+  .custom-shape-divider-bottom-1765980372 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1765980372 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 166px;
+}
+
+.custom-shape-divider-bottom-1765980372 .shape-fill {
+    fill: #fef1fc;
+}
+
   .container {
     max-width: 900px;
     margin: 0 auto;

@@ -1,0 +1,161 @@
+@use "../default/variables" as v;
+.faq {
+  padding: 400px 0;
+  position: relative;
+  background-color: #d6f1ff;
+    .custom-shape-divider-top-1765979172 {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+      transform: rotate(180deg);
+
+      svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 166px;
+      }
+
+      .shape-fill {
+        fill: #fef1fc;
+      }
+
+    }
+
+    
+    .custom-shape-divider-bottom-1765979762 {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+
+      svg {
+        position: relative;
+        display: block;
+        width: calc(100% + 1.3px);
+        height: 166px;
+      }
+
+      .shape-fill {
+        fill: #fafafa;
+      }
+    }
+
+    
+
+  .container {
+    position: relative;
+    max-width: 760px;
+    margin: 0 auto;
+    .catch {
+      .faq-title {
+        position: relative;
+        width: max-content;
+        margin: 0 auto;
+        font-family: v.$noto-sans;
+        font-size: 64px;
+        color: v.$dk-gray;
+        text-align: center;
+
+        &::before,
+        &::after {
+          position: absolute;
+          top: 50%;
+          content: "";
+          width: 0.5em;
+          height: 3px;
+          border-radius: 100vh;
+          background-color: v.$accent-color;
+          transform: translateY(50%);
+        }
+        &::before {
+          left: -0.7em;
+        }
+        &::after {
+          right: -0.7em;
+        }
+      }
+      .faq-text {
+        position: relative;
+        width: max-content;
+        margin: 16px auto 0;
+        font-size: 24px;
+        font-weight: bold;
+        color: v.$dk-gray;
+        text-align: center;
+
+        &::before,
+        &::after {
+          position: absolute;
+          top: 50%;
+          content: "";
+          width: 30px;
+          height: 3px;
+          border-radius: 100vh;
+          background-color: v.$accent-color;
+          transform: rotate(60deg )translateY(50%) ;
+        }
+        &::before {
+          left: -38px;
+          transform: rotate(60deg )translateY(50%) ;
+        }
+        &::after {
+          right: -38px;
+          transform: rotate(-60deg )translateY(50%) ;
+        }
+
+      }
+    }
+    .accordion {
+      margin-top: 60px;
+      .accordion-list {
+        .accordion-item {
+
+          .accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 8px;
+            border-bottom: 2px solid #000;
+
+            .accordion-title {
+              font-size: 18px;
+              font-weight: bold;
+              color: #555;  
+            }
+            .close-icon {
+              color: #000;
+              transform: rotate(45deg);
+            }
+          }
+
+          .inner-list {
+            height: 0;
+            max-height: auto;
+            overflow: hidden;
+            transition: all 0.5s;
+            background: #fafafa;
+            border-radius: 0 0 16px 16px;
+            .inner-list-item {
+              line-height: 2;
+              padding: 24px 16px;
+              font-weight: 500;
+              color: #333;
+              opacity: 0;
+              transform: translate(15px, 10px);
+            }
+
+            .inner-list-item:not(:last-child) {
+              border-bottom: 2px solid #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+}
