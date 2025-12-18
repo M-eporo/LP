@@ -1,7 +1,38 @@
 @use "../default/variables" as v;
 .resolve {
   position: relative;
-  padding: 100px 0;
+  padding: 160px 0 100px;
+  background: linear-gradient(135deg, #b1e2fa 0, #D6F1FF 30%);
+  .bubble {
+    position: absolute;
+    top: -51px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: block;
+    padding: 24px 36px 28px;
+    border-radius: 100vh;
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    font-family: v.$m-plus-round;
+    color: #fff;
+    background-color: v.$accent-color;
+    letter-spacing: 0.2em;
+    line-height: 1.6;
+    box-shadow: 5px 5px 3px 1px rgba(0,0,0,0.3);
+  }
+  .bubble::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    width: 32px;
+    height: 20px;
+    transform: translateX(-50%);
+    background-color: #fff;
+    clip-path: polygon(50% 65%, 0 0, 100% 0);
+  }
+
   .container {
     position: relative;
     display: grid;
@@ -29,30 +60,7 @@
       font-weight: bold;
       letter-spacing: 0;
       line-height: 1.6;
-      .bubble {
-        position: relative;
-        display: inline-block;
-        width: 300px;
-        padding: 8px 36px;
-        border-radius: 100vh;
-        font-size: 42px;
-        font-weight: 500;
-        color: #fff;
-        background-color: #381c09;
-        letter-spacing: 0;
-        line-height: 1.6;
-      }
-      .bubble::after {
-        content: "";
-        position: absolute;
-        bottom: -24px;
-        left: 50%;
-        width: 50px;
-        height: 25px;
-        transform: translateX(-50%);
-        background-color: #381c09;
-        clip-path: polygon(50% 65%, 0 0, 100% 0);
-      }
+      
       .text {
         margin-top: 64px;
         span{
@@ -72,9 +80,28 @@
       }
     }
   }
-  // .svg-resolve {
-  //   position: absolute;
-  //   top: -30%;
-  //   z-index: 1;
-  // }
+
+  .custom-shape-divider-top-1766060671 {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1766060671 svg {
+    position: relative;
+    display: block;
+    width: calc(100% + 1.3px);
+    height: 300px;
+}
+
+.custom-shape-divider-top-1766060671 .shape-fill {
+    fill: #D6F1FF;
+}
+  
+
+
 }

@@ -1,7 +1,7 @@
 @use "../default/variables" as v;
 .feature {
   position: relative;
-  margin-top: 300px;
+  padding: 160px 0;
   background: repeating-linear-gradient(
     -45deg,
     #fffef2,
@@ -23,7 +23,7 @@
   .container {
     max-width: 1160px;
     margin: 0 auto;
-    padding: 160px 0 240px;
+    
     .catch {
       text-align: center;
       .feature-title {
