@@ -2,10 +2,23 @@
 .problems {
   position: relative;
   margin-top: 250px;
-  padding: 160px 0 250px;
-  overflow: hidden;
+  padding: 160px 0 100px;
+  // overflow: hidden;
   font-family: v.$m-plus-round;
   background-color: #f0f0f0;
+
+  .arrow {
+    content: "";
+    position: absolute;
+    bottom: -60px;
+    left: 50%;
+    transform: translate(-50%,0);
+    width: 120px;
+    height: 60px;
+    background-color: #f0f0f0;
+    clip-path: polygon(50% 65%, 0 0, 100% 0);
+    z-index: 2;
+  }
   .container {
     position: relative;
     width: 100%;

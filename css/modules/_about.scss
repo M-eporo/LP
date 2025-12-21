@@ -1,79 +1,139 @@
 @use "../default/variables" as v;
 .about {
   position: relative;
-  padding: 360px 0 160px;
+  padding: 300px 0 160px;
+  background-color: #f0f0f0;
+  font-family: v.$m-plus-round;
+  mask-image: linear-gradient(180deg, #0000 0%, #000 10%);
+
+  .obj {
+    position: absolute;
+    width: 150px;
+    max-width: 150px;
+    aspect-ratio: 1/1;
+    z-index: -1;
+  }
+
+  
   .container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 46px;
     max-width: 1160px;
     margin: 0 auto;
-    .item{
-      position: relative;
-      max-width: 40em;
-      margin-top: v.$margin-l;
-      font-size: 18px;
-      .catch {
-        font-family: v.$font-anzu;
-        font-size: 32px;
-        .about-catch {
-          display: inline-flex;
-          justify-content: center;
-          align-items: center;
-          gap: 12px;
-          padding: 6px 12px;
-          text-align: justify;
-          border-top: 5px solid v.$sub-color;
-          border-bottom: 5px solid v.$sub-color;
-        }
-        
-        .about-catch::after {
+
+    .catch {
+      .about-title {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        width: max-content;
+        font-family: v.$noto-sans;
+        font-size: 64px;
+        color: v.$dk-gray; 
+
+        &::before,
+        &::after {
           content: "";
-          min-width: 100px;
-          height: 100px;
-          background: url("../../images/cat.png");
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: contain;
+          width: 0.5em;
+          height: 3px;
+          border-radius: 100vh;
+          background-color: v.$red;
+          transform: translateY(50%);
         }
       }
-      
-      .text-wrap {
-        margin-top: 16px;
-        padding-left: v.$padding-l;
-        text-align: justify;
-        p {
-          font-family: v.$m-plus-round;
+
+      .about-sub-title {
+        font-size: 26px;
+        font-weight: bold;
+        color: v.$dk-gray;
+      }
+      .wrapper {
+        margin-top: 12px;
+        .text {
           font-size: 18px;
+          font-weight: bold;
+          color: v.$dk-gray;
         }
+      }
+
+      .obj.triangle-blue {
+        width: 500px;
+        max-width: 500px;
+        left: 10%;
+        top: 10%;
+        transform: rotate(120deg);
+        mask-image: radial-gradient(circle at center, #000 90%, #0000 100%);
+      }
+    }
+    .text-wrap{
+      position: relative;
+      .em {
+        font-size: 1.2em;
+        color: v.$red;
+      }
+      .text-head {
+        .text {
+          font-size: 22px;
+          font-weight: bold;
+          color: v.$dk-gray;
+        }
+        
+      }
+
+      .text {
+        font-size: 18px;
+        color: v.$dk-gray;
+        p {
+          text-align: justify;
+          margin: 16px 0;
+        }
+
+        .p-em {
+          font-size: 22px;
+          font-weight: bold;
+        }
+
         .about-list {
           .list-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-size: 18px;
             line-height: 2;
             letter-spacing: 0.15em;
           }
           .list-item::before {
             content: "";
-            
+            width: 0.8em;
+            height: 2px;
+            border-radius: 100vh;
+            background-color: v.$red;
           }
         }
-
-        
+      }
+      
+      .obj {
+        position: absolute;
+        width: 150px;
+        max-width: 150px;
+        aspect-ratio: 1/1;
+        z-index: -1;
+      }
+      
+      .obj.triangle-yellow {
+        width: 300px;
+        max-width: 300px;
+        right: 0%;
+        bottom: 0%;
+        transform: rotate(-120deg);
+        mask-image: radial-gradient(circle at center, #000 90%, #0000 100%);
       }
     }
-    .item:nth-of-type(2n) {
-      align-self: flex-end;
-    };
-    .item:nth-child(2) .about-catch {
-      border-top: 5px solid v.$catch-color;
-      border-bottom: 5px solid v.$catch-color;
-    }
-    .item:nth-child(3) .about-catch {
-      border-top: 5px solid v.$yellow;
-      border-bottom: 5px solid v.$yellow;
-    }
-    .item:nth-child(4) .about-catch {
-      border-top: 5px solid v.$red;
-      border-bottom: 5px solid v.$red;
-    }
+  }
+
+  .office {
+    
   }
 }

@@ -1,8 +1,10 @@
 @use "../default/variables" as v;
 .resolve {
   position: relative;
-  padding: 160px 0 100px;
-  background: linear-gradient(135deg, #b1e2fa 0, #D6F1FF 30%);
+  padding: 10px 0 400px;
+  background-color: #ffe3e3;
+  mask-image: linear-gradient(180deg, #000 80%, #0000 100%);
+  font-family: v.$m-plus-round;
   .bubble {
     position: absolute;
     top: -51px;
@@ -12,14 +14,25 @@
     padding: 24px 36px 28px;
     border-radius: 100vh;
     text-align: center;
-    font-size: 32px;
+    font-size: 26px;
     font-weight: bold;
     font-family: v.$m-plus-round;
     color: #fff;
     background-color: v.$accent-color;
     letter-spacing: 0.2em;
     line-height: 1.6;
-    box-shadow: 5px 5px 3px 1px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 0px 4px #ffd8b5;
+    span {
+      font-size: 36px;
+    }
+  }
+  .bubble::before {
+    content: "";
+    position: absolute;
+    bottom: 34px;
+    width: 80%;
+    height: 3px;
+    background-color: #fff;
   }
   .bubble::after {
     content: "";
@@ -32,13 +45,27 @@
     background-color: #fff;
     clip-path: polygon(50% 65%, 0 0, 100% 0);
   }
-
+  .img-box {
+    position: absolute;
+    top: 12%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 1;
+  }
+  .dog-img {
+    width: 100px;
+    height: 100px;
+    mask-image: radial-gradient(circle at center, #000 40%, #0000 70%);
+  }
   .container {
     position: relative;
     display: grid;
     place-items: center;
     max-width: 1160px;
     margin: 0 auto;
+    margin-top: 500px;
     z-index: 2;
     .resolve-img {
       position: absolute;
@@ -49,33 +76,32 @@
       z-index: -1;
     }
     .resolve-img.left-img {
-      left: 0;
+      left: 00%;
     }
     .resolve-img.right-img {
       right: 0;
     }
     .catch {
       text-align: center;
-      font-family: v.$font-anzu;
       font-weight: bold;
       letter-spacing: 0;
       line-height: 1.6;
-      
       .text {
         margin-top: 64px;
         span{
           font-size: 64px;
-          margin-right: 0.1em;
-          color: #FF8719;
-          letter-spacing: 0;
+          font-weight: bold;
+          color: v.$red;
+          text-shadow: 0 0 3px rgba(255,255,255);
           line-height: 1.6;
         }
-        font-size: 32px;
+        font-size: 36px;
+        color: v.$dk-gray;
       }
       .text:last-child {
         margin-top: 0;
-        font-size: 48px;
-        letter-spacing: 0;
+        font-size: 64px;
+        color: v.$dk-gray;
         line-height: 1.6;
       }
     }
@@ -89,19 +115,43 @@
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
-}
+  }
 
-.custom-shape-divider-top-1766060671 svg {
+  .custom-shape-divider-top-1766060671 svg {
+    position: relative;
+    display: block;
+    width: calc(150% + 1.3px);
+    height: 300px;
+  }
+
+  .custom-shape-divider-top-1766060671 .shape-fill {
+    fill: #D6F1FF;
+  }
+
+  .custom-shape-divider-top-1766230186 {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+  }
+
+  .custom-shape-divider-top-1766230186 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
     height: 300px;
-}
+  }
 
-.custom-shape-divider-top-1766060671 .shape-fill {
-    fill: #D6F1FF;
-}
-  
-
+  .custom-shape-divider-top-1766230186 .line {
+    height: 305px;
+  }
+  .custom-shape-divider-top-1766230186 .line .shape-fill {
+    fill: #fafafa;
+  }
+  .custom-shape-divider-top-1766230186 .shape-fill {
+    fill: #f0f0f0;
+  }
 
 }
