@@ -1,10 +1,16 @@
 @use "../default/variables" as v;
 .resolve {
   position: relative;
-  padding: 10px 0 400px;
+  padding: 10px 0 0;
   background-color: #ffe3e3;
-  mask-image: linear-gradient(180deg, #000 80%, #0000 100%);
+  background: url("../../images/children.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-position: center;
+  mask-image: linear-gradient(180deg, #000 60%, #0000 90%);
   font-family: v.$m-plus-round;
+
   .bubble {
     position: absolute;
     top: -51px;
@@ -64,42 +70,28 @@
     display: grid;
     place-items: center;
     max-width: 1160px;
+    height: calc(100vw * (1280 / 1920));
+    min-height: 650px;
     margin: 0 auto;
-    margin-top: 500px;
     z-index: 2;
-    .resolve-img {
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      display: block;
-      width: 300px;
-      z-index: -1;
-    }
-    .resolve-img.left-img {
-      left: 00%;
-    }
-    .resolve-img.right-img {
-      right: 0;
-    }
+
     .catch {
+      height: 100%;
+      margin-top: 120px;
       text-align: center;
       font-weight: bold;
       letter-spacing: 0;
       line-height: 1.6;
       .text {
-        margin-top: 64px;
-        span{
-          font-size: 64px;
-          font-weight: bold;
-          color: v.$red;
-          text-shadow: 0 0 3px rgba(255,255,255);
-          line-height: 1.6;
-        }
+        font-size: 48px;
+        font-weight: bold;
+        color: v.$red;
+        text-shadow: 0 0 3px rgba(255,255,255);
+        line-height: 1.6;
         font-size: 36px;
         color: v.$dk-gray;
       }
       .text:last-child {
-        margin-top: 0;
         font-size: 64px;
         color: v.$dk-gray;
         line-height: 1.6;
@@ -121,7 +113,7 @@
     position: relative;
     display: block;
     width: calc(150% + 1.3px);
-    height: 300px;
+    height: 150px;
   }
 
   .custom-shape-divider-top-1766060671 .shape-fill {
@@ -141,11 +133,11 @@
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 300px;
+    height: 150px;
   }
 
   .custom-shape-divider-top-1766230186 .line {
-    height: 305px;
+    height: 155px;
   }
   .custom-shape-divider-top-1766230186 .line .shape-fill {
     fill: #fafafa;

@@ -13,16 +13,28 @@
     aspect-ratio: 1/1;
     z-index: -1;
   }
-
-  
   .container {
+    position: relative;
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 46px;
+    gap: 64px;
     max-width: 1160px;
     margin: 0 auto;
 
+    .img.woman {
+      position: absolute;
+      top: 55%;
+      left: 0;
+      transform: translate(0%,-50%);
+      width: 500px;
+      aspect-ratio: 1663 / 972;
+      display: block;
+      z-index: -2;
+      filter: blur(1px);
+    }
+    
     .catch {
+      position: relative;
       .about-title {
         position: relative;
         display: flex;
@@ -61,11 +73,13 @@
       .obj.triangle-blue {
         width: 500px;
         max-width: 500px;
-        left: 10%;
-        top: 10%;
+        left: 0;
+        top: -125px;
         transform: rotate(120deg);
         mask-image: radial-gradient(circle at center, #000 90%, #0000 100%);
       }
+
+      
     }
     .text-wrap{
       position: relative;
@@ -75,14 +89,13 @@
       }
       .text-head {
         .text {
-          font-size: 22px;
+          font-size: 26px;
           font-weight: bold;
           color: v.$dk-gray;
         }
-        
       }
 
-      .text {
+      .text-content {
         font-size: 18px;
         color: v.$dk-gray;
         p {
@@ -96,11 +109,15 @@
         }
 
         .about-list {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 12px;
           .list-item {
             display: flex;
             align-items: center;
             gap: 12px;
             font-size: 18px;
+            font-weight: bold;
             line-height: 2;
             letter-spacing: 0.15em;
           }
@@ -110,6 +127,7 @@
             height: 2px;
             border-radius: 100vh;
             background-color: v.$red;
+            transform: rotate(-45deg);
           }
         }
       }
@@ -125,7 +143,7 @@
       .obj.triangle-yellow {
         width: 300px;
         max-width: 300px;
-        right: 0%;
+        right: -150px;
         bottom: 0%;
         transform: rotate(-120deg);
         mask-image: radial-gradient(circle at center, #000 90%, #0000 100%);
@@ -133,7 +151,5 @@
     }
   }
 
-  .office {
-    
-  }
+  
 }

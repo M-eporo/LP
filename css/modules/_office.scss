@@ -1,1 +1,89 @@
 @use "../default/variables" as v;
+
+.office {
+    background-color: #f0f0f0;
+    font-family: v.$m-plus-round;
+    .container {
+        position: relative;        
+        width: 100%;
+        padding-right: max(min(3.47vw,50px),(100vw - 1171px)/2);
+        border: 1px solid transparent;
+        background-color: #b3c5db;
+
+        .catch {
+            text-align: center;
+            z-index: 3;
+            margin-top: -60px;
+            .office-title {
+                position: relative;
+                display: inline-flex;
+                align-items: center;
+                gap: 12px;
+                width: max-content;
+                font-family: v.$noto-sans;
+                font-size: 64px;
+                color: v.$dk-gray; 
+
+                &::before,
+                &::after {
+                    content: "";
+                    width: 1em;
+                    height: 3px;
+                    border-radius: 100vh;
+                    background-color: v.$yellow;
+                    transform: translateY(50%) rotate(-45deg);
+                }
+            }
+            .office-sub-title {
+                text-align: center;
+                font-size: 26px;
+                font-weight: bold;
+                color: v.$dk-gray;
+            }
+        }
+        .inner {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            max-width: 100%;
+            padding: 84px min(10.56vw,152px) 60px min(3.47vw,50px);
+            border-radius: 0 100vh 100vh 0;
+            background: url("../../images/office1.jpg");
+            z-index: 1;
+            .img.office {
+                position: absolute;
+                top: 0;
+                left: 0;
+                max-width: 500px;
+                z-index: 2;
+            }
+            
+
+            .content-wrapper {
+                display: flex;
+                flex-wrap: wrap;
+                z-index: 3;
+                dl {
+                    &:not(:first-child) {
+                        margin-top: 16px;
+                    }
+                    
+                    dt {
+                        border-bottom: 1px solid v.$dk-gray;
+                        font-size: 22px;
+                        font-weight: bold;
+                        color: v.$dk-gray;
+                    }
+                    dl {
+                        font-size: 18px;
+                        font-weight: bold;
+                        color: v.$dk-gray;
+                    }
+                    dd {
+                        margin-top: 16px;
+                    }
+                }
+            }
+        }
+    }
+}

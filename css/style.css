@@ -263,7 +263,7 @@ p {
 .problems {
   position: relative;
   margin-top: 250px;
-  padding: 160px 0 100px;
+  padding: 160px 0 50px;
   font-family: "M PLUS Rounded 1c", sans-serif;
   background-color: #f0f0f0;
 }
@@ -344,10 +344,15 @@ p {
 
 .resolve {
   position: relative;
-  padding: 10px 0 400px;
+  padding: 10px 0 0;
   background-color: #ffe3e3;
-  -webkit-mask-image: linear-gradient(180deg, #000 80%, rgba(0, 0, 0, 0) 100%);
-          mask-image: linear-gradient(180deg, #000 80%, rgba(0, 0, 0, 0) 100%);
+  background: url("../../images/children.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-clip: border-box;
+  background-position: center;
+  -webkit-mask-image: linear-gradient(180deg, #000 60%, rgba(0, 0, 0, 0) 90%);
+          mask-image: linear-gradient(180deg, #000 60%, rgba(0, 0, 0, 0) 90%);
   font-family: "M PLUS Rounded 1c", sans-serif;
 }
 .resolve .bubble {
@@ -410,44 +415,29 @@ p {
   display: grid;
   place-items: center;
   max-width: 1160px;
+  height: 66.6666666667vw;
+  min-height: 650px;
   margin: 0 auto;
-  margin-top: 500px;
   z-index: 2;
 }
-.resolve .container .resolve-img {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: block;
-  width: 300px;
-  z-index: -1;
-}
-.resolve .container .resolve-img.left-img {
-  left: 0%;
-}
-.resolve .container .resolve-img.right-img {
-  right: 0;
-}
 .resolve .container .catch {
+  height: 100%;
+  margin-top: 120px;
   text-align: center;
   font-weight: bold;
   letter-spacing: 0;
   line-height: 1.6;
 }
 .resolve .container .catch .text {
-  margin-top: 64px;
-  font-size: 36px;
-  color: #555;
-}
-.resolve .container .catch .text span {
-  font-size: 64px;
+  font-size: 48px;
   font-weight: bold;
   color: #ff6b6b;
   text-shadow: 0 0 3px rgb(255, 255, 255);
   line-height: 1.6;
+  font-size: 36px;
+  color: #555;
 }
 .resolve .container .catch .text:last-child {
-  margin-top: 0;
   font-size: 64px;
   color: #555;
   line-height: 1.6;
@@ -465,7 +455,7 @@ p {
   position: relative;
   display: block;
   width: calc(150% + 1.3px);
-  height: 300px;
+  height: 150px;
 }
 .resolve .custom-shape-divider-top-1766060671 .shape-fill {
   fill: #D6F1FF;
@@ -482,10 +472,10 @@ p {
   position: relative;
   display: block;
   width: calc(100% + 1.3px);
-  height: 300px;
+  height: 150px;
 }
 .resolve .custom-shape-divider-top-1766230186 .line {
-  height: 305px;
+  height: 155px;
 }
 .resolve .custom-shape-divider-top-1766230186 .line .shape-fill {
   fill: #fafafa;
@@ -510,11 +500,26 @@ p {
   z-index: -1;
 }
 .about .container {
+  position: relative;
   display: grid;
   grid-template-columns: auto 1fr;
-  gap: 46px;
+  gap: 64px;
   max-width: 1160px;
   margin: 0 auto;
+}
+.about .container .img.woman {
+  position: absolute;
+  top: 55%;
+  left: 0;
+  transform: translate(0%, -50%);
+  width: 500px;
+  aspect-ratio: 1663/972;
+  display: block;
+  z-index: -2;
+  filter: blur(1px);
+}
+.about .container .catch {
+  position: relative;
 }
 .about .container .catch .about-title {
   position: relative;
@@ -551,8 +556,8 @@ p {
 .about .container .catch .obj.triangle-blue {
   width: 500px;
   max-width: 500px;
-  left: 10%;
-  top: 10%;
+  left: 0;
+  top: -125px;
   transform: rotate(120deg);
   -webkit-mask-image: radial-gradient(circle at center, #000 90%, rgba(0, 0, 0, 0) 100%);
           mask-image: radial-gradient(circle at center, #000 90%, rgba(0, 0, 0, 0) 100%);
@@ -565,36 +570,43 @@ p {
   color: #ff6b6b;
 }
 .about .container .text-wrap .text-head .text {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: bold;
   color: #555;
 }
-.about .container .text-wrap .text {
+.about .container .text-wrap .text-content {
   font-size: 18px;
   color: #555;
 }
-.about .container .text-wrap .text p {
+.about .container .text-wrap .text-content p {
   text-align: justify;
   margin: 16px 0;
 }
-.about .container .text-wrap .text .p-em {
+.about .container .text-wrap .text-content .p-em {
   font-size: 22px;
   font-weight: bold;
 }
-.about .container .text-wrap .text .about-list .list-item {
+.about .container .text-wrap .text-content .about-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.about .container .text-wrap .text-content .about-list .list-item {
   display: flex;
   align-items: center;
   gap: 12px;
   font-size: 18px;
+  font-weight: bold;
   line-height: 2;
   letter-spacing: 0.15em;
 }
-.about .container .text-wrap .text .about-list .list-item::before {
+.about .container .text-wrap .text-content .about-list .list-item::before {
   content: "";
   width: 0.8em;
   height: 2px;
   border-radius: 100vh;
   background-color: #ff6b6b;
+  transform: rotate(-45deg);
 }
 .about .container .text-wrap .obj {
   position: absolute;
@@ -606,12 +618,94 @@ p {
 .about .container .text-wrap .obj.triangle-yellow {
   width: 300px;
   max-width: 300px;
-  right: 0%;
+  right: -150px;
   bottom: 0%;
   transform: rotate(-120deg);
   -webkit-mask-image: radial-gradient(circle at center, #000 90%, rgba(0, 0, 0, 0) 100%);
           mask-image: radial-gradient(circle at center, #000 90%, rgba(0, 0, 0, 0) 100%);
 }
+
+.office {
+  background-color: #f0f0f0;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+.office .container {
+  position: relative;
+  width: 100%;
+  padding-right: max(min(3.47vw, 50px), (100vw - 1171px) / 2);
+  border: 1px solid transparent;
+  background-color: #b3c5db;
+}
+.office .container .catch {
+  text-align: center;
+  z-index: 3;
+  margin-top: -60px;
+}
+.office .container .catch .office-title {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  width: -moz-max-content;
+  width: max-content;
+  font-family: "Noto Sans JP", sans-serif;
+  font-size: 64px;
+  color: #555;
+}
+.office .container .catch .office-title::before, .office .container .catch .office-title::after {
+  content: "";
+  width: 1em;
+  height: 3px;
+  border-radius: 100vh;
+  background-color: #fdef2e;
+  transform: translateY(50%) rotate(-45deg);
+}
+.office .container .catch .office-sub-title {
+  text-align: center;
+  font-size: 26px;
+  font-weight: bold;
+  color: #555;
+}
+.office .container .inner {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  max-width: 100%;
+  padding: 84px min(10.56vw, 152px) 60px min(3.47vw, 50px);
+  border-radius: 0 100vh 100vh 0;
+  background: url("../../images/office1.jpg");
+  z-index: 1;
+}
+.office .container .inner .img.office {
+  position: absolute;
+  top: 0;
+  left: 0;
+  max-width: 500px;
+  z-index: 2;
+}
+.office .container .inner .content-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  z-index: 3;
+}
+.office .container .inner .content-wrapper dl:not(:first-child) {
+  margin-top: 16px;
+}
+.office .container .inner .content-wrapper dl dt {
+  border-bottom: 1px solid #555;
+  font-size: 22px;
+  font-weight: bold;
+  color: #555;
+}
+.office .container .inner .content-wrapper dl dl {
+  font-size: 18px;
+  font-weight: bold;
+  color: #555;
+}
+.office .container .inner .content-wrapper dl dd {
+  margin-top: 16px;
+}
+
 .feature {
   position: relative;
   padding: 160px 0;
@@ -619,7 +713,7 @@ p {
   background-position: center;
   background-size: cover;
   font-family: "M PLUS Rounded 1c", sans-serif;
-  z-index: -1;
+  z-index: 1;
 }
 .feature .feature-svg-1 {
   position: absolute;
@@ -1432,25 +1526,6 @@ p {
 }
 .faq .container .accordion .accordion-list .accordion-item .inner-list .inner-list-item:not(:last-child) {
   border-bottom: 2px solid #fff;
-}
-
-.mask {
-  position: relative;
-  width: 500px;
-  height: 500px;
-}
-.mask .mask-clip {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  inset: 0;
-  clip-path: url("#mask-clip-path");
-}
-.mask .mask-clip img {
-  width: 500px;
-}
-.mask svg {
-  width: 100%;
 }
 
 .cta {
