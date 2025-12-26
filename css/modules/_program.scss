@@ -3,11 +3,24 @@
   position: relative;
   font-family: v.$m-plus-round;
   background-color: #fafafa;
+
   .container {
+    position: relative;
     max-width: 1160px;
     margin: 0 auto;
     padding: 160px 0 240px;
+
+    .obj.circle-blue {
+      position: absolute;
+      top: -5%;
+      left: -40%;
+      width: 700px;
+      filter: blur(2px);
+      z-index: 0;
+    }
     .catch {
+      position: relative;
+      z-index: 1;
       text-align: center;
       .program-title {
         font-size: 40px;

@@ -2,15 +2,15 @@
 .feature {
   position: relative;
   padding: 160px 0;
-  background: repeating-linear-gradient(
-    -45deg,
-    #fffef2,
-    #fffef2 8px,
-    #fffaf2 8px,
-    #fffaf2 16px
-  );
-  background-position: center;
-  background-size: cover;
+  // background: repeating-linear-gradient(
+  //   -45deg,
+  //   #fffef2,
+  //   #fffef2 8px,
+  //   #fffaf2 8px,
+  //   #fffaf2 16px
+  // );
+  // background-position: center;
+  // background-size: cover;
   font-family: v.$m-plus-round;
   z-index: 1;
   .feature-svg-1 {
@@ -19,6 +19,11 @@
     left: 0%;
     z-index: -1;
     width: 600px;
+  }
+  .obj.line-yellow {
+    position: absolute;
+    top: 0;
+    right: 0;
   }
   .container {
     max-width: 1160px;

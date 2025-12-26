@@ -1,15 +1,14 @@
 @use "../default/variables" as v;
 
 .office {
-    background-color: #f0f0f0;
+    background-color: #b3c5db;
     font-family: v.$m-plus-round;
+    padding-bottom: 200px;;
     .container {
         position: relative;        
         width: 100%;
         padding-right: max(min(3.47vw,50px),(100vw - 1171px)/2);
         border: 1px solid transparent;
-        background-color: #b3c5db;
-
         .catch {
             text-align: center;
             z-index: 3;
@@ -41,15 +40,27 @@
                 color: v.$dk-gray;
             }
         }
+        .text-wrap {
+            padding: 24px 46px;
+            .text {
+                font-size: 18px;
+            }
+        }
         .inner {
             position: relative;
             display: flex;
             justify-content: center;
+            flex-direction: column;
             max-width: 100%;
             padding: 84px min(10.56vw,152px) 60px min(3.47vw,50px);
+            //padding: 84px min(10.56vw,152px) 60px 0;
             border-radius: 0 100vh 100vh 0;
             background: url("../../images/office1.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            filter: grayscale(20%);
             z-index: 1;
+            
             .img.office {
                 position: absolute;
                 top: 0;
@@ -58,26 +69,28 @@
                 z-index: 2;
             }
             
-
             .content-wrapper {
                 display: flex;
                 flex-wrap: wrap;
+                gap: 24px;
                 z-index: 3;
+                padding: 12px;
+                border-radius: 0 100vh 100vh 0;
+                background-color: #ffffff99;
                 dl {
-                    &:not(:first-child) {
-                        margin-top: 16px;
-                    }
-                    
                     dt {
                         border-bottom: 1px solid v.$dk-gray;
                         font-size: 22px;
                         font-weight: bold;
-                        color: v.$dk-gray;
+                        color: v.$chacoal;
+                        text-shadow: 2px 2px 1px #fff;
                     }
-                    dl {
-                        font-size: 18px;
+                    dd {
+                        padding-left: 0.8em;
+                        font-size: 16px;
                         font-weight: bold;
-                        color: v.$dk-gray;
+                        color: v.$chacoal;
+                        text-shadow: 1px 1px 2px #fff;;
                     }
                     dd {
                         margin-top: 16px;

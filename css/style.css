@@ -509,9 +509,8 @@ p {
 }
 .about .container .img.woman {
   position: absolute;
-  top: 55%;
-  left: 0;
-  transform: translate(0%, -50%);
+  bottom: 0;
+  left: 80%;
   width: 500px;
   aspect-ratio: 1663/972;
   display: block;
@@ -626,15 +625,15 @@ p {
 }
 
 .office {
-  background-color: #f0f0f0;
+  background-color: #b3c5db;
   font-family: "M PLUS Rounded 1c", sans-serif;
+  padding-bottom: 200px;
 }
 .office .container {
   position: relative;
   width: 100%;
   padding-right: max(min(3.47vw, 50px), (100vw - 1171px) / 2);
   border: 1px solid transparent;
-  background-color: #b3c5db;
 }
 .office .container .catch {
   text-align: center;
@@ -666,14 +665,24 @@ p {
   font-weight: bold;
   color: #555;
 }
+.office .container .text-wrap {
+  padding: 24px 46px;
+}
+.office .container .text-wrap .text {
+  font-size: 18px;
+}
 .office .container .inner {
   position: relative;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   max-width: 100%;
   padding: 84px min(10.56vw, 152px) 60px min(3.47vw, 50px);
   border-radius: 0 100vh 100vh 0;
   background: url("../../images/office1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: grayscale(20%);
   z-index: 1;
 }
 .office .container .inner .img.office {
@@ -686,21 +695,25 @@ p {
 .office .container .inner .content-wrapper {
   display: flex;
   flex-wrap: wrap;
+  gap: 24px;
   z-index: 3;
-}
-.office .container .inner .content-wrapper dl:not(:first-child) {
-  margin-top: 16px;
+  padding: 12px;
+  border-radius: 0 100vh 100vh 0;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .office .container .inner .content-wrapper dl dt {
   border-bottom: 1px solid #555;
   font-size: 22px;
   font-weight: bold;
-  color: #555;
+  color: #333;
+  text-shadow: 2px 2px 1px #fff;
 }
-.office .container .inner .content-wrapper dl dl {
-  font-size: 18px;
+.office .container .inner .content-wrapper dl dd {
+  padding-left: 0.8em;
+  font-size: 16px;
   font-weight: bold;
-  color: #555;
+  color: #333;
+  text-shadow: 1px 1px 2px #fff;
 }
 .office .container .inner .content-wrapper dl dd {
   margin-top: 16px;
@@ -709,9 +722,6 @@ p {
 .feature {
   position: relative;
   padding: 160px 0;
-  background: repeating-linear-gradient(-45deg, #fffef2, #fffef2 8px, #fffaf2 8px, #fffaf2 16px);
-  background-position: center;
-  background-size: cover;
   font-family: "M PLUS Rounded 1c", sans-serif;
   z-index: 1;
 }
@@ -721,6 +731,11 @@ p {
   left: 0%;
   z-index: -1;
   width: 600px;
+}
+.feature .obj.line-yellow {
+  position: absolute;
+  top: 0;
+  right: 0;
 }
 .feature .container {
   max-width: 1160px;
@@ -900,11 +915,22 @@ p {
   background-color: #fafafa;
 }
 .program .container {
+  position: relative;
   max-width: 1160px;
   margin: 0 auto;
   padding: 160px 0 240px;
 }
+.program .container .obj.circle-blue {
+  position: absolute;
+  top: -5%;
+  left: -40%;
+  width: 700px;
+  filter: blur(2px);
+  z-index: 0;
+}
 .program .container .catch {
+  position: relative;
+  z-index: 1;
   text-align: center;
 }
 .program .container .catch .program-title {
