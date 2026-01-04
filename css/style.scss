@@ -6,11 +6,12 @@
 @use "modules/office";
 @use "modules/feature";
 @use "modules/program";
-@use "modules/domains";
 @use "modules/cv";
 @use "modules/voice";
 @use "modules/faq";
 @use "modules/cta";
+@use "modules/firstview";
+@use "modules/footer";
 
 //npx sass css/style.scss css/style.css
 //npx sass --watch css/style.scss:css/style.css

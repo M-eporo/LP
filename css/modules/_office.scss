@@ -42,8 +42,11 @@
         }
         .text-wrap {
             padding: 24px 46px;
+            text-align: center;
             .text {
                 font-size: 18px;
+                font-weight: bold;
+                color: v.$dk-gray;
             }
         }
         .inner {

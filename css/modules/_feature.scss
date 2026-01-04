@@ -2,16 +2,8 @@
 .feature {
   position: relative;
   padding: 160px 0;
-  // background: repeating-linear-gradient(
-  //   -45deg,
-  //   #fffef2,
-  //   #fffef2 8px,
-  //   #fffaf2 8px,
-  //   #fffaf2 16px
-  // );
-  // background-position: center;
-  // background-size: cover;
   font-family: v.$m-plus-round;
+  background-color: #f0f0f0;
   z-index: 1;
   .feature-svg-1 {
     position: absolute;
@@ -20,129 +12,181 @@
     z-index: -1;
     width: 600px;
   }
-  .obj.line-yellow {
-    position: absolute;
-    top: 0;
-    right: 0;
-  }
+  
   .container {
+    position: relative;
     max-width: 1160px;
     margin: 0 auto;
+
+    .obj {
+      position: absolute;
+    }
+    .obj.line-yellow {
+      top: 0;
+      right: 0;
+      transform: translate(50%, -100%);
+    }
     
     .catch {
       text-align: center;
       .feature-title {
-        font-size: 40px;
-        font-weight: bold;
-      }
-      .feature-text {
-        font-size: 32px;
-        font-weight: bold;
-      }
-      .feature-desc {
-        font-size: 20px;
-      }
-    }
-    .cards-container {
-      counter-reset: card;
-      display: grid;
-      gap: 84px;
-      margin-top: 84px;
-      .card {
-        counter-increment: card;
         position: relative;
-        display: flex;
-        gap: 32px;
-        border-radius: v.$min-radius;
-        // box-shadow: v.$box-shadow;
-        // background-color: #fefefe;
-        .img-wrap {
-          flex: 1 1 40%;
-          img {
-            border-radius: v.$min-radius;
-          }
-        }
-        .content {
-          display: grid;
-          place-content: center;
-          flex: 1 1 60%;
-          .title {
-            font-size: 32px;
-            font-weight: bold;
-            color: v.$dk-gray;
-          }
-          .text {
-            margin-top: 12px;
-            font-size: 18px;
-            color: v.$chacoal;
-          }
-          .icon-wrap {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-top: 16px;
-            .icon {
-              display: inline-grid;
-              place-items: center;
-              flex: 1;
-              padding: 12px 12px;
-              border: 3px solid v.$catch-sub-color;
-              border-radius: 100vh;
-              background-color: #fff;
-              text-align: center;
-              font-size: 16px;
-              font-weight: bold;
-              letter-spacing: 0.15em;
-              color: v.$catch-sub-color;
-            }
-          }
-        }
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        width: max-content;
+        font-family: v.$noto-sans;
+        font-size: 64px;
+        color: v.$dk-gray; 
 
-        &:nth-child(2) {
-          flex-direction: row-reverse;
-          .icon-wrap {
-            .icon {
-              padding: 6px 12px;
-              border-color: v.$catch-color;
-              color: v.$catch-color;
-            }
-          }
-        }
-        &:nth-child(3) {
-          .icon-wrap {
-            .icon {
-              border-color: v.$red;
-              color: v.$red;
-            }
-          }
+        &::before,
+        &::after {
+            content: "";
+          width: 0.5em;
+          height: 3px;
+          border-radius: 100vh;
+          background-color: v.$catch-color;
+          transform: translateY(50%);
         }
       }
-      .card::after {
-        content: "0" counter(card);
-        font-size: 256px;
+      .feature-sub-title {
+        text-align: center;
+        font-size: 26px;
         font-weight: bold;
-        font-family: v.$noto-sans;
-        position: absolute;
-        top: 0;
-        right: 0;
-        opacity: 0.4;
-        color: v.$catch-sub-color;
-        z-index: -1;
+        color: v.$dk-gray;
       }
       
-      .card:nth-child(2)::after {
-        left: 0;
-        color: v.$catch-color;
+    }
+    
+    .cards-container {
+      margin-top: 64px;
+      .cards-head {
+        text-align: center;
+        font-size: 36px;
+        font-weight: bold;
+        color: v.$dk-gray;
       }
-      .card:nth-child(3)::after {
-        color: v.$red;
+    
+      .cards {
+        counter-reset: card;
+        display: grid;
+        gap: 84px;
+        margin-top: 84px;
+
+        .card {
+          counter-increment: card;
+          position: relative;
+          display: flex;
+          gap: 32px;
+          border-radius: v.$min-radius;
+          .img-wrap {
+            flex: 1 1 40%;
+            img {
+              border-radius: v.$min-radius;
+            }
+          }
+          .content {
+            display: grid;
+            place-content: center;
+            flex: 1 1 60%;
+            .title {
+              font-size: 32px;
+              font-weight: bold;
+              color: v.$dk-gray;
+            }
+            .text {
+              margin-top: 12px;
+              font-size: 18px;
+              color: v.$chacoal;
+            }
+            .icon-wrap {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 16px;
+              margin-top: 16px;
+              .icon {
+                display: inline-grid;
+                place-items: center;
+                flex: 1;
+                padding: 12px 12px;
+                border: 3px solid v.$catch-sub-color;
+                border-radius: 100vh;
+                background-color: #fff;
+                text-align: center;
+                font-size: 16px;
+                font-weight: bold;
+                letter-spacing: 0.15em;
+                color: v.$catch-sub-color;
+              }
+            }
+          }
+
+          &:nth-child(2) {
+            flex-direction: row-reverse;
+            .icon-wrap {
+              .icon {
+                padding: 6px 12px;
+                border-color: v.$catch-color;
+                color: v.$catch-color;
+              }
+            }
+          }
+          &:nth-child(3) {
+            .icon-wrap {
+              .icon {
+                border-color: v.$red;
+                color: v.$red;
+              }
+            }
+          }
+        }
+        .card::after {
+          content: "0" counter(card);
+          font-size: 256px;
+          font-weight: bold;
+          font-family: v.$noto-sans;
+          position: absolute;
+          top: 0;
+          right: 0;
+          opacity: 0.4;
+          color: v.$catch-sub-color;
+          z-index: -1;
+        }
+        
+        .card:nth-child(2)::after {
+          left: 0;
+          color: v.$catch-color;
+        }
+        .card:nth-child(3)::after {
+          color: v.$red;
+        }
       }
     }
 
-    .feature-second {
-
+    .feature-bottom {
+      position: relative;
       margin-top: 160px;
 
+      .obj.line-blue {
+        z-index: -1;
+        top: -10%;
+        left: -10%;
+      }
+
+      .bottom-head {
+        text-align: center;
+        .text {
+          font-size: 32px;
+          font-weight: bold;
+          color: v.$dk-gray;
+        }
+        .desc {
+          margin-top: 16px;
+          font-size: 20px;
+          font-weight: bold;
+          color: v.$dk-gray
+        }
+      }
       .content-wrap {
         display: grid;
         grid-template-columns: 1fr 1.2fr 1fr;
@@ -152,6 +196,13 @@
         ;
         row-gap: 16px;
         margin-top: 64px;
+        padding: 46px;
+        border-radius: 36px;
+        background-color: v.$ivory;
+        box-shadow: 0px 0px 150px 5px rgba(255, 195, 195, 0.8) inset,
+        0px 0px 15px 7px rgba(255, 195, 195, 0.8)
+        ;
+        border-radius: 10px;
         .item {
           padding-inline: 12px;
           .title {
@@ -217,11 +268,7 @@
           grid-area: rb;
           margin-top: 16px;
         }
-
       }
     }
-    
-
-
   }
 }

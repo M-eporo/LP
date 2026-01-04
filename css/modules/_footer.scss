@@ -1,0 +1,11 @@
+@use "../default/variables" as v;
+
+.footer {
+    small {
+        display: block;
+        text-align: center;
+        padding: v.$padding-m 0;
+        font-size: v.$small-text;
+        color: v.$dk-gray;
+    }
+}
