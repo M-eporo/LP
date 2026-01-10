@@ -1,12 +1,8 @@
 @use "../default/variables" as v;
+@use "../default/mixin" as m;
 .voice {
+  padding: 0 4%;
   background-color: #fef1fc;
-  // background: radial-gradient(
-  // #f8e5f5 1.5px,
-  // #faf6f6 1.5px,
-  // );
-  // background-size: 15px 15px;
-  // background-repeat: repeat;
   font-family: v.$m-plus-round;
   position: relative;
   .custom-shape-divider-bottom-1765980372 {
@@ -36,33 +32,42 @@
     padding: 160px 0;
     .catch {
       .voice-title {
-        font-size: 40px;
+        font-size: 32px;
         font-weight: bold;
         text-align: center;
+        color: v.$dk-gray;
+        line-height: 1.7;
+        letter-spacing: 0.15em;
       }
     }
     .item-container {
       display: flex;
       flex-direction: column;
       gap: 24px;
-      margin-top: v.$margin-xl;
+      margin-top: 64px;
+      
       .item {
         display: flex;
+        flex-direction: row;
         align-items: center;
         gap: 32px;
+        
         .icon {
-          width: 100px;
+          max-width: 100px;
           height: 100px;
+          min-width: 15%;
         }
         .voice-text {
           position: relative;
-          width: 60%;
           padding: 16px 24px;
           border-radius: 32px;
           background-color: #fff;
-          font-weight: semi-bold;
-          font-size: 16px;
+          font-size: 14px;
           color: v.$chacoal;
+          @include m.mq(sm) {
+            width: 60%;
+            font-size: 16px;
+          }
         }
         .voice-text::before {
           content: "";

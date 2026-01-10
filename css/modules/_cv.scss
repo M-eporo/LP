@@ -1,6 +1,8 @@
 @use "../default/variables" as v;
+@use "../default/mixin" as m;
 .cv {
   position: relative;
+  padding: 0 4%;
   font-family: v.$m-plus-round;
   background: url("../../images/bg_cv.png");
   background-repeat: no-repeat;
@@ -25,22 +27,31 @@
         justify-content: center;
         text-align: center;
         color: #fff;
+        text-shadow: 1px 1px 1px #333;
         .em-text {
-          font-size: 24px;
+          font-size: clamp(1rem, 0.8807rem + 0.5089vw, 1.125rem);
           font-weight: bold;
           span{
-            font-size: 46px;
+            font-size: clamp(1.625rem, 0.4323rem + 5.0891vw, 2.875rem);
           }
         }
         p {
-          font-size: 18px;
+          font-size: clamp(1rem, 0.8807rem + 0.5089vw, 1.125rem);
           color: #fff;
-          line-height: 3;
+          line-height: 2.4;
 
           &:last-child {
-            font-size: 28px;
+            font-size: clamp(1.25rem, 0.7729rem + 2.0356vw, 1.75rem);
             font-weight: bold;
           }
+        }
+        .middle {
+          max-width: 600px;
+          text-align: justify;
+        }
+        @include m.mq(sm) {
+          line-height: 3;
+          text-align: center;
         }
       }
       .btn {
@@ -57,21 +68,21 @@
     }
     .svg-tri {
       position: absolute;
-      bottom: 5%;
+      bottom: 25%;
       left: 0%;
-      width: 250px;
-      transform: rotate(30deg);
+      width: 150px;
+      transform:  rotate(30deg);
       z-index: -2;
     }
     .svg-tri2 {
-      top: 0;
-      right: 10%;
+      top: 20%;
+      right: 0%;
       left: initial;
       transform: rotate(-45deg);
     }
     .svg-tri3 {
       bottom: 10%;
-      right: 7%;
+      right: 2%;
       left: initial;
       transform: rotate(135deg);
     }
@@ -80,7 +91,32 @@
       left: 5%;
       transform: rotate(-135deg);
     }
+    @include m.mq(l) {
+      .svg-tri {
+        width: 250px;
+      }
+    }
+    @include m.mq(sm) {
+      .svg-tri {
+        width: 200px;
+        bottom: 5%;
+        left: 0%;
+      }
+      .svg-tri2 {
+        top: 0;
+        right: 10%;
+        left: initial;
+      }
+      .svg-tri3 {
+        bottom: 10%;
+        right: 7%;
+        left: initial;
+      }
+      .svg-tri4 {
+        top: 10%;
+        left: 5%;
+      }
+    }
   }
 
-  
 }

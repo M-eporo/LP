@@ -1,4 +1,5 @@
 @use "../default/variables" as v;
+@use "../default/mixin" as m;
 
 .office {
     background-color: #b3c5db;
@@ -12,7 +13,8 @@
         .catch {
             text-align: center;
             z-index: 3;
-            margin-top: -60px;
+            margin-top: -1.2em;
+            font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
             .office-title {
                 position: relative;
                 display: inline-flex;
@@ -20,7 +22,7 @@
                 gap: 12px;
                 width: max-content;
                 font-family: v.$noto-sans;
-                font-size: 64px;
+                font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
                 color: v.$dk-gray; 
 
                 &::before,
@@ -35,69 +37,103 @@
             }
             .office-sub-title {
                 text-align: center;
-                font-size: 26px;
+                font-size: clamp(1.125rem, 0.5rem + 2.6667vw, 1.5rem);
                 font-weight: bold;
                 color: v.$dk-gray;
             }
         }
-        .text-wrap {
-            padding: 24px 46px;
-            text-align: center;
-            .text {
-                font-size: 18px;
-                font-weight: bold;
-                color: v.$dk-gray;
+        .intro {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 24px 20px 24px 24px;
+            @include m.mq(sm) {
+                padding: 24px 36px;
+            }
+            .intro-text {
+                
+                text-align: justify;
+                font-size: clamp(0.875rem, 0.889vw + 0.667rem, 1rem);
+                color: v.$chacoal;
             }
         }
-        .inner {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
+
+        .splide.office__splide {
             max-width: 100%;
-            padding: 84px min(10.56vw,152px) 60px min(3.47vw,50px);
-            //padding: 84px min(10.56vw,152px) 60px 0;
+            padding: 84px min(10.56vw,152px) 60px 40px;
             border-radius: 0 100vh 100vh 0;
             background: url("../../images/office1.jpg");
             background-repeat: no-repeat;
             background-size: cover;
             filter: grayscale(20%);
             z-index: 1;
-            
-            .img.office {
-                position: absolute;
-                top: 0;
-                left: 0;
-                max-width: 500px;
-                z-index: 2;
+            @include m.mq(sm) {
+                padding: 84px min(10.56vw,152px) 60px 50px;
             }
-            
-            .content-wrapper {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 24px;
-                z-index: 3;
-                padding: 12px;
+            .splide__track {
                 border-radius: 0 100vh 100vh 0;
                 background-color: #ffffff99;
-                dl {
-                    dt {
-                        border-bottom: 1px solid v.$dk-gray;
-                        font-size: 22px;
-                        font-weight: bold;
-                        color: v.$chacoal;
-                        text-shadow: 2px 2px 1px #fff;
+            
+                .splide__list {
+                    .splide__slide {
+                        
+                        dl {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: space-between;
+                            width: 350px;
+                            height: 270px;
+                            padding: 16px 0 16px 10px;
+                            dt {
+                                position: relative;
+                                // border-bottom: 1px solid v.$dk-gray;
+                                font-size: clamp(1.125rem, 0.9464rem + 0.7619vw, 1.375rem);
+                                font-weight: bold;
+                                color: v.$chacoal;
+                                text-shadow: 2px 2px 1px #fff;
+                                &::before {
+                                    content: "";
+                                    position: absolute;
+                                    top: calc(100% + 16px);
+                                    width: 2px;
+                                    height: 194px;
+                                    background-color: v.$red;
+                                }
+                            }
+                            dd {
+                                margin-top: 16px;
+                                padding-left: 8px;
+                                font-size: 16px;
+                                font-weight: bold;
+                                color: v.$chacoal;
+                                text-shadow: 1px 1px 2px #fff;;
+                            }
+                            .address {
+                                font-size: 14px;
+                                @include m.mq(lg) {
+                                    font-size: 16px;
+                                }
+                            }
+                            .tel {
+                                font-family: v.$noto-sans;
+                                font-size: clamp(1.125rem, 0.9464rem + 0.7619vw, 1.375rem);
+                            }
+                        }
                     }
-                    dd {
-                        padding-left: 0.8em;
-                        font-size: 16px;
-                        font-weight: bold;
-                        color: v.$chacoal;
-                        text-shadow: 1px 1px 2px #fff;;
-                    }
-                    dd {
-                        margin-top: 16px;
-                    }
+                }
+            }
+            .splide__arrow--prev.custom-prev {
+                left: .5em;
+                @include m.mq(sm) {
+                    left: 1em;
+                }
+            }
+            .splide__pagination.custom-pagination {
+                gap: 12px;
+                .splide__pagination__page.custom-pagination-page {
+                    width: 14px;
+                    height: 14px;
+                    border: 2px solid v.$white;
+                    background-color: v.$red;
                 }
             }
         }

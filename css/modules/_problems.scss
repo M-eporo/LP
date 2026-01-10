@@ -1,60 +1,46 @@
 @use "../default/variables" as v;
+@use "../default/mixin.scss" as m;
+
 .problems {
   position: relative;
   padding: 160px 0 50px;
   font-family: v.$m-plus-round;
   background-color: #f0f0f0;
 
-  .arrow {
-    content: "";
-    position: absolute;
-    bottom: -60px;
-    left: 50%;
-    transform: translate(-50%,0);
-    width: 120px;
-    height: 60px;
-    background-color: #f0f0f0;
-    clip-path: polygon(50% 65%, 0 0, 100% 0);
-    z-index: 2;
-  }
   .container {
     position: relative;
-    width: 100%;
     max-width: 1160px;
     margin: 0 auto;
     .catch {
       text-align: center;
       .problems-text {
-        font-size: 24px;
+        font-size: clamp(1rem, 0.7611rem + 1.0191vw, 1.5rem);
         font-weight: bold;
         color: v.$dk-gray;
+        line-height: 1.6;
       }
       .problems-title {
-        position: relative;
+        display: inline-flex;
+        align-items: center;
         width: max-content;
         margin: 0 auto;
-        font-size: 48px;
+        font-size: clamp(1.125rem, 0.2293rem + 3.8217vw, 3rem);
         letter-spacing: 0.1em;
         color: v.$dk-gray;
       }
       .problems-title::before,
       .problems-title::after {
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
         content: "";
-        width: 50px;
-        height: 50px;
+        width: clamp(1.5625rem, 0.8161rem + 3.1847vw, 3.125rem);
+        aspect-ratio: 1/1;
       }
       .problems-title::before {  
-        left: -60px;
         background: url("../../images/SVG/line-left.svg");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
       }
       .problems-title::after {
-        right: -60px;
         background: url("../../images/SVG/line-right.svg");
         background-repeat: no-repeat;
         background-size: contain;
@@ -72,12 +58,16 @@
     .text-wrap {
       margin-top: 64px;
       .text{
-        font-size: 32px;
+        font-size: clamp(1.25rem, 0.8917rem + 1.5287vw, 2rem);
         text-align: center;
         font-weight: bold;
         color: v.$dk-gray;
       }
-      
+    }
+  }
+  @include m.mq(sm) {
+    .sp {
+      display: none;
     }
   }
 }

@@ -1,4 +1,5 @@
 @use "../default/variables" as v;
+@use "../default/mixin" as m;
 .resolve {
   position: relative;
   padding: 10px 0 0;
@@ -7,63 +8,14 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-clip: border-box;
-  background-position: center;
+  background-position: 60%;
   mask-image: linear-gradient(180deg, #000 60%, #0000 90%);
   font-family: v.$m-plus-round;
 
-  .bubble {
-    position: absolute;
-    top: -51px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: block;
-    padding: 24px 36px 28px;
-    border-radius: 100vh;
-    text-align: center;
-    font-size: 26px;
-    font-weight: bold;
-    font-family: v.$m-plus-round;
-    color: #fff;
-    background-color: v.$accent-color;
-    letter-spacing: 0.2em;
-    line-height: 1.6;
-    box-shadow: 0px 0px 0px 4px #ffd8b5;
-    span {
-      font-size: 36px;
+  @include m.mq(lg) {
+    .resolve {
+      background-position: center;
     }
-  }
-  .bubble::before {
-    content: "";
-    position: absolute;
-    bottom: 34px;
-    width: 80%;
-    height: 3px;
-    background-color: #fff;
-  }
-  .bubble::after {
-    content: "";
-    position: absolute;
-    bottom: 4px;
-    left: 50%;
-    width: 32px;
-    height: 20px;
-    transform: translateX(-50%);
-    background-color: #fff;
-    clip-path: polygon(50% 65%, 0 0, 100% 0);
-  }
-  .img-box {
-    position: absolute;
-    top: 12%;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
-    z-index: 1;
-  }
-  .dog-img {
-    width: 100px;
-    height: 100px;
-    mask-image: radial-gradient(circle at center, #000 40%, #0000 70%);
   }
   .container {
     position: relative;
@@ -74,7 +26,6 @@
     min-height: 650px;
     margin: 0 auto;
     z-index: 2;
-
     .catch {
       height: 100%;
       margin-top: 120px;
@@ -83,41 +34,20 @@
       letter-spacing: 0;
       line-height: 1.6;
       .text {
-        font-size: 48px;
         font-weight: bold;
         color: v.$red;
         text-shadow: 0 0 3px rgba(255,255,255);
         line-height: 1.6;
-        font-size: 36px;
+        font-size: clamp(1.5rem, 1.1417rem + 1.5287vw, 2.25rem);
         color: v.$dk-gray;
       }
       .text:last-child {
-        font-size: 64px;
+        margin-top: 16px;
+        font-size: clamp(2.875rem, 2.3376rem + 2.293vw, 4rem);
         color: v.$dk-gray;
         line-height: 1.6;
       }
     }
-  }
-
-  .custom-shape-divider-top-1766060671 {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    transform: rotate(180deg);
-  }
-
-  .custom-shape-divider-top-1766060671 svg {
-    position: relative;
-    display: block;
-    width: calc(150% + 1.3px);
-    height: 150px;
-  }
-
-  .custom-shape-divider-top-1766060671 .shape-fill {
-    fill: #D6F1FF;
   }
 
   .custom-shape-divider-top-1766230186 {
@@ -140,7 +70,7 @@
     height: 155px;
   }
   .custom-shape-divider-top-1766230186 .line .shape-fill {
-    fill: #fafafa;
+    fill: #fff;
   }
   .custom-shape-divider-top-1766230186 .shape-fill {
     fill: #f0f0f0;

@@ -1,11 +1,12 @@
 @use "../default/variables" as v;
+@use "../default/mixin" as m;
 .about {
   position: relative;
-  padding: 300px 0 160px;
+  padding: 300px 4% 160px;
   background-color: #f0f0f0;
   font-family: v.$m-plus-round;
   mask-image: linear-gradient(180deg, #0000 0%, #000 10%);
-
+  overflow: hidden;
   .obj {
     position: absolute;
     width: 150px;
@@ -16,20 +17,27 @@
   .container {
     position: relative;
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 64px;
+    grid-template-columns: 1fr;
+    gap: 38px;
     max-width: 1160px;
     margin: 0 auto;
-
+    @include m.mq(lg) {
+      grid-template-columns: auto max(500px);
+      gap: 64px;
+    }
     .img.woman {
       position: absolute;
       bottom: 0;
-      left: 80%;
-      width: 500px;
+      right: 0%;
+      min-width: 500px;
+      max-width: 500px;
       aspect-ratio: 1663 / 972;
       display: block;
       z-index: -2;
       filter: blur(1px);
+      @include m.mq(lg) {
+        left: 0%;
+      }
     }
     
     .catch {
@@ -38,10 +46,10 @@
         position: relative;
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 12px;
-        width: max-content;
         font-family: v.$noto-sans;
-        font-size: 64px;
+        font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
         color: v.$dk-gray; 
 
         &::before,
@@ -54,21 +62,12 @@
           transform: translateY(50%);
         }
       }
-
       .about-sub-title {
-        font-size: 26px;
+        font-size: clamp(1.125rem, 0.5rem + 2.6667vw, 1.5rem);
         font-weight: bold;
         color: v.$dk-gray;
+        text-align: center;
       }
-      .wrapper {
-        margin-top: 12px;
-        .text {
-          font-size: 18px;
-          font-weight: bold;
-          color: v.$dk-gray;
-        }
-      }
-
       .obj.triangle-blue {
         width: 500px;
         max-width: 500px;
@@ -77,33 +76,47 @@
         transform: rotate(120deg);
         mask-image: radial-gradient(circle at center, #000 90%, #0000 100%);
       }
-
-      
     }
     .text-wrap{
       position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      @include m.mq(lg) {
+        margin: 0;
+      }
       .em {
         font-size: 1.2em;
         color: v.$red;
       }
       .text-head {
         .text {
-          font-size: 26px;
+          text-align: center;
+          font-size: clamp(1.125rem, 0.7083rem + 1.7778vw, 1.375rem);
           font-weight: bold;
           color: v.$dk-gray;
+          line-height: 1.7;
+        }
+      }
+      @include m.mq(lg) {
+        .text-head {
+          .text {
+            text-align: left;
+          }
         }
       }
 
       .text-content {
-        font-size: 18px;
-        color: v.$dk-gray;
+        font-size: 16px;
+        color: v.$chacoal;
+        text-shadow: 1px 1px 1px #fff;
         p {
           text-align: justify;
           margin: 16px 0;
+          line-height: 2.0;
         }
 
         .p-em {
-          font-size: 22px;
+          font-size: 18px;
           font-weight: bold;
         }
 
@@ -115,9 +128,8 @@
             display: flex;
             align-items: center;
             gap: 12px;
-            font-size: 18px;
+            font-size: 16px;
             font-weight: bold;
-            line-height: 2;
             letter-spacing: 0.15em;
           }
           .list-item::before {
@@ -130,25 +142,22 @@
           }
         }
       }
-      
-      .obj {
-        position: absolute;
-        width: 150px;
-        max-width: 150px;
-        aspect-ratio: 1/1;
-        z-index: -1;
-      }
-      
-      .obj.triangle-yellow {
-        width: 300px;
-        max-width: 300px;
-        right: -150px;
-        bottom: 0%;
-        transform: rotate(-120deg);
-        mask-image: radial-gradient(circle at center, #000 90%, #0000 100%);
-      }
     }
   }
-
-  
+  .sp {
+    display: none;
+  }
+  .sp-600 {
+    display: revert;
+  }
+  @include m.mq(sm) {
+    .sp-600 {
+      display: none;
+    }
+  }
+  @include m.mq(lg) {
+    .sp {
+      display: revert;
+    }
+  }
 }

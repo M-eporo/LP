@@ -1,7 +1,11 @@
+@use "./variables" as v;
+@use "./breakpoints" as b;
+@use "./mixin" as m;
+
 * {
   box-sizing: border-box;
 }
-body {
+html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -24,7 +28,64 @@ img {
 }
 p {
   letter-spacing: 0.15em;
-  line-height: 2;
+  line-height: 1.7;
+}
+.sp {
+  display: revert;
+}
+// @include m.mq(lg) {
+//   .sp {
+//     display: none;
+//   }
+// }
+// @media (min-width: 1160px) {
+//   .sp {
+//     display: none;
+//   }
+// }
+
+.circle-btn {
+  position: fixed;
+  bottom: 42px;
+  right: 42px;
+  width: 180px;
+  height: 180px;
+  border: none;
+  border-radius: 50%;
+  background-color: v.$main-color;
+  z-index: 100;
+  cursor: pointer;
+  font-family: v.$m-plus-round;
+  font-size: 18px;
+  font-weight: bold;
+  color: #eee;
+  letter-spacing: 0.1em;
+
+  .triangle {
+    display: block;
+    margin: 10px auto;
+    animation: rotate_animation 3s linear infinite;
+  }
+  @keyframes rotate_animation {
+    from {
+      transform: rotateY(0deg);
+    }
+    to {
+      transform: rotateY(360deg);
+    }
+  }
+  .dot-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    stroke-dashoffset: 0;
+    animation: dash_animation1 15s linear infinite;
+  }
+  @keyframes dash_animation1 {
+    to {
+      stroke-dashoffset: 504;
+    }
+  } 
 }
 @font-face {
   font-family: 'apricotJapanesefont';

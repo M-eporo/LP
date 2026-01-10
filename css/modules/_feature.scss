@@ -1,10 +1,12 @@
 @use "../default/variables" as v;
+@use "../default/mixin" as m;
 .feature {
   position: relative;
-  padding: 160px 0;
+  padding: 160px 4%;
   font-family: v.$m-plus-round;
   background-color: #f0f0f0;
   z-index: 1;
+
   .feature-svg-1 {
     position: absolute;
     top: -40%;
@@ -24,7 +26,12 @@
     .obj.line-yellow {
       top: 0;
       right: 0;
-      transform: translate(50%, -100%);
+      transform: translate(20%, -80%);
+      @include m.mq(xl) {
+        top: 0;
+        right: 0;
+        transform: translate(50%, -100%);
+      }
     }
     
     .catch {
@@ -36,7 +43,7 @@
         gap: 12px;
         width: max-content;
         font-family: v.$noto-sans;
-        font-size: 64px;
+        font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
         color: v.$dk-gray; 
 
         &::before,
@@ -51,7 +58,7 @@
       }
       .feature-sub-title {
         text-align: center;
-        font-size: 26px;
+        font-size: clamp(1.125rem, 0.5rem + 2.6667vw, 1.5rem);
         font-weight: bold;
         color: v.$dk-gray;
       }
@@ -62,7 +69,7 @@
       margin-top: 64px;
       .cards-head {
         text-align: center;
-        font-size: 36px;
+        font-size: clamp(1.125rem, 0.5876rem + 2.293vw, 2.25rem);
         font-weight: bold;
         color: v.$dk-gray;
       }
@@ -72,17 +79,28 @@
         display: grid;
         gap: 84px;
         margin-top: 84px;
-
+        
         .card {
           counter-increment: card;
           position: relative;
-          display: flex;
-          gap: 32px;
+          display: revert;
+          
           border-radius: v.$min-radius;
           .img-wrap {
-            flex: 1 1 40%;
+            width: 90%;
+            min-width: 310px;
+            margin: 0 auto;
+            @include m.mq(sm) {
+              width: 70%;
+              margin: 0 auto 0 0;
+            }
             img {
+              position: relative; 
+              z-index: -2;
               border-radius: v.$min-radius;
+              @include m.mq(lg) {
+                z-index: revert;
+              }
             }
           }
           .content {
@@ -90,42 +108,46 @@
             place-content: center;
             flex: 1 1 60%;
             .title {
-              font-size: 32px;
+              margin-top: 24px;
+              font-size: clamp(1.125rem, 0.6186rem + 2.1605vw, 2rem); //32
               font-weight: bold;
               color: v.$dk-gray;
             }
             .text {
               margin-top: 12px;
-              font-size: 18px;
+              font-size: clamp(1rem, 0.9277rem + 0.3086vw, 1.125rem); //18
               color: v.$chacoal;
             }
             .icon-wrap {
               display: flex;
+              align-items: center;
               flex-wrap: wrap;
-              gap: 16px;
+              gap: 10px;
               margin-top: 16px;
               .icon {
-                display: inline-grid;
+                display: grid;
                 place-items: center;
-                flex: 1;
-                padding: 12px 12px;
+                flex: 0 0 max(150px);
+                padding: 12px 8px;
                 border: 3px solid v.$catch-sub-color;
                 border-radius: 100vh;
                 background-color: #fff;
                 text-align: center;
-                font-size: 16px;
+                font-size: clamp(0.875rem, 0.8027rem + 0.3086vw, 1rem); //16
                 font-weight: bold;
-                letter-spacing: 0.15em;
+                letter-spacing: 0.1em;
                 color: v.$catch-sub-color;
+                @include m.mq(sm) {
+                  flex: 0 0 max(175px);
+                }
               }
+              
             }
           }
 
           &:nth-child(2) {
-            flex-direction: row-reverse;
             .icon-wrap {
               .icon {
-                padding: 6px 12px;
                 border-color: v.$catch-color;
                 color: v.$catch-color;
               }
@@ -140,26 +162,55 @@
             }
           }
         }
+        @include m.mq(lg) {
+          .card {
+            display: flex;
+            gap: 32px;
+            &:nth-child(2) {
+              flex-direction: row-reverse;
+            }
+            .img-wrap {
+              flex: 1 1 40%;
+            }
+            .content {
+              .title {
+                margin-top: 0;
+              }
+            }
+          }
+        }
         .card::after {
           content: "0" counter(card);
+          line-height: 1;
           font-size: 256px;
           font-weight: bold;
           font-family: v.$noto-sans;
           position: absolute;
-          top: 0;
+          bottom: 0%;
           right: 0;
           opacity: 0.4;
           color: v.$catch-sub-color;
           z-index: -1;
+          @include m.mq(sm) {
+            top: 0;
+            top: 50%;
+            right: 0;
+            transform: translateY(-50%);
+          }
+
         }
         
         .card:nth-child(2)::after {
-          left: 0;
+          right: 0;
           color: v.$catch-color;
+          @include m.mq(lg) {
+            left: 0;
+          }
         }
         .card:nth-child(3)::after {
           color: v.$red;
         }
+        
       }
     }
 
@@ -174,54 +225,108 @@
       }
 
       .bottom-head {
-        text-align: center;
+        
         .text {
-          font-size: 32px;
+          max-width: 800px;
+          margin:  0 auto;
+          font-size: clamp(1.25rem, 0.5344rem + 3.0534vw, 2rem);
           font-weight: bold;
+          text-align: center;
           color: v.$dk-gray;
         }
         .desc {
-          margin-top: 16px;
-          font-size: 20px;
-          font-weight: bold;
+          max-width: 600px;
+          margin: 16px auto 0;
+          font-size: clamp(0.9375rem, 0.6393rem + 1.2723vw, 1.25rem);
           color: v.$dk-gray
         }
       }
       .content-wrap {
         display: grid;
-        grid-template-columns: 1fr 1.2fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-template-areas: 
-        "lt ct rt"
-        "lb ct rb"
+        "ct ct"
+        "lt lt"
+        "lb lb"
+        "rt rt"
+        "rb rb"
         ;
         row-gap: 16px;
         margin-top: 64px;
-        padding: 46px;
+        padding: 46px 0;
         border-radius: 36px;
         background-color: v.$ivory;
         box-shadow: 0px 0px 150px 5px rgba(255, 195, 195, 0.8) inset,
         0px 0px 15px 7px rgba(255, 195, 195, 0.8)
         ;
         border-radius: 10px;
+        @include m.mq(md) {
+          grid-template-columns: 1fr 1fr;
+          grid-template-areas: 
+          "ct ct"
+          "lt rt"
+          "lb rb"
+          ;
+          padding: 46px;
+        }
+        @include m.mq(l) {
+          grid-template-columns: 1fr 1.2fr 1fr;
+          grid-template-areas: 
+          "lt ct rt"
+          "lb ct rb"
+          ;
+        }
         .item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
           padding-inline: 12px;
+          @include m.mq(md) {
+            display: block;
+          }
           .title {
+            width: 300px;
+            margin: 0 auto;
             padding: 16px 16px;
             border-radius: 100vh;
             background-color: v.$red;
             text-align: center;
             font-size: 18px;
             font-weight: bold;
-            color: #fff;
+            color: v.$white;
             letter-spacing: 0.2em;
+            //clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+            
           }
           .list {
+            width: min(420px, 100%);
+            display: grid;
+            justify-items: start;
             margin-top: 24px;
+            margin-inline: auto;
+            max-width: 100%;
+            @include m.mq(md) {
+              margin-left: revert;
+            }
             .list-item {
+              display: grid;
+              grid-template-columns: 22px 1fr;
+              padding-inline-start: 8px;
               font-size: 16px;
               font-weight: bold;
               color: v.$chacoal;
               line-height: 1.8;
+              min-width: 0;
+              &::before {
+                content: "";
+                width: 20px;
+                height: 20px;
+                justify-self: center;
+                align-self: start;
+                margin-top: 4px;
+                background: url("../../images/SVG/chevron_forward.svg");
+                background-size: contain;
+              }
             }
             .list-item:not(:first-child) {
               margin-top: 12px;
@@ -254,11 +359,19 @@
         .item.center {
           grid-area: ct;
           display: flex;
+          flex-direction: row;
           justify-content: center;
           align-items: center;
           img {
-            width: 45%;
+            width: 25%;
+            min-width: 130px;
             aspect-ratio: 418 / 616;
+          }
+          @include m.mq(l) {
+            img {
+              width: 45%;
+              aspect-ratio: 418 / 616;
+            }
           }
         }
         .item.right-top {
@@ -269,6 +382,21 @@
           margin-top: 16px;
         }
       }
+    }
+  }
+  @media (min-width: 900px) {
+    .sp-900{
+      display: none;
+    }
+  }
+  @include m.mq(sm) {
+    .sp-600{
+      display: none;
+    }
+  }
+  @include m.mq(md) {
+    .sp-md{
+      display: none;
     }
   }
 }

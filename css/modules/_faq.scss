@@ -1,6 +1,7 @@
 @use "../default/variables" as v;
+@use "../default/mixin" as m;
 .faq {
-  padding: 400px 0;
+  padding: 400px 4%;
   position: relative;
   background-color: #d6f1ff;
     .custom-shape-divider-top-1765979172 {
@@ -11,20 +12,16 @@
       overflow: hidden;
       line-height: 0;
       transform: rotate(180deg);
-
       svg {
         position: relative;
         display: block;
         width: calc(100% + 1.3px);
         height: 166px;
       }
-
       .shape-fill {
         fill: #fef1fc;
       }
-
     }
-
     
     .custom-shape-divider-bottom-1765979762 {
       position: absolute;
@@ -33,32 +30,36 @@
       width: 100%;
       overflow: hidden;
       line-height: 0;
-
       svg {
         position: relative;
         display: block;
         width: calc(100% + 1.3px);
         height: 166px;
       }
-
       .shape-fill {
         fill: #f0f0f0;
       }
     }
-
-    
 
   .container {
     position: relative;
     max-width: 760px;
     margin: 0 auto;
     .catch {
+      .sp {
+          display: revert;
+        }
+        @include m.mq(sm) {
+          .sp {
+            display: none;
+          }
+        }
       .faq-title {
         position: relative;
         width: max-content;
         margin: 0 auto;
         font-family: v.$noto-sans;
-        font-size: 64px;
+        font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
         color: v.$dk-gray;
         text-align: center;
 
@@ -79,12 +80,13 @@
         &::after {
           right: -0.7em;
         }
+        
       }
       .faq-text {
         position: relative;
         width: max-content;
         margin: 16px auto 0;
-        font-size: 24px;
+        font-size: clamp(1.125rem, 0.7672rem + 1.5267vw, 1.5rem);
         font-weight: bold;
         color: v.$dk-gray;
         text-align: center;
@@ -112,7 +114,8 @@
       }
     }
     .accordion {
-      margin-top: 60px;
+      max-width: 600px;
+      margin: 60px auto 0;
       .accordion-list {
         .accordion-item {
 

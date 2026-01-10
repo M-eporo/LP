@@ -1,11 +1,11 @@
 @use "../default/variables" as v;
 .cta {
-  padding: 200px 0;
+  padding: 200px 4%;
   font-family: v.$m-plus-round;
   background-color: #f0f0f0;
   border-radius: 0 0 80px 80px;;
   .container {
-    max-width: 1160px;
+    max-width: 768px;
     margin: 0 auto;
     padding: 48px;
     border-radius: 20px;
@@ -20,7 +20,7 @@
         gap: 12px;
         width: max-content;
         font-family: v.$noto-sans;
-        font-size: 64px;
+        font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
         color: v.$dk-gray; 
 
         &::before,
@@ -35,29 +35,26 @@
       }
       .cta-text {
         text-align: center;
-        font-size: 26px;
+        font-size: clamp(1rem, 0.5229rem + 2.0356vw, 1.5rem);
         font-weight: bold;
         color: v.$dk-gray;
       }
     }
     .form {
-      margin-top: 48px;
+      margin: 48px auto 0;
+      padding: 0 4%;
       .form-group {
         display: flex;
-        align-items: flex-start;
-        column-gap: 2rem;
-        flex-wrap: wrap;
+        flex-direction: column;
+        gap: 12px;
         width: 100%;
         margin-bottom: 32px;
         .label {
           display: flex;
           justify-content: space-between;
+          align-items: center;
           column-gap: 1rem;
-          flex: 0.1 1 10em;
-          min-width: 10em;
           label {
-            display: flex;
-            align-items: center;
             font-size: v.$medium-text;
             font-weight: 500;
           } 
@@ -70,8 +67,6 @@
           }
         }
         input {
-          flex: 0.6 1 330px;
-          min-width: 330px;
           padding: v.$padding-s v.$padding-m;
           border: none;
           border-radius: 5px;
@@ -84,8 +79,6 @@
           }
         }
         textarea {
-          flex: 0.6 1 330px;
-          min-width: 330px;
           height: 184px;
           padding: v.$padding-s v.$padding-m;
           border: none;
