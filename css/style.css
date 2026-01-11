@@ -158,8 +158,10 @@ p {
   font-display: swap;
 }
 .header {
-  position: relative;
-  background-color: #f0f0f0;
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  z-index: 100;
 }
 .header .primary-btn {
   border: 2px solid #2AA8C3;
@@ -674,7 +676,7 @@ p {
   color: #555;
 }
 .office .container .intro {
-  max-width: 800px;
+  max-width: 700px;
   margin: 0 auto;
   padding: 24px 20px 24px 24px;
 }
@@ -685,8 +687,13 @@ p {
 }
 .office .container .intro .intro-text {
   text-align: justify;
-  font-size: clamp(0.875rem, 0.889vw + 0.667rem, 1rem);
+  font-size: 16px;
   color: #333;
+}
+@media (min-width: 600px) {
+  .office .container .intro .intro-text .intro-text {
+    font-size: 18px;
+  }
 }
 .office .container .splide.office__splide {
   max-width: 100%;
@@ -1189,15 +1196,16 @@ p {
   z-index: -1;
 }
 .program .container .inner .intro {
+  max-width: 700px;
   margin-top: 32px;
   padding-right: 12px;
 }
 .program .container .inner .intro .intro-text {
-  font-size: 14px;
+  font-size: 16px;
 }
 @media (min-width: 600px) {
   .program .container .inner .intro .intro-text {
-    font-size: 16px;
+    font-size: 18px;
   }
 }
 .program .container .inner .box-container {
@@ -1303,16 +1311,15 @@ p {
   margin: 160px auto;
   padding: 0 4%;
 }
-.program .domains .domains-head {
-  text-align: center;
-}
 .program .domains .domains-head .text {
+  text-align: center;
   font-size: clamp(1.25rem, 0.5344rem + 3.0534vw, 2rem);
   font-weight: bold;
   color: #555;
 }
 .program .domains .domains-head .desc {
-  margin-top: 16px;
+  max-width: 700px;
+  margin: 16px auto 0;
   font-size: clamp(0.9375rem, 0.6393rem + 1.2723vw, 1.25rem);
   color: #555;
 }
@@ -2031,9 +2038,6 @@ p {
 }
 .firstview .container {
   position: relative;
-  max-width: 1360px;
-  margin: 0 auto;
-  padding: 0 0 0 4%;
 }
 .firstview .container .decoration-text {
   position: absolute;
@@ -2049,39 +2053,55 @@ p {
   z-index: 1;
   opacity: 0.5;
 }
-.firstview .container .splide__track {
-  border-radius: 150px 100px 100px 400px;
-}
-.firstview .container .splide__track .slider__img {
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.firstview .container .splide__track .inner {
+.firstview .container .text-box {
   position: absolute;
 }
-.firstview .container .splide__track .inner .main-title {
+.firstview .container .splide .splide__track .splide__list .splide__slide .slider__img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-left: auto;
+}
+.firstview .container .splide .splide__track .splide__list .splide__slide .inner {
+  position: absolute;
+  top: 50%;
+  left: 4.2%;
+}
+.firstview .container .splide .splide__track .splide__list .splide__slide .inner .main-title {
   font-size: 48px;
   font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: bold;
   color: #21C4E9;
 }
-.firstview .container .splide__track .inner .text {
+.firstview .container .splide .splide__track .splide__list .splide__slide .inner .text {
   font-size: 32px;
   font-family: "Noto Sans JP", sans-serif;
   font-weight: bold;
 }
-.firstview .container .splide__track .inner.first-slide {
-  top: 15px;
-  right: 15px;
-}
-.firstview .container .splide__track .inner.first-slide .main-title {
+.firstview .container .splide .splide__track .splide__list .splide__slide .inner.first-slide .main-title {
   color: #feaa2d;
   text-shadow: 1px 1px 2px #fff;
 }
-.firstview .container .splide__track .inner.first-slide .text {
+.firstview .container .splide .splide__track .splide__list .splide__slide .inner.first-slide .text {
   color: #ff6b6b;
   text-shadow: 1px 1px 2px #fff;
 }
+.firstview .container .splide .splide__track .splide__list .splide__slide .inner.second-slide .main-title {
+  color: #feaa2d;
+  text-shadow: 1px 1px 2px #fff;
+}
+.firstview .container .splide .splide__track .splide__list .splide__slide .inner.second-slide .text {
+  color: #ff6b6b;
+  text-shadow: 1px 1px 2px #fff;
+}
+.firstview .container .splide .splide__track .splide__list .splide__slide .inner.third-slide .main-title {
+  color: #feaa2d;
+  text-shadow: 1px 1px 2px #fff;
+}
+.firstview .container .splide .splide__track .splide__list .splide__slide .inner.third-slide .text {
+  color: #ff6b6b;
+  text-shadow: 1px 1px 2px #fff;
+}
+
 .footer small {
   display: block;
   text-align: center;

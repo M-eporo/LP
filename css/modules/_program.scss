@@ -58,16 +58,16 @@
         z-index: -1;
       }
       .intro {
+        max-width: 700px;
         margin-top: 32px;
         padding-right: 12px;
         .intro-text {
-          font-size: 14px;
-          
+          font-size: 16px;
         }
 
         @include m.mq(sm) {
           .intro-text {
-            font-size: 16px;
+            font-size: 18px;
           }   
         }
 
@@ -194,14 +194,15 @@
     margin: 160px auto;
     padding: 0 4%;
     .domains-head {
-      text-align: center;
       .text {
+        text-align: center;
         font-size: clamp(1.25rem, 0.5344rem + 3.0534vw, 2rem);
         font-weight: bold;
         color: v.$dk-gray;
       }
       .desc {
-        margin-top: 16px;
+        max-width: 700px;
+        margin: 16px auto 0;
         font-size: clamp(0.9375rem, 0.6393rem + 1.2723vw, 1.25rem);
         color: v.$dk-gray
       }

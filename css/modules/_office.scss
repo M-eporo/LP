@@ -43,17 +43,21 @@
             }
         }
         .intro {
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
             padding: 24px 20px 24px 24px;
             @include m.mq(sm) {
                 padding: 24px 36px;
             }
             .intro-text {
-                
                 text-align: justify;
-                font-size: clamp(0.875rem, 0.889vw + 0.667rem, 1rem);
+                font-size: 16px;
                 color: v.$chacoal;
+                @include m.mq(sm) {
+                    .intro-text {
+                        font-size: 18px;
+                    }   
+                }
             }
         }
 

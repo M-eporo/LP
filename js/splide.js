@@ -8,6 +8,7 @@ const firstViewSplide = new Splide(".splide", {
   speed: 2000,
   arrows: true,
   pagination: true,
+  
 }).mount();
 
 const programSplide = new Splide(".splide.program__splide", {
@@ -70,12 +71,13 @@ const officeSplide = new Splide(".splide.office__splide", {
       perPage: 2,
       perMove: 1,
       focus: "left",
-      //omitEnd: true,
+      omitEnd: true,
       trimSpace: true,
     },
     768: {
       perPage: 1,
       perMove: 1,
+      omitEnd: false,
     }
   }
 });

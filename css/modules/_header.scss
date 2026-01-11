@@ -1,8 +1,10 @@
 @use "../default/variables" as v;
 @use "../default/mixin" as m;
 .header {
-  position: relative;
-  background-color: #f0f0f0;
+  position: absolute;
+  background-color: transparent;
+  width: 100%;
+  z-index: 100;
   // overflow: hidden;
   .primary-btn {
     border: 2px solid v.$logo-color;
