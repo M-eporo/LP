@@ -8,6 +8,16 @@ const firstViewSplide = new Splide(".splide", {
   speed: 2000,
   arrows: true,
   pagination: true,
+  cover: true,
+  fixedHeight: "1000px",
+  breakpoints: {
+    1280: {
+      fixedHeight: "700px",
+    },
+    600: {
+      fixedHeight: "700px",
+    }
+  },
   classes: {
 		arrows: 'splide__arrows custom-arrows',
 		arrow : 'splide__arrow your-class-arrow',

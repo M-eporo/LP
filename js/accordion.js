@@ -38,21 +38,21 @@ listItems.forEach((listItem, index) => {
     const targetIcon = e.currentTarget.querySelector(".js-icon");
     const targetInnerList = e.currentTarget.querySelector(".js-inner-list");
     const targetList = e.currentTarget;
-    const otherOpenedList = listItems.find((content) => content !== e.currentTarget && content.dataset.open === "opened");
-    const otherInnerList = otherOpenedList?.querySelector(".js-inner-list");
-    const otherIcon = otherOpenedList?.querySelector(".js-icon");
+    // const otherOpenedList = listItems.find((content) => content !== e.currentTarget && content.dataset.open === "opened");
+    // const otherInnerList = otherOpenedList?.querySelector(".js-inner-list");
+    // const otherIcon = otherOpenedList?.querySelector(".js-icon");
     if(listItem.dataset.open === "closed") {
       const animes = [
         rotationAnime(targetIcon, false),
         openAnime(targetInnerList, false),
       ];
-      if(otherOpenedList){
-        const otherInnerListAnimations = [];
-        const otherInnerListItems = [...otherOpenedList.querySelectorAll(".js-inner-list-item")];
-        otherInnerListItems.forEach((otherInnerListItem, index) => {
-          animes.push(listItemAnime(otherInnerListItem, true, false, index));
-        });
-      }
+      // if(otherOpenedList){
+      //   const otherInnerListAnimations = [];
+      //   const otherInnerListItems = [...otherOpenedList.querySelectorAll(".js-inner-list-item")];
+      //   otherInnerListItems.forEach((otherInnerListItem, index) => {
+      //     animes.push(listItemAnime(otherInnerListItem, true, false, index));
+      //   });
+      // }
       Promise.all(
         animes.map((anime) => {
           anime.play();
@@ -65,18 +65,18 @@ listItems.forEach((listItem, index) => {
           const innerListAnime = listItemAnime(innerListItem, false, true, index);
           innerListAnimations.push(innerListAnime);
         });
-        if(otherOpenedList){
-          innerListAnimations.push(rotationAnime(otherIcon, true)); 
-          innerListAnimations.push(openAnime(otherInnerList, true));
-        }
+        // if(otherOpenedList){
+        //   innerListAnimations.push(rotationAnime(otherIcon, true)); 
+        //   innerListAnimations.push(openAnime(otherInnerList, true));
+        // }
         innerListAnimations.forEach((innerListAnime) => {
           innerListAnime.play();
         });
       });
       listItem.dataset.open = "opened";
-      if(otherOpenedList) {
-        otherOpenedList.dataset.open = "closed";
-      }
+      // if(otherOpenedList) {
+      //   otherOpenedList.dataset.open = "closed";
+      // }
     } else if(listItem.dataset.open === "opened") {
       const innerListAnimations = [];
       const innerListItems = listItem.querySelectorAll(".js-inner-list-item");

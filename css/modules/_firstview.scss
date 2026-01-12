@@ -22,39 +22,80 @@
       position: absolute;
     }
     .splide {
-      //min-width: 985px;
-      margin-left: 0%;
-      @include m.mq(lg) {
-        // max-width: 1500px;
-        // margin-left: auto;
+      margin-left: 4%;
+      @include m.mq(xl) {
+        
+        margin-left: 10%;
       }
       .splide__track {
+        border-radius: 20vh 0 0 20vh;
+        overflow: visible;
+        @include m.mq(sm) {
+          border-radius: 100vh 0 0 100vh;
+        }
         @media (min-width: 1500px) {
-          overflow: visible;
+          
         }
         .splide__list {
           .splide__slide {
-            .slider__img {
-              object-fit: cover;
-              margin-left: auto;
+            background-position: 11% top !important;
+            border-radius: 20vh 0 0 20vh;
+            @include m.mq(sm) {
+              background-position: left top !important;
             }
+            @include m.mq(sm) {
+              border-radius: 100vh 0 0 100vh;
+            }
+            
+            &.splide__slide:nth-child(2) {
+              background-position: 25% bottom !important;
+              @include m.mq(sm) {
+                background-position: left bottom !important;
+              }
+            }
+            &.splide__slide:nth-child(3) {
+              background-position: 80% top !important;
+              @include m.mq(sm) {
+                background-position: right top !important;
+              }
+            }
+            
             .inner {
               position: absolute;
-              top: 50%;
+              bottom: 0%;
               left: 4.2%;
-              // @media (min-width: 1500px) {
-              //   left: clamp(-28.125rem, -102.4vw + 99.875rem, 3.875rem);
-              // }
+              
+              @media (min-width: 1500px) {
+                
+              }
               .main-title {
-                font-size: 48px;
+                font-size: 42px;
                 font-family: v.$m-plus-round;
                 font-weight: bold;
                 color: v.$heading-color;
+                @include m.mq(sm) {
+                  font-size: 48px;
+                }
+                @include m.mq(xl) {
+                  font-size: 64px;
+                }
+                .sp-xs {
+                  display: revert;
+                  @include m.mq(sm) {
+                    display: none;
+                  }
+                }
               }
               .text {
-                font-size: 32px;
+                font-size: 26px;
                 font-family: v.$noto-sans;
                 font-weight: bold;
+                @include m.mq(sm) {
+                  font-size: 30px;
+                }
+                @include m.mq(xl) {
+                  font-size: 48px;
+                }
               }
               &.first-slide {
                 
@@ -65,42 +106,26 @@
                 .text {
                   color: v.$red;
                   text-shadow: 1px 1px 2px #fff;
+
                 }
               }
               &.second-slide {
                 
-                .main-title {
-                  color: #feaa2d;
-                  text-shadow: 1px 1px 2px #fff;
-                }
                 .text {
                   color: v.$red;
                   text-shadow: 1px 1px 2px #fff;
+                  
                 }
               }
               &.third-slide {
                 
-                .main-title {
-                  color: #feaa2d;
-                  text-shadow: 1px 1px 2px #fff;
-                }
                 .text {
                   color: v.$red;
                   text-shadow: 1px 1px 2px #fff;
+                  
                 }
               }
             }
-          }
-        }
-      }
-
-      .splide__arrows.custom-arrows {
-        .splide__arrow--next.custom-next {
-          right: revert;
-          left: calc(100vw - 42px);
-          @media (min-width: 1500px) {
-            left: revert;
-            right: 1em;
           }
         }
       }
