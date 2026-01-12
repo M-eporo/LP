@@ -8,7 +8,12 @@ const firstViewSplide = new Splide(".splide", {
   speed: 2000,
   arrows: true,
   pagination: true,
-  
+  classes: {
+		arrows: 'splide__arrows custom-arrows',
+		arrow : 'splide__arrow your-class-arrow',
+		prev  : 'splide__arrow--prev your-class-prev',
+		next  : 'splide__arrow--next custom-next',
+  },
 }).mount();
 
 const programSplide = new Splide(".splide.program__splide", {

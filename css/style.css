@@ -184,7 +184,7 @@ p {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1600px;
   height: 114px;
   padding: 0 4%;
   margin: 0 auto;
@@ -2056,6 +2056,14 @@ p {
 .firstview .container .text-box {
   position: absolute;
 }
+.firstview .container .splide {
+  margin-left: 0%;
+}
+@media (min-width: 1500px) {
+  .firstview .container .splide .splide__track {
+    overflow: visible;
+  }
+}
 .firstview .container .splide .splide__track .splide__list .splide__slide .slider__img {
   -o-object-fit: cover;
      object-fit: cover;
@@ -2100,6 +2108,16 @@ p {
 .firstview .container .splide .splide__track .splide__list .splide__slide .inner.third-slide .text {
   color: #ff6b6b;
   text-shadow: 1px 1px 2px #fff;
+}
+.firstview .container .splide .splide__arrows.custom-arrows .splide__arrow--next.custom-next {
+  right: revert;
+  left: calc(100vw - 42px);
+}
+@media (min-width: 1500px) {
+  .firstview .container .splide .splide__arrows.custom-arrows .splide__arrow--next.custom-next {
+    left: revert;
+    right: 1em;
+  }
 }
 
 .footer small {

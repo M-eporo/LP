@@ -1,4 +1,5 @@
 @use "../default/variables" as v;
+@use "../default/mixin" as m;
 .firstview {
   background-color: #f0f0f0;
   .container {
@@ -21,9 +22,16 @@
       position: absolute;
     }
     .splide {
-      
+      //min-width: 985px;
+      margin-left: 0%;
+      @include m.mq(lg) {
+        // max-width: 1500px;
+        // margin-left: auto;
+      }
       .splide__track {
-        //border-radius: 0px 0 100vh 100vh;
+        @media (min-width: 1500px) {
+          overflow: visible;
+        }
         .splide__list {
           .splide__slide {
             .slider__img {
@@ -33,8 +41,10 @@
             .inner {
               position: absolute;
               top: 50%;
-              
               left: 4.2%;
+              // @media (min-width: 1500px) {
+              //   left: clamp(-28.125rem, -102.4vw + 99.875rem, 3.875rem);
+              // }
               .main-title {
                 font-size: 48px;
                 font-family: v.$m-plus-round;
@@ -80,6 +90,17 @@
                 }
               }
             }
+          }
+        }
+      }
+
+      .splide__arrows.custom-arrows {
+        .splide__arrow--next.custom-next {
+          right: revert;
+          left: calc(100vw - 42px);
+          @media (min-width: 1500px) {
+            left: revert;
+            right: 1em;
           }
         }
       }
