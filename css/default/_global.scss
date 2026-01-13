@@ -33,16 +33,7 @@ p {
 .sp {
   display: revert;
 }
-// @include m.mq(lg) {
-//   .sp {
-//     display: none;
-//   }
-// }
-// @media (min-width: 1160px) {
-//   .sp {
-//     display: none;
-//   }
-// }
+
 
 .circle-btn {
   position: fixed;
@@ -52,7 +43,7 @@ p {
   height: 180px;
   border: none;
   border-radius: 50%;
-  background-color: v.$main-color;
+  background-color: v.$fixed-btn-color;
   z-index: 100;
   cursor: pointer;
   font-family: v.$m-plus-round;

@@ -33,7 +33,7 @@
           width: 1em;
           height: 3px;
           border-radius: 100vh;
-          background-color: v.$accent-color;
+          background-color: v.$orange;
           transform: translateY(50%);
         }
       }
@@ -50,12 +50,18 @@
 
       .obj.circle-blue {
         position: absolute;
-        top: 0;
+        top: 50px;
         left: 0;
         width: 700px;
         filter: blur(2px);
         transform: translate(-30%, -30%);
         z-index: -1;
+        @include m.mq(md) {
+          top: 200px;
+        }
+        @include m.mq(xl) {
+          top: 90px;
+        }
       }
       .intro {
         max-width: 700px;
@@ -97,7 +103,7 @@
               .heading {
                 text-align: center;
                 font-size: 20px;
-                background: linear-gradient(90deg, v.$heading-sub-color 0px, v.$heading-sub-color 3px, transparent 3px, transparent 100%);
+                background: linear-gradient(90deg, v.$deep-green 0px, v.$deep-green 3px, transparent 3px, transparent 100%);
                 color: v.$dk-gray
 
               }
@@ -112,9 +118,10 @@
                 border-bottom: 1px solid #000;
                 text-align: justify;
                 .bold {
-                  text-align: center;
+                  display: inline-block;
+                  margin-bottom: 8px;
                   font-weight: bold;
-                  color: v.$heading-sub-color;
+                  color: v.$deep-green;
                   text-shadow: 1px 1px 1px #fff;
                 }
               }
@@ -126,7 +133,7 @@
                 .list-item {
                   padding: 8px 0;
                   .icon {
-                    color: v.$heading-sub-color;
+                    color: v.$deep-green;
                   }
                   .item {
                     margin-left: 4px;
@@ -139,30 +146,30 @@
           &:nth-child(2) {
               .box {
                 .heading {
-                  background: linear-gradient(90deg, v.$catch-color 0px, v.$catch-color 3px, transparent 3px, transparent 100%);
+                  background: linear-gradient(90deg, v.$blue 0px, v.$blue 3px, transparent 3px, transparent 100%);
                 }
                 .text {
                   .bold {
-                    color: v.$catch-color;
+                    color: v.$blue;
                   }
                 }
                 .icon > i {
-                  color: v.$catch-color;
+                  color: v.$blue;
                 }
               }
             }
             &:nth-of-type(3) {
               .box {
                 .heading {
-                  background: linear-gradient(90deg, v.$accent-color 0px, v.$accent-color 3px, transparent 3px, transparent 100%);
+                  background: linear-gradient(90deg, v.$orange 0px, v.$orange 3px, transparent 3px, transparent 100%);
                 }
                 .text {
                   .bold {
-                    color: v.$accent-color;
+                    color: v.$orange;
                   }
                 }
                 .icon > i {
-                  color: v.$accent-color;
+                  color: v.$orange;
                 }
               }
             }
@@ -227,9 +234,9 @@
         background: conic-gradient(
           v.$red 0 20%,
           v.$purple 20% 40%,
-          v.$accent-color 40% 60%,
-          v.$heading-color 60% 80%,
-          v.$catch-sub-color 80% 100%
+          v.$orange 40% 60%,
+          v.$blue 60% 80%,
+          v.$green 80% 100%
         );
         -webkit-mask: radial-gradient(
           farthest-side,
@@ -318,18 +325,18 @@
       }
       .domain.third {
         
-        border-color: v.$accent-color;
-        color: v.$accent-color;
+        border-color: v.$orange;
+        color: v.$orange;
       }
       .domain.fourth {
         
-        border-color: v.$heading-color;
-        color: v.$heading-color;
+        border-color: v.$blue;
+        color: v.$blue;
       }
       .domain.fifth {
         
-        border-color: v.$catch-sub-color;
-        color: v.$catch-sub-color;
+        border-color: v.$green;
+        color: v.$green;
       }
     }
 
@@ -383,7 +390,7 @@
               color: v.$purple;
             }
             &::after {
-              background: linear-gradient(180deg, v.$purple 0%, v.$accent-color 90%);
+              background: linear-gradient(180deg, v.$purple 0%, v.$orange 90%);
             }
             .list-title {
               color: v.$purple;
@@ -392,38 +399,38 @@
           &:nth-child(3) {
 
             &::before {
-              border-color: v.$accent-color;
-              color: v.$accent-color;
+              border-color: v.$orange;
+              color: v.$orange;
             }
             &::after {
-              background: linear-gradient(180deg, v.$accent-color 0%, v.$heading-color 80%);
+              background: linear-gradient(180deg, v.$orange 0%, v.$blue 80%);
             }
             .list-title {
-              color: v.$accent-color;
+              color: v.$orange;
             }
           }
           &:nth-child(4) {
 
             &::before {
-              border-color: v.$heading-color;
-              color: v.$heading-color;
+              border-color: v.$blue;
+              color: v.$blue;
             }
             &::after {
-              background: linear-gradient(180deg, v.$heading-color 0%, v.$catch-sub-color 80%);
+              background: linear-gradient(180deg, v.$blue 0%, v.$green 80%);
             }
             .list-title {
-              color: v.$heading-color;
+              color: v.$blue;
             }
           }
           &:nth-child(5) {
 
             &::before {
-              border-color: v.$catch-sub-color;
-              color: v.$catch-sub-color;
+              border-color: v.$green;
+              color: v.$green;
             }
 
             .list-title {
-              color: v.$catch-sub-color;
+              color: v.$green;
             }
           }
 

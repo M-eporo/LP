@@ -43,7 +43,7 @@
 
   .container {
     position: relative;
-    max-width: 760px;
+    max-width: 768px;
     margin: 0 auto;
     .catch {
       .sp {
@@ -71,7 +71,7 @@
           width: 0.5em;
           height: 3px;
           border-radius: 100vh;
-          background-color: v.$accent-color;
+          background-color: v.$orange;
           transform: translateY(50%);
         }
         &::before {
@@ -99,7 +99,7 @@
           width: 30px;
           height: 3px;
           border-radius: 100vh;
-          background-color: v.$accent-color;
+          background-color: v.$orange;
           transform: rotate(60deg )translateY(50%) ;
         }
         &::before {
@@ -114,11 +114,9 @@
       }
     }
     .accordion {
-      max-width: 600px;
       margin: 60px auto 0;
       .accordion-list {
         .accordion-item {
-
           .accordion-header {
             display: flex;
             align-items: center;

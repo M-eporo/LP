@@ -72,7 +72,6 @@
                 font-size: 42px;
                 font-family: v.$m-plus-round;
                 font-weight: bold;
-                color: v.$heading-color;
                 @include m.mq(sm) {
                   font-size: 48px;
                 }

@@ -48,11 +48,11 @@
 
         &::before,
         &::after {
-            content: "";
+          content: "";
           width: 0.5em;
           height: 3px;
           border-radius: 100vh;
-          background-color: v.$catch-color;
+          background-color: v.$blue;
           transform: translateY(50%);
         }
       }
@@ -84,8 +84,12 @@
           counter-increment: card;
           position: relative;
           display: revert;
-          
-          border-radius: v.$min-radius;
+          border-radius: 10px;
+          @include m.mq(lg) {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+          }
           .img-wrap {
             width: 90%;
             min-width: 310px;
@@ -94,10 +98,13 @@
               width: 70%;
               margin: 0 auto 0 0;
             }
+            @include m.mq(lg) {
+              flex: 1 1 40%;
+            }
             img {
               position: relative; 
               z-index: -2;
-              border-radius: v.$min-radius;
+              border-radius: 10px;
               @include m.mq(lg) {
                 z-index: revert;
               }
@@ -109,13 +116,16 @@
             flex: 1 1 60%;
             .title {
               margin-top: 24px;
-              font-size: clamp(1.125rem, 0.6186rem + 2.1605vw, 2rem); //32
+              font-size: clamp(1.125rem, 0.6186rem + 2.1605vw, 2rem);
               font-weight: bold;
               color: v.$dk-gray;
+              @include m.mq(lg) { 
+                margin-top: 0;
+              }
             }
             .text {
               margin-top: 12px;
-              font-size: clamp(1rem, 0.9277rem + 0.3086vw, 1.125rem); //18
+              font-size: clamp(1rem, 0.9277rem + 0.3086vw, 1.125rem);
               color: v.$chacoal;
             }
             .icon-wrap {
@@ -129,14 +139,14 @@
                 place-items: center;
                 flex: 0 0 max(150px);
                 padding: 12px 8px;
-                border: 3px solid v.$catch-sub-color;
+                border: 3px solid v.$green;
                 border-radius: 100vh;
                 background-color: #fff;
                 text-align: center;
-                font-size: clamp(0.875rem, 0.8027rem + 0.3086vw, 1rem); //16
+                font-size: clamp(0.875rem, 0.8027rem + 0.3086vw, 1rem);
                 font-weight: bold;
                 letter-spacing: 0.1em;
-                color: v.$catch-sub-color;
+                color: v.$green;
                 @include m.mq(sm) {
                   flex: 0 0 max(175px);
                 }
@@ -146,10 +156,13 @@
           }
 
           &:nth-child(2) {
+            @include m.mq(lg) {
+              flex-direction: row-reverse;
+            }
             .icon-wrap {
               .icon {
-                border-color: v.$catch-color;
-                color: v.$catch-color;
+                border-color: v.$blue;
+                color: v.$blue;
               }
             }
           }
@@ -162,23 +175,7 @@
             }
           }
         }
-        @include m.mq(lg) {
-          .card {
-            display: flex;
-            gap: 32px;
-            &:nth-child(2) {
-              flex-direction: row-reverse;
-            }
-            .img-wrap {
-              flex: 1 1 40%;
-            }
-            .content {
-              .title {
-                margin-top: 0;
-              }
-            }
-          }
-        }
+        
         .card::after {
           content: "0" counter(card);
           line-height: 1;
@@ -189,7 +186,7 @@
           bottom: 0%;
           right: 0;
           opacity: 0.4;
-          color: v.$catch-sub-color;
+          color: v.$green;
           z-index: -1;
           @include m.mq(sm) {
             top: 0;
@@ -197,27 +194,25 @@
             right: 0;
             transform: translateY(-50%);
           }
-
         }
         
         .card:nth-child(2)::after {
           right: 0;
-          color: v.$catch-color;
+          color: v.$blue;
           @include m.mq(lg) {
-            left: 0;
+            right: 0;
+            transform: translate(-150%, -50%);
           }
         }
         .card:nth-child(3)::after {
           color: v.$red;
         }
-        
       }
     }
 
     .feature-bottom {
       position: relative;
       margin-top: 160px;
-
       .obj.line-blue {
         z-index: -1;
         top: -10%;
@@ -225,7 +220,6 @@
       }
 
       .bottom-head {
-        
         .text {
           max-width: 800px;
           margin:  0 auto;
@@ -295,8 +289,6 @@
             font-weight: bold;
             color: v.$white;
             letter-spacing: 0.2em;
-            //clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
-            
           }
           .list {
             width: min(420px, 100%);
@@ -335,12 +327,12 @@
 
           &:nth-child(2) {
             .title {
-              background-color: v.$catch-color;
+              background-color: v.$blue;
             }
           }
           &:nth-child(4) {
             .title {
-              background-color: v.$catch-sub-color;
+              background-color: v.$green;
             }
           }
           &:nth-child(5) {
@@ -366,9 +358,7 @@
             width: 25%;
             min-width: 130px;
             aspect-ratio: 418 / 616;
-          }
-          @include m.mq(l) {
-            img {
+            @include m.mq(l) {
               width: 45%;
               aspect-ratio: 418 / 616;
             }

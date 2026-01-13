@@ -5,11 +5,10 @@
   background-color: transparent;
   width: 100%;
   z-index: 100;
-  // overflow: hidden;
   .primary-btn {
-    border: 2px solid v.$logo-color;
+    border: 2px solid v.$header-color;
     border-radius: 50px;
-    background-color: v.$logo-color;
+    background-color: v.$header-color;
     a {
       display: block;
       width: 100%;
@@ -48,11 +47,18 @@
       span + span {
         font-size: clamp(1rem, -0.3636rem + 5.8182vw, 2rem);
         font-family: v.$m-plus-round;
-        color: v.$logo-color;
+        color: v.$header-color;
       }
     }
     .pc-sns {
       display: none;
+      @include m.mq(lg) {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        column-gap: 24px;
+        align-items: center;
+      }
       .sns-item {
         a {
           display: block;
@@ -61,130 +67,109 @@
     }
 
     .sp-primary-btn {
-      border: 2px solid v.$logo-color;
+      border: 2px solid v.$header-color;
       border-radius: 50px;
-      background-color: v.$logo-color;
+      background-color: v.$header-color;
+      @include m.mq(lg) {
+        display: none;
+      }
       a {
         display: block;
-        // width: 100%;
-        // height: 100%;
         padding: 12px 14px;
         font-family: v.$noto-sans;
         font-size: clamp(0.875rem, 0.7556rem + 0.5096vw, 1.125rem);
         font-weight: bold;
         color: v.$white;
-      }
-    }
-
-    @include m.mq(lg) {
-      .pc-sns {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        column-gap: 24px;
-        align-items: center;
-      }
-      .sp-primary-btn {
-        display: none;
-      }
-    }
-    @include m.mq(sm) {
-      .sp-primary-btn {
-        a {
+        @include m.mq(sm) {
           padding: 16px 24px;
         }
       }
     }
   }
 
-    .hamburger-btn {
-      position: fixed;
-      top: 120px;
-      right: 16px;
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      cursor: pointer;
-      z-index: 140;
-
-      & span {
-        position: absolute;
-        left: 0;
-        right: 0;
-        display: block;
-        height: 3px;
-        border-radius: 3px;
-        background-color: v.$logo-color;
-        transition: all 0.6s;
-
-        &:nth-of-type(1) {
-          top: 4px;
-        }
-        &:nth-of-type(2) {
-          top: 15px;
-        }
-        &:nth-of-type(3) {
-          top: 26px;
-        }
-      }
-
-      .btn-area {
-        width: 100%;
-        height: 100%;
-        z-index: 140;
-        transition: all 0.6s;
-        &.open {
-          transform: rotate(360deg);	
-        }
-      }
-    }	
-    
-    .hamburger-btn.open span {
-      z-index: 100;
-    }
-    .hamburger-btn.open span:nth-of-type(1){
-      top: 14px;
-      transform-origin: center;
-      transform: rotate(45deg);	
-    }
-    .hamburger-btn.open span:nth-of-type(2){
-      opacity: 0;
-    }
-    .hamburger-btn.open span:nth-of-type(3){
-      top: 14px;
-      transform-origin: center;
-      transform: rotate(-45deg);	
-    }
-
-    .mask {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 100%;
-      height: 114px;
+  .hamburger-btn {
+    position: fixed;
+    top: 120px;
+    right: 16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 140;
+    @include m.mq(lg) {
       display: none;
-      background-color: #fff;
+    }
+    & span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      display: block;
+      height: 3px;
+      border-radius: 3px;
+      background-color: v.$header-color;
       transition: all 0.6s;
 
-      .sp-sns {
-        display: grid;
-        grid-template-columns: repeat(5, 40px) auto;
-        justify-items: center;
-        justify-content: space-evenly;
-        align-items: center;
-        height: 100%;
+      &:nth-of-type(1) {
+        top: 4px;
       }
-    }
-    .mask.open {
-      display: revert;
+      &:nth-of-type(2) {
+        top: 15px;
+      }
+      &:nth-of-type(3) {
+        top: 26px;
+      }
     }
 
-    @include m.mq(lg) {
-      .hamburger-btn {
-        display: none;
-      }
-      .mask {
-        display: none;
+    .btn-area {
+      width: 100%;
+      height: 100%;
+      z-index: 140;
+      transition: all 0.6s;
+      &.open {
+        transform: rotate(360deg);	
       }
     }
+  }	
+  
+  .hamburger-btn.open span {
+    z-index: 100;
+  }
+  .hamburger-btn.open span:nth-of-type(1){
+    top: 14px;
+    transform-origin: center;
+    transform: rotate(45deg);	
+  }
+  .hamburger-btn.open span:nth-of-type(2){
+    opacity: 0;
+  }
+  .hamburger-btn.open span:nth-of-type(3){
+    top: 14px;
+    transform-origin: center;
+    transform: rotate(-45deg);	
+  }
+
+  .mask {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 114px;
+    display: none;
+    background-color: #fff;
+    transition: all 0.6s;
+    @include m.mq(lg) {
+      display: none;
+    }
+    .sp-sns {
+      display: grid;
+      grid-template-columns: repeat(5, 40px) auto;
+      justify-items: center;
+      justify-content: space-evenly;
+      align-items: center;
+      height: 100%;
+    }
+  }
+  .mask.open {
+    display: revert;
+  }
 }
