@@ -6,6 +6,7 @@
   box-sizing: border-box;
 }
 html, body {
+  scroll-behavior: smooth;
   margin: 0;
   padding: 0;
   overflow-x: hidden;
@@ -33,51 +34,27 @@ p {
 .sp {
   display: revert;
 }
-
-
-.circle-btn {
-  position: fixed;
-  bottom: 42px;
-  right: 42px;
-  width: 180px;
-  height: 180px;
-  border: none;
-  border-radius: 50%;
-  background-color: v.$fixed-btn-color;
-  z-index: 100;
-  cursor: pointer;
-  font-family: v.$m-plus-round;
-  font-size: 18px;
-  font-weight: bold;
-  color: #eee;
-  letter-spacing: 0.1em;
-
-  .triangle {
-    display: block;
-    margin: 10px auto;
-    animation: rotate_animation 3s linear infinite;
-  }
-  @keyframes rotate_animation {
-    from {
-      transform: rotateY(0deg);
-    }
-    to {
-      transform: rotateY(360deg);
-    }
-  }
-  .dot-line {
-    position: absolute;
-    top: 0;
-    left: 0;
-    stroke-dashoffset: 0;
-    animation: dash_animation1 15s linear infinite;
-  }
-  @keyframes dash_animation1 {
-    to {
-      stroke-dashoffset: 504;
-    }
-  } 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
+.skip-link {
+  position: absolute;
+  left: -9999px;
+}
+.skip-link:focus {
+  left: 16px;
+  top: 16px;
+  z-index: 9999;
+}
+
 @font-face {
   font-family: 'apricotJapanesefont';
   src: url('../../fonts/apricotJapanesefont.woff2') format('woff2'),

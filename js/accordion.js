@@ -1,103 +1,136 @@
 const listItems = [...document.querySelectorAll(".js-list-item")];
-const icons = [...document.querySelectorAll(".js-icon")];
-const listContents = [...document.querySelectorAll(".js-inner-list")];
 
-const openAnime = (list, isClosing, isDelay = false) => {
-  const height = list.scrollHeight;
+const openAnime = (panel, isClosing, isDelay = false) => {
+  const height = panel.scrollHeight;
   const keyframes = isClosing
-   ? [{ height: height + "px" }, { height: 0 }]
-   : [{ height: 0 }, { height: height + "px" }];
-  const timing = { duration: 200, easing: "ease-in", fill: "both", delay: isDelay ? 90 : 0 };
-  const effect = new KeyframeEffect(list, keyframes, timing);
-  const animation = new Animation(effect, document.timeline);
-  return animation;
+    ? [{ height: height + "px" }, { height: 0 }]
+    : [{ height: 0 }, { height: height + "px" }];
+
+  const timing = {
+    duration: 200,
+    easing: "ease-in",
+    fill: "both",
+    delay: isDelay ? 90 : 0,
+  };
+
+  return new Animation(new KeyframeEffect(panel, keyframes, timing), document.timeline);
 };
 
 const rotationAnime = (icon, isClosing, isDelay = false) => {
   const keyframes = isClosing
-   ? [{ transform: "rotate(45deg)" }]
-   : [{ transform: "rotate(180deg)" }];
-  const timing = { duration: 200, easing: "ease-in", fill: "both", delay: isDelay ? 90 : 0 };
-  const effect = new KeyframeEffect(icon, keyframes, timing);
-  const animation = new Animation(effect, document.timeline);
-  return animation;
+    ? [{ transform: "rotate(45deg)" }]
+    : [{ transform: "rotate(180deg)" }];
+
+  const timing = {
+    duration: 200,
+    easing: "ease-in",
+    fill: "both",
+    delay: isDelay ? 90 : 0,
+  };
+
+  return new Animation(new KeyframeEffect(icon, keyframes, timing), document.timeline);
 };
 
-const listItemAnime = (listItem, isClosing, isDelay = false, index = 0) => {
+const listItemAnime = (item, isClosing, isDelay = false, index = 0) => {
   const keyframes = isClosing
-   ? [{ transform: "translate(0px)", opacity: 1 }, { transform: "translate(15px, 10px)", opacity: 0 }]
-   : [{ transform: "translate(15px, 10px)", opacity: 0 },{ transform: "translate(0px)", opacity: 1 }];
-  const timing = { duration: 200, easing: "ease-in", fill: "both", delay: isDelay ? 90 * 0.9 * index : 0 };
-  const effect = new KeyframeEffect(listItem, keyframes, timing);
-  const animation = new Animation(effect, document.timeline);
-  return animation;
+    ? [{ transform: "translate(0px)", opacity: 1 }, { transform: "translate(15px, 10px)", opacity: 0 }]
+    : [{ transform: "translate(15px, 10px)", opacity: 0 }, { transform: "translate(0px)", opacity: 1 }];
+
+  const timing = {
+    duration: 200,
+    easing: "ease-in",
+    fill: "both",
+    delay: isDelay ? 90 * 0.9 * index : 0,
+  };
+
+  return new Animation(new KeyframeEffect(item, keyframes, timing), document.timeline);
 };
 
-listItems.forEach((listItem, index) => {
-  listItem.addEventListener("click", (e) => {
-    const targetIcon = e.currentTarget.querySelector(".js-icon");
-    const targetInnerList = e.currentTarget.querySelector(".js-inner-list");
-    const targetList = e.currentTarget;
-    // const otherOpenedList = listItems.find((content) => content !== e.currentTarget && content.dataset.open === "opened");
-    // const otherInnerList = otherOpenedList?.querySelector(".js-inner-list");
-    // const otherIcon = otherOpenedList?.querySelector(".js-icon");
-    if(listItem.dataset.open === "closed") {
-      const animes = [
-        rotationAnime(targetIcon, false),
-        openAnime(targetInnerList, false),
-      ];
-      // if(otherOpenedList){
-      //   const otherInnerListAnimations = [];
-      //   const otherInnerListItems = [...otherOpenedList.querySelectorAll(".js-inner-list-item")];
-      //   otherInnerListItems.forEach((otherInnerListItem, index) => {
-      //     animes.push(listItemAnime(otherInnerListItem, true, false, index));
-      //   });
-      // }
-      Promise.all(
-        animes.map((anime) => {
-          anime.play();
-          return anime.finished;
-        })
-      ).then(() => {
-        const innerListAnimations = [];
-        const innerListItems = listItem.querySelectorAll(".js-inner-list-item");
-        innerListItems.forEach((innerListItem, index) => {
-          const innerListAnime = listItemAnime(innerListItem, false, true, index);
-          innerListAnimations.push(innerListAnime);
-        });
-        // if(otherOpenedList){
-        //   innerListAnimations.push(rotationAnime(otherIcon, true)); 
-        //   innerListAnimations.push(openAnime(otherInnerList, true));
-        // }
-        innerListAnimations.forEach((innerListAnime) => {
-          innerListAnime.play();
-        });
-      });
-      listItem.dataset.open = "opened";
-      // if(otherOpenedList) {
-      //   otherOpenedList.dataset.open = "closed";
-      // }
-    } else if(listItem.dataset.open === "opened") {
-      const innerListAnimations = [];
-      const innerListItems = listItem.querySelectorAll(".js-inner-list-item");
-      innerListItems.forEach((innerListItem, index) => {
-        const innerListAnime = listItemAnime(innerListItem, true);
-        innerListAnimations.push(innerListAnime);
-      });
-      Promise.all(
-        innerListAnimations.map((innerListAnime, index) => {
-          innerListAnime.play();
-          return innerListAnime.finished;
-        })
-      ).then(() => {
-        const animes = [openAnime(targetInnerList, true), rotationAnime(targetIcon, true)];
-        animes.forEach(anime => {
-          anime.play();
-        });
-        listItem.dataset.open = "closed";
-      });      
+listItems.forEach((li) => {
+  const button = li.querySelector(".accordion-header");
+  const panel = li.querySelector(".js-inner-list");
+
+  if (!button || !panel) return;
+
+  const isOpened = li.dataset.open === "opened";
+  button.setAttribute("aria-expanded", isOpened ? "true" : "false");
+
+  if (isOpened) {
+    panel.removeAttribute("hidden");
+  } else {
+    panel.setAttribute("hidden", "");
+  }
+});
+
+const openItem = async (li) => {
+  const button = li.querySelector(".accordion-header");
+  const icon = li.querySelector(".js-icon");
+  const panel = li.querySelector(".js-inner-list");
+  if (!button || !panel || !icon) return;
+
+  panel.removeAttribute("hidden");
+
+  const animes = [
+    rotationAnime(icon, false),
+    openAnime(panel, false),
+  ];
+
+  await Promise.all(
+    animes.map((a) => {
+      a.play();
+      return a.finished;
+    })
+  );
+
+  const innerItems = [...li.querySelectorAll(".js-inner-list-item")];
+  innerItems.forEach((innerItem, idx) => {
+    const a = listItemAnime(innerItem, false, true, idx);
+    a.play();
+  });
+
+  
+  li.dataset.open = "opened";
+  button.setAttribute("aria-expanded", "true");
+};
+
+const closeItem = async (li) => {
+  const button = li.querySelector(".accordion-header");
+  const icon = li.querySelector(".js-icon");
+  const panel = li.querySelector(".js-inner-list");
+  if (!button || !panel || !icon) return;
+
+  const innerItems = [...li.querySelectorAll(".js-inner-list-item")];
+  const innerAnimes = innerItems.map((innerItem) => listItemAnime(innerItem, true));
+
+  await Promise.all(
+    innerAnimes.map((a) => {
+      a.play();
+      return a.finished;
+    })
+  );
+
+  const animes = [openAnime(panel, true), rotationAnime(icon, true)];
+  animes.forEach((a) => a.play());
+
+  const closePanelAnime = animes[0];
+  closePanelAnime.finished.then(() => {
+    panel.setAttribute("hidden", "");
+  });
+
+  li.dataset.open = "closed";
+  button.setAttribute("aria-expanded", "false");
+};
+
+listItems.forEach((li) => {
+  const button = li.querySelector(".accordion-header");
+  if (!button) return;
+
+  button.addEventListener("click", async () => {
+    const isOpened = li.dataset.open === "opened";
+    if (isOpened) {
+      await closeItem(li);
+    } else {
+      await openItem(li);
     }
   });
 });
-  
-

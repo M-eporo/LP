@@ -1,16 +1,18 @@
 @use "default/global";
 @use "modules/header";
+@use "modules/firstview";
 @use "modules/problems";
 @use "modules/resolve";
 @use "modules/about";
 @use "modules/office";
 @use "modules/feature";
 @use "modules/program";
+@use "modules/circleBtn";
 @use "modules/cv";
 @use "modules/voice";
 @use "modules/faq";
 @use "modules/cta";
-@use "modules/firstview";
+
 @use "modules/footer";
 
 //npx sass css/style.scss css/style.css

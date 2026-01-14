@@ -1,0 +1,57 @@
+@use "../default/variables" as v;
+@use "../default/mixin" as m;
+
+.circle-btn {
+    display: grid;
+    place-content: center;
+    position: fixed;
+    bottom: 42px;
+    right: 42px;
+    width: clamp(6.875rem, 17.812vw + 2.7rem, 11.25rem);
+    height: clamp(6.875rem, 17.812vw + 2.7rem, 11.25rem);
+    border: none;
+    border-radius: 50%;
+    background-color: v.$fixed-btn-color;
+    z-index: 100;
+    cursor: pointer;
+    text-align: center;
+    font-family: v.$m-plus-round;
+    font-size: clamp(0.875rem, 1.018vw + 0.636rem, 1.125rem);
+    font-weight: bold;
+    color: #eee;
+    letter-spacing: 0.1em;
+    @include m.mq(md) {
+        width: 180px;
+        height: 180px;
+    }
+    .triangle {
+        display: block;
+        margin: 8px auto;
+        animation: rotate_animation 3s linear infinite;
+        @include m.mq(sm) {
+            margin: 4px auto;
+        }
+    }
+    @keyframes rotate_animation {
+        from {
+            transform: rotateY(0deg);
+        }
+        to {
+            transform: rotateY(360deg);
+        }
+    }
+    .dot-line {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        stroke-dashoffset: 0;
+        animation: dash_animation1 15s linear infinite;
+    }
+    @keyframes dash_animation1 {
+        to {
+            stroke-dashoffset: 504;
+        }
+    } 
+}
