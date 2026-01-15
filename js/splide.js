@@ -23,6 +23,8 @@ const firstViewSplide = new Splide(".splide", {
 		arrow : 'splide__arrow your-class-arrow',
 		prev  : 'splide__arrow--prev your-class-prev',
 		next  : 'splide__arrow--next custom-next',
+    pagination: 'splide__pagination custom-pagination',
+    page: 'splide__pagination__page custom-pagination-page',
   },
 }).mount();
 

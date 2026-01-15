@@ -122,6 +122,9 @@
               @include m.mq(lg) { 
                 margin-top: 0;
               }
+              span {
+                font-size: clamp(0.875rem, 0.5861rem + 1.2327vw, 1.375rem);
+              }
             }
             .text {
               margin-top: 12px;

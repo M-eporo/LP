@@ -9,18 +9,14 @@
     border: 2px solid v.$header-color;
     border-radius: 50px;
     background-color: v.$header-color;
-    
-    a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      padding: 16px 24px;
-      font-family: v.$noto-sans;
-      font-size: 18px;
-      font-weight: bold;
-      letter-spacing: 0.1em;
-      color: v.$white;
-    }
+    display: grid;
+    place-items: center;
+    padding: 16px 24px;
+    font-family: v.$noto-sans;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.1em;
+    color: v.$white;
   }
   .container {
     display: flex;
@@ -51,28 +47,41 @@
         color: v.$header-color;
       }
     }
-    
-    .pc-sns {
-      display: none;
-      @include m.mq(lg) {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        column-gap: 24px;
-        align-items: center;
-      }
-      .sns-item {
-        a {
-          display: block;
+    .inner {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      .pc-nav {
+      .pc-sns {
+        display: none;
+        @include m.mq(lg) {
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          column-gap: 24px;
+          align-items: center;
+        }
+        .sns-item {
+          a {
+            display: block;
+          }
         }
       }
     }
+    .primary-btn {
+      display: none;
+      @include m.mq(lg) {
+        display: revert;
+      }
+    }
+    }
+    
   }
 
   .hamburger-btn {
     position: fixed;
     top: 36px;
-    right: 36px;
+    right: 4%;
     width: 48px;
     height: 48px;
     padding: 8px;
@@ -81,6 +90,10 @@
     background-color: v.$header-color;
     cursor: pointer;
     z-index: 999;
+    
+    @include m.mq(sm) {
+      right: 36px;
+    }
     @include m.mq(lg) {
       display: none;
     }
@@ -141,7 +154,6 @@
     width: 100%;
     min-height: 114px;
     padding: 0 4% 32px;
-    // display: none;
     background-color: #fff;
     opacity: 0;
     visibility: hidden;
@@ -175,22 +187,56 @@
       }
     }
 
-
-    nav {
-      height: 100%;
-      .sp-sns {
+    
+    .wrap {
+      display: block;
+      
+      @include m.mq(md) {
         display: grid;
-        grid-template-columns: repeat(5, 40px) auto;
-        justify-items: center;
-        justify-content: space-evenly;
+        grid-template-columns: 1fr max-content;
         align-items: center;
-        height: 100%;
+      }
+      .sp-nav {
+        display: grid;
+        place-items: center;
+        gap: 16px;
+        @include m.mq(md) {
+          place-items: flex-start;
+        }
+        .text {
+          font-size: 16px;
+          .sp-600 {
+            display: revert;
+            @include m.mq(sm) {
+              display: none;
+            }
+          }
+        }
+        .sp-sns {
+          display: grid;
+          grid-template-columns: repeat(5, 40px);
+          gap: clamp(1rem, 7.143vw - 0.429rem, 2.25rem);
+        }
+      }
+      .primary-btn {
+        display: block;
+        width: 70%;
+        max-width: 350px;
+        margin: 16px auto 0;
+        text-align: center;
+        @include m.mq(md) {
+          width: auto;
+          display: grid;
+          grid-template-columns: 1fr max-content;
+          align-items: center;
+        }
       }
     }
     
+
+    
   }
   .mask.open {
-    // display: revert;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

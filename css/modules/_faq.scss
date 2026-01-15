@@ -76,6 +76,7 @@
         }
         &::before {
           left: -0.7em;
+          
         }
         &::after {
           right: -0.7em;
@@ -84,31 +85,39 @@
       }
       .faq-text {
         position: relative;
+        display: flex;
+        gap: 4px;
         width: max-content;
         margin: 16px auto 0;
         font-size: clamp(1.125rem, 0.7672rem + 1.5267vw, 1.5rem);
         font-weight: bold;
         color: v.$dk-gray;
         text-align: center;
-
+        @include m.mq(sm) {
+          gap: 0;
+        }
         &::before,
         &::after {
-          position: absolute;
-          top: 50%;
+          display: inline-block;
+          width: 48px;
+          
+          aspect-ratio: 1/1;
           content: "";
-          width: 30px;
-          height: 3px;
-          border-radius: 100vh;
-          background-color: v.$orange;
-          transform: rotate(60deg )translateY(50%) ;
+          @include m.mq(sm) {
+            width: 30px;
+          }
         }
         &::before {
-          left: -38px;
-          transform: rotate(60deg )translateY(50%) ;
+          background: url("../../images/SVG/line-left-orange.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
         }
         &::after {
-          right: -38px;
-          transform: rotate(-60deg )translateY(50%) ;
+          background: url("../../images/SVG/line-right-orange.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
         }
 
       }

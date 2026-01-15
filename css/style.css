@@ -148,11 +148,8 @@ p {
   border: 2px solid #2AA8C3;
   border-radius: 50px;
   background-color: #2AA8C3;
-}
-.header .primary-btn a {
-  display: block;
-  width: 100%;
-  height: 100%;
+  display: grid;
+  place-items: center;
   padding: 16px 24px;
   font-family: "Noto Sans JP", sans-serif;
   font-size: 18px;
@@ -189,11 +186,16 @@ p {
   font-family: "M PLUS Rounded 1c", sans-serif;
   color: #2AA8C3;
 }
-.header .container .pc-sns {
+.header .container .inner {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.header .container .inner .pc-nav .pc-sns {
   display: none;
 }
 @media (min-width: 1024px) {
-  .header .container .pc-sns {
+  .header .container .inner .pc-nav .pc-sns {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -202,13 +204,21 @@ p {
     align-items: center;
   }
 }
-.header .container .pc-sns .sns-item a {
+.header .container .inner .pc-nav .pc-sns .sns-item a {
   display: block;
+}
+.header .container .inner .primary-btn {
+  display: none;
+}
+@media (min-width: 1024px) {
+  .header .container .inner .primary-btn {
+    display: revert;
+  }
 }
 .header .hamburger-btn {
   position: fixed;
   top: 36px;
-  right: 36px;
+  right: 4%;
   width: 48px;
   height: 48px;
   padding: 8px;
@@ -217,6 +227,11 @@ p {
   background-color: #2AA8C3;
   cursor: pointer;
   z-index: 999;
+}
+@media (min-width: 600px) {
+  .header .hamburger-btn {
+    right: 36px;
+  }
 }
 @media (min-width: 1024px) {
   .header .hamburger-btn {
@@ -309,16 +324,56 @@ p {
   font-family: "M PLUS Rounded 1c", sans-serif;
   color: #2AA8C3;
 }
-.header .mask nav {
-  height: 100%;
+.header .mask .wrap {
+  display: block;
 }
-.header .mask nav .sp-sns {
+@media (min-width: 768px) {
+  .header .mask .wrap {
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+  }
+}
+.header .mask .wrap .sp-nav {
   display: grid;
-  grid-template-columns: repeat(5, 40px) auto;
-  justify-items: center;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 100%;
+  place-items: center;
+  gap: 16px;
+}
+@media (min-width: 768px) {
+  .header .mask .wrap .sp-nav {
+    place-items: flex-start;
+  }
+}
+.header .mask .wrap .sp-nav .text {
+  font-size: 16px;
+}
+.header .mask .wrap .sp-nav .text .sp-600 {
+  display: revert;
+}
+@media (min-width: 600px) {
+  .header .mask .wrap .sp-nav .text .sp-600 {
+    display: none;
+  }
+}
+.header .mask .wrap .sp-nav .sp-sns {
+  display: grid;
+  grid-template-columns: repeat(5, 40px);
+  gap: clamp(1rem, 7.143vw - 0.429rem, 2.25rem);
+}
+.header .mask .wrap .primary-btn {
+  display: block;
+  width: 70%;
+  max-width: 350px;
+  margin: 16px auto 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .header .mask .wrap .primary-btn {
+    width: auto;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+  }
 }
 .header .mask.open {
   opacity: 1;
@@ -398,8 +453,16 @@ p {
 }
 .firstview .container .splide .splide__track .splide__list .splide__slide .inner {
   position: absolute;
-  bottom: 0%;
+  bottom: 5%;
   left: 4.2%;
+}
+.firstview .container .splide .splide__track .splide__list .splide__slide .inner .sp-xs {
+  display: revert;
+}
+@media (min-width: 600px) {
+  .firstview .container .splide .splide__track .splide__list .splide__slide .inner .sp-xs {
+    display: none;
+  }
 }
 .firstview .container .splide .splide__track .splide__list .splide__slide .inner .main-title {
   font-size: 42px;
@@ -414,14 +477,6 @@ p {
 @media (min-width: 1280px) {
   .firstview .container .splide .splide__track .splide__list .splide__slide .inner .main-title {
     font-size: 64px;
-  }
-}
-.firstview .container .splide .splide__track .splide__list .splide__slide .inner .main-title .sp-xs {
-  display: revert;
-}
-@media (min-width: 600px) {
-  .firstview .container .splide .splide__track .splide__list .splide__slide .inner .main-title .sp-xs {
-    display: none;
   }
 }
 .firstview .container .splide .splide__track .splide__list .splide__slide .inner .text {
@@ -454,6 +509,15 @@ p {
 .firstview .container .splide .splide__track .splide__list .splide__slide .inner.third-slide .text {
   color: #ff6b6b;
   text-shadow: 1px 1px 2px #fff;
+}
+.firstview .container .splide .splide__pagination.custom-pagination {
+  gap: 12px;
+}
+.firstview .container .splide .splide__pagination.custom-pagination .splide__pagination__page.custom-pagination-page {
+  width: 14px;
+  height: 14px;
+  border: 2px solid #fff;
+  background-color: #ff6b6b;
 }
 
 .problems {
@@ -1024,6 +1088,9 @@ p {
   .feature .container .cards-container .cards .card .content .title {
     margin-top: 0;
   }
+}
+.feature .container .cards-container .cards .card .content .title span {
+  font-size: clamp(0.875rem, 0.5861rem + 1.2327vw, 1.375rem);
 }
 .feature .container .cards-container .cards .card .content .text {
   margin-top: 12px;
@@ -2057,6 +2124,8 @@ p {
 }
 .faq .container .catch .faq-text {
   position: relative;
+  display: flex;
+  gap: 4px;
   width: -moz-max-content;
   width: max-content;
   margin: 16px auto 0;
@@ -2065,23 +2134,33 @@ p {
   color: #555;
   text-align: center;
 }
+@media (min-width: 600px) {
+  .faq .container .catch .faq-text {
+    gap: 0;
+  }
+}
 .faq .container .catch .faq-text::before, .faq .container .catch .faq-text::after {
-  position: absolute;
-  top: 50%;
+  display: inline-block;
+  width: 48px;
+  aspect-ratio: 1/1;
   content: "";
-  width: 30px;
-  height: 3px;
-  border-radius: 100vh;
-  background-color: #FF8719;
-  transform: rotate(60deg) translateY(50%);
+}
+@media (min-width: 600px) {
+  .faq .container .catch .faq-text::before, .faq .container .catch .faq-text::after {
+    width: 30px;
+  }
 }
 .faq .container .catch .faq-text::before {
-  left: -38px;
-  transform: rotate(60deg) translateY(50%);
+  background: url("../../images/SVG/line-left-orange.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 .faq .container .catch .faq-text::after {
-  right: -38px;
-  transform: rotate(-60deg) translateY(50%);
+  background: url("../../images/SVG/line-right-orange.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
 }
 .faq .container .accordion {
   margin: 60px auto 0;

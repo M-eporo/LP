@@ -33,9 +33,7 @@
         @include m.mq(sm) {
           border-radius: 100vh 0 0 100vh;
         }
-        @media (min-width: 1500px) {
-          
-        }
+
         .splide__list {
           .splide__slide {
             background-position: 11% top !important;
@@ -62,11 +60,13 @@
             
             .inner {
               position: absolute;
-              bottom: 0%;
+              bottom: 5%;
               left: 4.2%;
-              
-              @media (min-width: 1500px) {
-                
+              .sp-xs {
+                display: revert;
+                @include m.mq(sm) {
+                  display: none;
+                }
               }
               .main-title {
                 font-size: 42px;
@@ -77,12 +77,6 @@
                 }
                 @include m.mq(xl) {
                   font-size: 64px;
-                }
-                .sp-xs {
-                  display: revert;
-                  @include m.mq(sm) {
-                    display: none;
-                  }
                 }
               }
               .text {
@@ -97,7 +91,6 @@
                 }
               }
               &.first-slide {
-                
                 .main-title {
                   color: #feaa2d;
                   text-shadow: 1px 1px 2px #fff;
@@ -105,19 +98,15 @@
                 .text {
                   color: v.$red;
                   text-shadow: 1px 1px 2px #fff;
-
                 }
               }
               &.second-slide {
-                
                 .text {
                   color: v.$red;
                   text-shadow: 1px 1px 2px #fff;
-                  
                 }
               }
               &.third-slide {
-                
                 .text {
                   color: v.$red;
                   text-shadow: 1px 1px 2px #fff;
@@ -126,6 +115,16 @@
               }
             }
           }
+        }
+      }
+      .splide__pagination.custom-pagination {
+        //bottom: -1.5em;
+        gap: 12px;
+        .splide__pagination__page.custom-pagination-page {
+          width: 14px;
+          height: 14px;
+          border: 2px solid v.$white;
+          background-color: v.$red;
         }
       }
     }
