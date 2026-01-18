@@ -41,6 +41,7 @@
         font-size: clamp(1.125rem, 0.5rem + 2.6667vw, 1.5rem);
         font-weight: bold;
         color: v.$dk-gray;
+        letter-spacing: 0.13em;
       }
     }
 
@@ -206,6 +207,7 @@
         font-size: clamp(1.25rem, 0.5344rem + 3.0534vw, 2rem);
         font-weight: bold;
         color: v.$dk-gray;
+        letter-spacing: 0.15em;
       }
       .desc {
         max-width: 700px;

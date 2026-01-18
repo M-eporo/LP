@@ -72,6 +72,7 @@
         font-size: clamp(1.125rem, 0.5876rem + 2.293vw, 2.25rem);
         font-weight: bold;
         color: v.$dk-gray;
+        letter-spacing: 0.15em;
       }
     
       .cards {
@@ -230,6 +231,7 @@
           font-weight: bold;
           text-align: center;
           color: v.$dk-gray;
+          letter-spacing: 0.15em;
         }
         .desc {
           max-width: 600px;

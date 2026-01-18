@@ -3,10 +3,12 @@
 
 .problems {
   position: relative;
-  padding: 160px 0 50px;
+  padding: 60px 0 50px;
   font-family: v.$m-plus-round;
   background-color: #f0f0f0;
-
+  @include m.mq(md) {
+    padding: 160px 0 50px;
+  }
   .container {
     position: relative;
     max-width: 1160px;

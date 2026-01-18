@@ -1,32 +1,33 @@
-const firstViewSplide = new Splide(".splide", {
-  autoplay: false,
-  type: "fade",
-  rewind: true,
-  pauseOnHover: false,
-  pauseOnFocus: false,
-  interval: 5000,
-  speed: 2000,
-  arrows: true,
-  pagination: true,
-  cover: true,
-  fixedHeight: "1000px",
-  breakpoints: {
-    1280: {
-      fixedHeight: "700px",
-    },
-    600: {
-      fixedHeight: "700px",
-    }
-  },
-  classes: {
-		arrows: 'splide__arrows custom-arrows',
-		arrow : 'splide__arrow your-class-arrow',
-		prev  : 'splide__arrow--prev your-class-prev',
-		next  : 'splide__arrow--next custom-next',
-    pagination: 'splide__pagination custom-pagination',
-    page: 'splide__pagination__page custom-pagination-page',
-  },
-}).mount();
+// const firstViewSplide = new Splide(".splide", {
+//   autoplay: false,
+//   type: "fade",
+//   rewind: true,
+//   pauseOnHover: false,
+//   pauseOnFocus: false,
+//   interval: 5000,
+//   speed: 2000,
+//   arrows: true,
+//   pagination: true,
+//   //cover: true,
+//   //fixedHeight: "1000px",
+//   breakpoints: {
+    
+//     // 1280: {
+//     //   fixedHeight: "700px",
+//     // },
+//     // 600: {
+//     //   fixedHeight: "700px",
+//     // }
+//   },
+//   classes: {
+// 		arrows: 'splide__arrows custom-arrows',
+// 		arrow : 'splide__arrow your-class-arrow',
+// 		prev  : 'splide__arrow--prev your-class-prev',
+// 		next  : 'splide__arrow--next custom-next',
+//     pagination: 'splide__pagination custom-pagination',
+//     page: 'splide__pagination__page custom-pagination-page',
+//   },
+// }).mount();
 
 const programSplide = new Splide(".splide.program__splide", {
   destroy: false,
@@ -99,3 +100,25 @@ const officeSplide = new Splide(".splide.office__splide", {
   }
 });
 officeSplide.mount();
+
+
+
+const firstViewreSplide = new Splide(".splide.splider", {
+  autoplay: true,
+  type: "fade",
+  rewind: true,
+  pauseOnHover: false,
+  pauseOnFocus: false,
+  interval: 5000,
+  speed: 2000,
+  arrows: false,
+  pagination: true,
+  classes: {
+		arrows: 'splide__arrows custom-arrows',
+		arrow : 'splide__arrow custom-arrow',
+		prev  : 'splide__arrow--prev custom-prev',
+		next  : 'splide__arrow--next custom-next',
+    pagination: 'splide__pagination custom-pagination',
+    page: 'splide__pagination__page custom-pagination-page',
+  },
+}).mount();

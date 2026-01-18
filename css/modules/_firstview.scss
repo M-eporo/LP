@@ -1,33 +1,29 @@
 @use "../default/variables" as v;
 @use "../default/mixin" as m;
 .firstview {
+  position: relative;
   background-color: #f0f0f0;
+  
+  //height: clamp(600px, 100vh, 880px);
+
+
   .container {
     position: relative;
-    .decoration-text {
-      position: absolute;
-      bottom: 2%;
-      left: 0%;
-      font-size: 240px;
-      font-family: v.$m-plus-round;
-      font-weight: bold;
-      line-height: 1.0;
-      letter-spacing: 0;
-      color: v.$yellow;
-      text-shadow: 5px 5px 3px #aaa;
-      z-index: 1;
-      opacity: 0.5;
-    }
-    .text-box {
-      position: absolute;
-    }
     .splide {
-      margin-left: 4%;
+      position: relative;
+      z-index: 1;
+      max-height: 1000px;
+      margin-left: 2%;
+      aspect-ratio: 3/2;
+      @include m.mq(sm) {
+        margin-left: 4%;
+      }
       @include m.mq(xl) {
-        
-        margin-left: 10%;
+        margin-left: auto;
       }
       .splide__track {
+        height: 100%;
+        min-height: 700px;
         border-radius: 20vh 0 0 20vh;
         overflow: visible;
         @include m.mq(sm) {
@@ -35,7 +31,10 @@
         }
 
         .splide__list {
+          // border-radius: 20vh 0 0 20vh;
+          height: 100%;
           .splide__slide {
+            height: 100%;
             background-position: 11% top !important;
             border-radius: 20vh 0 0 20vh;
             @include m.mq(sm) {
@@ -50,18 +49,44 @@
               @include m.mq(sm) {
                 background-position: left bottom !important;
               }
+              .slider__img {
+                object-position: 75%;
+                @include m.mq(sm) {
+                  object-position: 78%;
+                }
+              } 
             }
             &.splide__slide:nth-child(3) {
               background-position: 80% top !important;
               @include m.mq(sm) {
                 background-position: right top !important;
               }
+              .slider__img {
+                object-position: 78%;
+                @include m.mq(sm) {
+                  object-position: right;
+                }
+              }
             }
-            
+            .slider__img {
+              border-radius: 20vh 0 0 20vh;
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: 15% bottom;
+              @include m.mq(sm) {
+                border-radius: 100vh 0 0 100vh;
+              }
+            }
             .inner {
               position: absolute;
               bottom: 5%;
               left: 4.2%;
+              z-index: 10;
+              @media (min-width: 1600px) {
+                left: 4%;
+                bottom: 15%;
+              }
               .sp-xs {
                 display: revert;
                 @include m.mq(sm) {
@@ -128,6 +153,28 @@
         }
       }
     }
+  }
+  .obj {
+    position: absolute;
+    max-width: 250px;
+    display: none;
+    @media (min-width: 2200px) {
+      display: revert;
+    }
+  }
+  .obj.triangle {
+    top: 15%;
+    left: 10%;
+    transform: rotate(135deg);
+  } 
+  .obj.bar {
+    bottom: 0%;
+    left: 10%;
+  }
+  .obj.star {
+    top: 45%;
+    left: 5%;
+    transform: rotate(30deg);
   }
 }
 

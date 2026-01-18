@@ -113,7 +113,7 @@
     </div>
   </header>
   <main id="main">
-  <!-- <section id="firstview" class="firstview">
+  <section id="firstview" class="firstview">
     <div class="container">
       <div class="splide" role="group" aria-roledescription="carousel" aria-label="メインビジュアルのスライダー">
         <div class="splide__track">
@@ -146,18 +146,24 @@
           </div>
         </div>
       </div>
-    </div>
+    </div><!-- /.container -->
     <img class="obj triangle" src="images/SVG/obj-triangle-yellow.svg" alt="">
     <img class="obj bar" src="images/SVG/obj-bar-red.svg" alt="">
     <img class="obj star" src="images/SVG/obj-star.svg" alt="">
-  </section> -->
+  </section><!-- /.firstview -->
 
 
   <section class="section">
     <div class="text-g">
       <div class="main">
-        <h1 class="main-title">今すぐできる<br>具体的な支援を<br class="sp-md">ご提案</h1>
-        <p class="text">気軽に相談できる<br class="sp-md">心のよりどころに</p>
+        <h1 class="main-title">今すぐできる<br>具体的な支援を<br class="sp-xs">ご提案</h1>
+        <p class="text">気軽に相談できる<br>心のよりどころに</p>
+      </div>
+      <div class="sub">
+        <p class="text">「今」に寄り添い</p>
+        <p class="text">できないをやりたいへ</p>
+        <p class="text">苦手を楽しいへ</p>
+        <p class="text">未来へと繋いでいく</p>
       </div>
     </div>
     <div class="splide splider" role="group" aria-roledescription="carousel" aria-label="メインビジュアルのスライダー">
@@ -166,34 +172,33 @@
             <div class="splide__slide">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="_レイヤー_1" viewBox="0 0 1105 1060">
                 <defs>
-                  <clipPath id="clippath1">
+                  <clipPath id="clippath">
                     <path class="cls-1" d="M1094.6,540.6c-18.4,132.8-32.77,262.97-64,312-96.09,150.85-285.6,184.8-484,196.8-151.48,9.16-323.2-44-411.2-149.6C58.69,807.75,8.29,670.14,3.4,540.6-3,371,71.97,226.63,161,135,253.45,39.85,429,4.6,550.71,4.6s334.24,44.81,427.09,144c85.14,90.96,135.25,258.86,116.8,392Z"/>
                   </clipPath>
                 </defs>
-                <image clip-path="url(#clippath1)" href="./images/sample.png" width="1105" height="1060"  preserveAspectRatio="xMidYMid meet" />
+                <image href="./images/sample.png" width="1105" height="1060" />
               </svg>
             </div>
 
             <div class="splide__slide">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="_レイヤー_1" viewBox="0 0 1105 1060">
                 <defs>
-                  <clipPath id="clippath2">
+                  <clipPath id="clippath">
                     <path class="cls-1" d="M1094.6,540.6c-18.4,132.8-32.77,262.97-64,312-96.09,150.85-285.6,184.8-484,196.8-151.48,9.16-323.2-44-411.2-149.6C58.69,807.75,8.29,670.14,3.4,540.6-3,371,71.97,226.63,161,135,253.45,39.85,429,4.6,550.71,4.6s334.24,44.81,427.09,144c85.14,90.96,135.25,258.86,116.8,392Z"/>
                   </clipPath>
                 </defs>
-                  <image clip-path="url(#clippath2)" href="./images/sample2.png" width="1105" height="1060"  preserveAspectRatio="xMidYMid meet" />
+                  <image href="./images/sample2.png" width="1105" height="1060" />
               </svg>
             </div>
 
             <div class="splide__slide">
               <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="_レイヤー_1"  viewBox="0 0 1105 1060">
                 <defs>
-                  <clipPath id="clippath3">
+                  <clipPath id="clippath">
                     <path class="cls-1" d="M1094.6,540.6c-18.4,132.8-32.77,262.97-64,312-96.09,150.85-285.6,184.8-484,196.8-151.48,9.16-323.2-44-411.2-149.6C58.69,807.75,8.29,670.14,3.4,540.6-3,371,71.97,226.63,161,135,253.45,39.85,429,4.6,550.71,4.6s334.24,44.81,427.09,144c85.14,90.96,135.25,258.86,116.8,392Z"/>
                   </clipPath>
                 </defs>
-                <!-- <image href="./images/sample3.png" width="1105" height="1060" /> -->
-                <image clip-path="url(#clippath3)" href="./images/sample3.png" width="1105" height="1060"  preserveAspectRatio="xMidYMid meet"/>
+                <image href="./images/sample3.png" width="1105" height="1060" />
               </svg>
             </div>
 
@@ -207,7 +212,7 @@
     <div class="container">
       <div class="catch">
         <p class="problems-text">お子さまの発達・育児で<br class="sp">お悩みのすべての方へ!!</p>
-        <h2 class="problems-title">こんなお悩みはありませんか？</h2>
+        <h3 class="problems-title">こんなお悩みはありませんか？</h3>
       </div>
       <div class="img-wrap">
         <img src="./images/problems_img.svg" alt="友達との関わりがうまくいかない、言葉の発達がゆっくり、集団行動が苦手、家庭での対応に悩む様子を表したカラフルな円のイラスト">
@@ -355,11 +360,11 @@
       <img class="obj line-yellow"src="./images/SVG/line-yellow.svg" alt="">
       <div class="catch">
         <h2 class="feature-title">Feature</h2>
-        <p class="feature-sub-title">サポートの特徴</p>
+        <h2 class="feature-sub-title">サポートの特徴</h2>
       </div><!-- /.catch -->
 
       <div class="cards-container">
-        <h3 class="cards-head">3つの関係性を大切に <br>お子さま・ご家族・社会をつなぐ</h3>
+        <p class="cards-head">3つの関係性を大切に <br>お子さま・ご家族・社会をつなぐ</p>
         <div class="cards">
           <div class="card">
             <div class="img-wrap">
@@ -414,13 +419,13 @@
       <div class="feature-bottom">
         <img class="obj line-blue" src="./images/SVG/line-blue.svg" alt="">
         <div class="bottom-head">
-          <h3 class="text">お子さまの可能性を広げる<br class="sp-900">最適なアプローチを
-          <br>専門的視点から提供する<br class="sp-900">「早期療育」の価値</h3>
+          <p class="text">お子さまの可能性を広げる<br class="sp-900">最適なアプローチを</p>
+          <p class="text">専門的視点から提供する<br class="sp-900">「早期療育」の価値</p>
           <p class="desc">子どもの脳がよく発達する幼児期に様々な刺激を与え言葉や社会性を伸ばしやすくします。早期療育により将来の困りごとを減らす効果が期待できます。</p>
         </div>
         <div class="content-wrap">
           <div class="item left-top">
-            <h4 class="title">コミュニケーション</h4>
+            <h5 class="title">コミュニケーション</h5>
             <ul class="list">
               <li class="list-item">言葉がなかなか出ない、理解が難しい</li>
               <li class="list-item">お友達の輪に入ることが苦手</li>
@@ -428,7 +433,7 @@
             </ul>
           </div>
           <div class="item left-bottom">
-            <h4 class="title">運動</h4>
+            <h5 class="title">運動</h5>
             <ul class="list">
               <li class="list-item">運動が苦手なお子さま</li>
               <li class="list-item">お箸や鉛筆を握るなど、手先の操作が苦手</li>
@@ -440,7 +445,7 @@
             <img src="./images/woman-with-heart.png" width="418" height="616" alt="やさしく寄り添う支援者の女性イラスト">
           </div>
           <div class="item right-top">
-            <h4 class="title">学校園での環境調整</h4>
+            <h5 class="title">学校園での環境調整</h5>
             <ul class="list">
               <li class="list-item">かんしゃくが激しく切り替えが難しい</li>
               <li class="list-item">園や学校の環境に馴染めず、ストレスを感じている</li>
@@ -448,7 +453,7 @@
             </ul>
           </div>
           <div class="item right-bottom">
-            <h4 class="title">保護者支援</h4>
+            <h5 class="title">保護者支援</h5>
             <ul class="list">
               <li class="list-item">接し方に迷いがありつい叱ってしまう</li>
               <li class="list-item">お子さまの特性を深く理解し、味方でいたい</li>
@@ -464,7 +469,7 @@
     <div class="container">
       <div class="catch">
           <h2 class="program-title">Programs</h2>
-          <p class="program-sub-title">成長段階に合わせた多彩なプログラム</p>
+          <h3 class="program-sub-title">成長段階に合わせた多彩なプログラム</h3>
       </div><!-- /.catch -->
       <div class="inner">
         <img class="obj circle-blue" src="./images/SVG/obj-circle-blue.svg" alt="">
@@ -478,7 +483,7 @@
                 <li class="splide__slide">
                   <div class="box">
                     <div class="content">
-                      <h4 class="heading">幼児向けプログラム (0〜6歳)</h4>
+                      <h5 class="heading">幼児向けプログラム (0〜6歳)</h5>
                       <img class="thumbnail" src="./images/nendo.jpg" width="1920" height="1440" alt="">
                       <p class="text"><span class="bold">「できた！」が増える<br>一生の土台づくり</span><br>早期の適切な関わりは、お子様の自信に繋がります。遊びの中にある「学び」を大切にし、集団生活で自分らしく過ごすための基礎体力を専門チームが共に育みます。</p>
                       <ul class="list">
@@ -505,7 +510,7 @@
                 <li class="splide__slide">
                   <div class="box">
                     <div class="content">
-                      <h4 class="heading">学童向けプログラム (7歳～)</h4>
+                      <h5 class="heading">学童向けプログラム (7歳～)</h5>
                       <img class="thumbnail" src="./images/elementary-school-students.jpg" width="1920" height="1280" alt="スタッフと一緒に学習に取り組む学童期の子どもたち">
                       <p class="text"><span class="bold">個性を強みに<br>自立への一歩を支える</span><br>学校とも家とも違う、第三の安心できる居場所として。学習支援や対人スキルの向上を通じ「自分で考え行動する力」を養い、社会へ羽ばたく自信をサポートします。
                       </p>
@@ -533,7 +538,7 @@
                 <li class="splide__slide">
                   <div class="box">
                     <div class="content">
-                      <h4 class="heading">保護者向けサポート</h4>
+                      <h5 class="heading">保護者向けサポート</h5>
                       <img class="thumbnail" src="./images/mother-in-pickingup.jpg" width="1920" height="1280" alt="保護者へのサポートを行うスタッフと親子の様子">
                       <p class="text"><span class="bold">ひとりで悩まない<br>家族に寄り添うパートナー</span><br>お子様の成長を一番に願うからこそ、お悩みは尽きません。私たちはご家族の伴走者として、具体的な関わり方のコツを共有し、心にゆとりを持てる毎日を支えます。</p>
                       <ul class="list">
@@ -566,7 +571,7 @@
 
     <div class="domains">
       <div class="domains-head">
-        <h3 class="text">5領域に基づいた支援プログラム</h3>
+        <p class="text">5領域に基づいた支援プログラム</p>
         <p class="desc">5領域とは子どもの成長をバランスよく支えるために大切にされている5つの発達の視点です。一人ひとりの「できる力」「伸びる力」を総合的に育てていきます。</p>
       </div><!-- /.domains-head -->
       <div class="domain-wrap">
@@ -589,23 +594,23 @@
       <div class="list-wrap">
         <ul class="list">
           <li class="list-item">
-            <h4 class="list-title">健康・生活</h4>
+            <h5 class="list-title">健康・生活</h5>
             <p class="list-text">その日の気持ちや体調を「見える化」しながら、心身の健康とお子さまが安心して過ごせる生活の土台・環境を整えます。保護者様と情報共有を行い、必要なSSTなどのニーズに合わせてを支援内容を調節していきます。</p>
           </li>
           <li class="list-item">
-            <h4 class="list-title">運動・感覚</h4>
+            <h5 class="list-title">運動・感覚</h5>
             <p class="list-text">指先の細かい動きから全身運動まで、遊びと実践を通して「動かしやすい体」と感覚の発達を支えます。将来の生活や仕事を見据え、パソコン操作やホッチキス止めなどの実践的な練習にも取り組みます。</p>
           </li>
           <li class="list-item">
-            <h4 class="list-title">言語・コミュニケーション</h4>
+            <h5 class="list-title">言語・コミュニケーション</h5>
             <p class="list-text">聞く力・伝える力・理解する力を大切にしながら、日常生活に必要なコミュニケーション能力を育てます。自分の気持ちを大切にしながら、相手にも配慮した伝え方を学び、自主性と自己表現力を育むコミュニケーション支援を行っています。</p>
           </li>
           <li class="list-item">
-            <h4 class="list-title">認知・行動</h4>
+            <h5 class="list-title">認知・行動</h5>
             <p class="list-text">状況を理解し、考えて行動する力を育てながら、日常生活や集団生活への適応力を高めます。さらに、WISCなどの検査結果を参考にし、ビジョントレーニングや計算（電卓の使用を含む）、お金・時間・カレンダーなどの学習を行い、認知機能の発達を多角的に支援しています。</p>
           </li>
           <li class="list-item">
-            <h4 class="list-title">人間関係・社会性</h4>
+            <h5 class="list-title">人間関係・社会性</h5>
             <p class="list-text">挨拶や順番を待つ、必要な場面で我慢する、指示を聞いて行動するなど、人との関わりを通して、必要となるルールや気持ちのやり取りを学び、安心して集団の中で過ごす力を育てます。</p>
           </li>
           
