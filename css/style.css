@@ -618,7 +618,7 @@ p {
   .section .text-g {
     position: absolute;
     top: 70%;
-    left: 8%;
+    left: 14%;
     transform: translate(0, -50%);
   }
 }
@@ -669,7 +669,7 @@ p {
 @media (min-width: 1160px) {
   .section .splider {
     width: 60%;
-    margin: 0 10% 0 auto;
+    margin: 0 15% 0 auto;
   }
 }
 .section .splider .splide__track {
@@ -1539,6 +1539,17 @@ p {
   border-radius: 80vw 0 0 80vw;
   background: #b3c5db;
 }
+@media (min-width: 1024px) {
+  .program .container {
+    margin-left: 10%;
+    border-radius: 100vw 0 0 100vw;
+  }
+}
+@media (min-width: 1280px) {
+  .program .container {
+    padding: 150px 0;
+  }
+}
 .program .container .catch {
   position: relative;
 }
@@ -1570,6 +1581,11 @@ p {
 .program .container .inner {
   max-width: 1160px;
   margin: 0 auto 0 10%;
+}
+@media (min-width: 600px) {
+  .program .container .inner {
+    margin: 0 auto 0 18%;
+  }
 }
 .program .container .inner .obj.circle-blue {
   position: absolute;
@@ -1638,6 +1654,8 @@ p {
   aspect-ratio: 1/1;
   margin: 16px auto;
   border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 .program .container .inner .box-container .splide__slide .box .content .text {
   padding: 8px;
@@ -1685,27 +1703,16 @@ p {
 .program .container .inner .box-container .splide__slide:nth-of-type(3) .box .icon > i {
   color: #FF8719;
 }
-@media (min-width: 600px) {
-  .program .container .inner {
-    margin: 0 auto 0 18%;
-  }
-}
-@media (min-width: 1024px) {
-  .program .container {
-    margin-left: 10%;
-    border-radius: 100vw 0 0 100vw;
-  }
-}
-@media (min-width: 1280px) {
-  .program .container {
-    padding: 150px 0;
-  }
-}
 .program .domains {
   position: relative;
   max-width: 1160px;
   margin: 160px auto;
   padding: 0 4%;
+}
+@media (min-width: 1280px) {
+  .program .domains {
+    padding-inline: 0;
+  }
 }
 .program .domains .domains-head .text {
   text-align: center;
@@ -1727,6 +1734,11 @@ p {
   height: 360px;
   margin: 94px auto;
   transform: scale(0.7);
+}
+@media (min-width: 600px) {
+  .program .domains .domain-wrap {
+    transform: scale(1);
+  }
 }
 .program .domains .domain-wrap::before {
   position: absolute;
@@ -1946,27 +1958,6 @@ p {
   width: 200px;
   top: 90%;
   right: 5%;
-}
-@media (min-width: 1280px) {
-  .program .domains {
-    padding-inline: 0;
-  }
-  .program .domains .sp {
-    display: none;
-  }
-}
-@media (min-width: 1024px) {
-  .program .sp-lg {
-    display: none;
-  }
-}
-@media (min-width: 600px) {
-  .program .domains .domain-wrap {
-    transform: scale(1);
-  }
-  .program .sp-sm {
-    display: none;
-  }
 }
 
 .circle-btn {

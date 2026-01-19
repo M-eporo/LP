@@ -17,6 +17,14 @@
     border-radius: 80vw 0 0 80vw;
     background: #b3c5db;
 
+    @include m.mq(lg) {
+      margin-left: 10%;
+      border-radius: 100vw 0 0 100vw;
+    }
+    @include m.mq(xl) {
+      padding: 150px 0;
+    }
+
     .catch {
       position: relative;
       .program-title {
@@ -48,7 +56,9 @@
     .inner {
       max-width: 1160px;
       margin: 0 auto 0 10%;  
-
+      @include m.mq(sm) {
+        margin: 0 auto 0 18%;
+      }
       .obj.circle-blue {
         position: absolute;
         top: 50px;
@@ -113,6 +123,7 @@
                 aspect-ratio: 1/1;
                 margin: 16px auto;
                 border-radius: 50%;
+                object-fit: cover;
               }
               .text {
                 padding: 8px;
@@ -177,23 +188,6 @@
         }
       }
     }
-
-      @include m.mq(sm) {
-        .inner {
-          margin: 0 auto 0 18%;
-        }
-      }
-    }
-  @include m.mq(lg) {
-    .container {
-      margin-left: 10%;
-      border-radius: 100vw 0 0 100vw;
-    }
-  }
-  @include m.mq(xl) {
-    .container {
-      padding: 150px 0;
-    }
   }
 
   .domains {
@@ -201,6 +195,9 @@
     max-width: 1160px;
     margin: 160px auto;
     padding: 0 4%;
+    @include m.mq(xl) {
+      padding-inline: 0;
+    }
     .domains-head {
       .text {
         text-align: center;
@@ -224,6 +221,9 @@
       height: 360px;
       margin: 94px auto;
       transform: scale(0.7);
+      @include m.mq(sm) {
+        transform: scale(1.0);
+      }
       &::before {
         position: absolute;
         content: "";
@@ -488,29 +488,29 @@
       right: 5%;
     }
   }
-  @include m.mq(xl) {
-    .domains {
-      padding-inline: 0;
-      .sp {
-        display: none;
-      }
-    }
-  }
-  @include m.mq(lg) {
-    .sp-lg {
-      display: none;
-    }
-  }
-  @include m.mq(sm) {
-    .domains {
-      .domain-wrap {
-        transform: scale(1.0);
-      }
-    }
-    .sp-sm {
-      display: none;
-    }
-  }
+  // @include m.mq(xl) {
+  //   .domains {
+  //     padding-inline: 0;
+  //     .sp {
+  //       display: none;
+  //     }
+  //   }
+  // }
+  // @include m.mq(lg) {
+  //   .sp-lg {
+  //     display: none;
+  //   }
+  // }
+  // @include m.mq(sm) {
+  //   .domains {
+  //     .domain-wrap {
+  //       transform: scale(1.0);
+  //     }
+  //   }
+  //   .sp-sm {
+  //     display: none;
+  //   }
+  // }
 
 
 }
