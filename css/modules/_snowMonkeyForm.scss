@@ -1,0 +1,147 @@
+.cta .container .snow-monkey-form {
+  margin: 48px auto 0;
+  padding: 0 4%;
+}
+
+.wp-block-snow-monkey-forms-item.smf-item.form-group
+{
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 32px;
+}
+
+
+.smf-item__label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  -moz-column-gap: 1rem;
+       column-gap: 1rem;
+}
+
+.smf-item__label label
+ {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.smf-item__label .required
+ {
+  padding: 0.4em;
+  border-radius: 3px;
+  background-color: rgb(192, 47, 47);
+  font-size: 12px;
+  color: #fff;
+}
+
+.smf-item__col.smf-item__col--controls .smf-item__controls .input {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  letter-spacing: 0.1em;
+  background-color: #DDEEF7;
+}
+
+.smf-item__col.smf-item__col--controls .smf-item__controls .input:focus
+{
+  box-shadow: 0 0 0 2px #000;
+}
+
+.smf-item__controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.smf-item__col.smf-item__col--controls .smf-item__controls .textarea
+{
+  height: 184px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  letter-spacing: 0.1em;
+  background-color: #DDEEF7;
+}
+
+.smf-item__col.smf-item__col--controls .smf-item__controls .textarea:focus
+{
+  box-shadow: 0 0 0 2px #000;
+}
+
+.wp-block-snow-monkey-forms-item.smf-item.form-group.privacy {
+  margin-top: 12px;
+}
+
+.smf-item__col.smf-item__col--label.privacy-box {
+  padding: 16px;
+  border-radius: 10px;
+  background-color: #f7f7f7;
+  line-height: 1.8;
+}
+
+.smf-item__label.privacy-title
+{
+  margin: 0 0 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #555;
+}
+
+.smf-item__description.privacy-text {
+  margin: 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.smf-item__col.smf-item__col--controls .smf-item__controls.agree {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.smf-item__col.smf-item__col--controls .smf-item__controls.agree input[type=checkbox]  {
+  width: 18px;
+  height: 18px;
+  accent-color: rgb(192, 47, 47);
+  margin: 0;
+}
+
+.smf-item__col.smf-item__col--controls .smf-item__controls.agree input[type=checkbox]:checked {
+  background-color: rgb(192, 47, 47);
+  border: none;
+}
+
+.smf-item__col.smf-item__col--controls .smf-item__controls.agree label
+{
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  cursor: pointer;
+}
+
+.smf-action .smf-button-control__control {
+  display: block;
+  width: 200px;
+  margin: 48px auto 0;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 50px;
+  background: linear-gradient(135deg, rgb(255, 212, 212) 0%, rgb(228, 48, 48) 40%);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+}
+
+.smf-action  .smf-button-control__control:disabled
+{
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(40%);
+}

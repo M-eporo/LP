@@ -1,182 +1,122 @@
 @use "../default/variables" as v;
 @use "../default/mixin" as m;
+
 .firstview {
-  position: relative;
-  background-color: #f0f0f0;
-  
-  //height: clamp(600px, 100vh, 880px);
-
-
-  .container {
     position: relative;
-    .splide {
-      position: relative;
-      z-index: 1;
-      max-height: 1000px;
-      margin-left: 2%;
-      aspect-ratio: 3/2;
-      @include m.mq(sm) {
-        margin-left: 4%;
-      }
-      @include m.mq(xl) {
-        margin-left: auto;
-      }
-      .splide__track {
-        height: 100%;
-        min-height: 700px;
-        border-radius: 20vh 0 0 20vh;
-        overflow: visible;
-        @include m.mq(sm) {
-          border-radius: 100vh 0 0 100vh;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding: 114px 3% 0px;
+    background-color: #f0f0f0;
+    font-family: v.$m-plus-round;
+    @include m.mq(md) {
+        display: revert;
+        min-height: 600px;
+        padding: 114px 3% 0px;
+    }
+    .text-g {
+        position: relative;
+        z-index: 99;
+        margin-top: 22px;
+        @include m.mq(md) {
+            position: absolute;
+            top: 80%;
+            left: 8%;
+            transform: translate(0,-50%);
+            margin-top: 0;
+        }
+        @include m.mq(l) {
+            position: absolute;
+            top: 70%;
+            left: 14%;
+            transform: translate(0,-50%);
         }
 
-        .splide__list {
-          // border-radius: 20vh 0 0 20vh;
-          height: 100%;
-          .splide__slide {
-            height: 100%;
-            background-position: 11% top !important;
-            border-radius: 20vh 0 0 20vh;
-            @include m.mq(sm) {
-              background-position: left top !important;
-            }
-            @include m.mq(sm) {
-              border-radius: 100vh 0 0 100vh;
-            }
-            
-            &.splide__slide:nth-child(2) {
-              background-position: 25% bottom !important;
-              @include m.mq(sm) {
-                background-position: left bottom !important;
-              }
-              .slider__img {
-                object-position: 75%;
-                @include m.mq(sm) {
-                  object-position: 78%;
-                }
-              } 
-            }
-            &.splide__slide:nth-child(3) {
-              background-position: 80% top !important;
-              @include m.mq(sm) {
-                background-position: right top !important;
-              }
-              .slider__img {
-                object-position: 78%;
-                @include m.mq(sm) {
-                  object-position: right;
-                }
-              }
-            }
-            .slider__img {
-              border-radius: 20vh 0 0 20vh;
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              object-position: 15% bottom;
-              @include m.mq(sm) {
-                border-radius: 100vh 0 0 100vh;
-              }
-            }
-            .inner {
-              position: absolute;
-              bottom: 5%;
-              left: 4.2%;
-              z-index: 10;
-              @media (min-width: 1600px) {
-                left: 4%;
-                bottom: 15%;
-              }
-              .sp-xs {
+        .sp-md {
+            display: none;
+            @include m.mq(md) {
                 display: revert;
-                @include m.mq(sm) {
-                  display: none;
-                }
-              }
-              .main-title {
-                font-size: 42px;
-                font-family: v.$m-plus-round;
+            }
+            @include m.mq(l) {
+                display: none;
+            }
+        }
+
+        .main {
+            .main-title {
+                font-size: clamp(2rem, 1.1627rem + 3.8278vw, 3rem);
                 font-weight: bold;
-                @include m.mq(sm) {
-                  font-size: 48px;
-                }
-                @include m.mq(xl) {
+                color: #feaa2d;
+                text-shadow: 1px 1px 2px #fff;
+                
+                @include m.mq(xxl) {
                   font-size: 64px;
                 }
-              }
-              .text {
-                font-size: 26px;
-                font-family: v.$noto-sans;
+            }
+            .text {
+                font-size: clamp(1.125rem, 0.497rem + 2.8708vw, 1.875rem);
                 font-weight: bold;
-                @include m.mq(sm) {
-                  font-size: 30px;
-                }
-                @include m.mq(xl) {
+                color: v.$red;
+                text-shadow: 1px 1px 2px #fff;
+                
+                @include m.mq(xxl) {
                   font-size: 48px;
                 }
-              }
-              &.first-slide {
-                .main-title {
-                  color: #feaa2d;
-                  text-shadow: 1px 1px 2px #fff;
-                }
-                .text {
-                  color: v.$red;
-                  text-shadow: 1px 1px 2px #fff;
-                }
-              }
-              &.second-slide {
-                .text {
-                  color: v.$red;
-                  text-shadow: 1px 1px 2px #fff;
-                }
-              }
-              &.third-slide {
-                .text {
-                  color: v.$red;
-                  text-shadow: 1px 1px 2px #fff;
-                  
-                }
-              }
             }
-          }
         }
-      }
-      .splide__pagination.custom-pagination {
-        //bottom: -1.5em;
-        gap: 12px;
-        .splide__pagination__page.custom-pagination-page {
-          width: 14px;
-          height: 14px;
-          border: 2px solid v.$white;
-          background-color: v.$red;
+    }
+    .splider {
+        max-width: 900px;
+        @include m.mq(md) {
+            margin: 0 auto;
+            min-height: 600px;
         }
-      }
+        @media (min-width:1160px) {
+            width: 60%;
+            margin: 0 15% 0 auto;
+        }
+        
+        .splide__track {
+            width: 100%;
+            min-height: 100%;
+            .splide__list {
+                width: 100%;
+                min-height: 100%;
+                .splide__slide {
+                    position: relative;
+                    width: 100%;
+                    min-height: 100%;
+                    svg {
+                        width: 100%;
+                        height: 100%;
+                        display: block;
+                        image {
+                            width: 100%;
+                            min-height: 600px;
+                        }
+                    }
+                    // svg:first-child {
+                    //     position: relative;
+                    //     z-index: 1;
+                    // }
+                    // .bg-svg {
+                    //     position: absolute;
+                    //     top: 0;
+                    //     z-index: 0;
+                    //     fill: v.$red;
+                    // }
+                }
+            }
+        }
+        .splide__pagination.custom-pagination {
+            bottom: -1.5em;
+            gap: 12px;
+            .splide__pagination__page.custom-pagination-page {
+            width: 14px;
+            height: 14px;
+            border: 2px solid v.$white;
+            background-color: v.$red;
+            }
+        }
     }
-  }
-  .obj {
-    position: absolute;
-    max-width: 250px;
-    display: none;
-    @media (min-width: 2200px) {
-      display: revert;
-    }
-  }
-  .obj.triangle {
-    top: 15%;
-    left: 10%;
-    transform: rotate(135deg);
-  } 
-  .obj.bar {
-    bottom: 0%;
-    left: 10%;
-  }
-  .obj.star {
-    top: 45%;
-    left: 5%;
-    transform: rotate(30deg);
-  }
 }
-
-
-

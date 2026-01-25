@@ -1,7 +1,6 @@
 @use "default/global";
 @use "modules/header";
 @use "modules/firstview";
-@use "modules/firstviewre";
 @use "modules/problems";
 @use "modules/resolve";
 @use "modules/about";
@@ -13,8 +12,9 @@
 @use "modules/voice";
 @use "modules/faq";
 @use "modules/cta";
-
 @use "modules/footer";
+@use "modules/error";
+@use "modules/snowMonkeyForm";
 
 //npx sass css/style.scss css/style.css
 //npx sass --watch css/style.scss:css/style.css
