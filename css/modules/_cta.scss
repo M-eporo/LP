@@ -1,15 +1,19 @@
   @use "../default/variables" as v;
+  @use "../default/mixin" as m;
   .cta {
-    padding: 200px 4%;
+    padding: clamp(6.25rem, 6.369vw + 4.757rem, 9.375rem) 4% 100px;
     font-family: v.$m-plus-round;
     background-color: #f0f0f0;
     border-radius: 0 0 80px 80px;;
     .container {
       max-width: 768px;
       margin: 0 auto;  
-      padding: 48px;
+      padding: 48px 0;
       border-radius: 20px;
       background-color: v.$white;
+      @include m.mq(md) {
+        padding: 48px;
+      }
       .catch {
         text-align: center;
         

@@ -119,11 +119,14 @@
 
               }
               .thumbnail {
-                width: 300px;
+                width: 250px;
                 aspect-ratio: 1/1;
                 margin: 16px auto;
                 border-radius: 50%;
                 object-fit: cover;
+                @include m.mq(sm) {
+                  width: 300px;
+                }
               }
               .text {
                 padding: 8px;

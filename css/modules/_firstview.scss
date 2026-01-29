@@ -14,7 +14,7 @@
         min-height: 600px;
         padding: 114px 3% 0px;
     }
-    .text-g {
+    .text-wrapper {
         position: relative;
         z-index: 99;
         margin-top: 22px;
@@ -32,15 +32,7 @@
             transform: translate(0,-50%);
         }
 
-        .sp-md {
-            display: none;
-            @include m.mq(md) {
-                display: revert;
-            }
-            @include m.mq(l) {
-                display: none;
-            }
-        }
+        
 
         .main {
             .main-title {
@@ -63,6 +55,15 @@
                   font-size: 48px;
                 }
             }
+            .sp-md {
+                display: none;
+                @include m.mq(md) {
+                    display: revert;
+                }
+                @include m.mq(l) {
+                    display: none;
+                }
+            }
         }
     }
     .splider {
@@ -77,6 +78,7 @@
         }
         
         .splide__track {
+            position: relative;
             width: 100%;
             min-height: 100%;
             .splide__list {
@@ -119,4 +121,14 @@
             }
         }
     }
+    .sample_svg,
+    .sample_svg2 {
+        width: 300px;
+        height: 300px;
+        filter: blur(10px);
+        mask-image: radial-gradient(circle at center, #000, transparent 50%);
+        opacity: 0.5;
+    }
+    
 }
+    

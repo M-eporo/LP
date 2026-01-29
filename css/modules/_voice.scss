@@ -19,7 +19,7 @@
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
-    height: 166px;
+    height: 100px;
 }
 
 .custom-shape-divider-bottom-1765980372 .shape-fill {
@@ -88,6 +88,25 @@
           left: initial;
           right: -24px;
           transform: translateY(-50%) rotate(90deg);
+        }
+      }
+
+      .item:nth-child(1) img {
+        transform: scaleY(1.4);
+        @include m.mq(sm) {
+          transform: scaleY(1.0);
+        }
+      }
+      .item:nth-child(4) img {
+        transform: scaleY(1.4);
+        @include m.mq(sm) {
+          transform: scaleY(1.0);
+        }
+      }
+      .item:nth-child(5) img {
+        transform: scaleY(1.2);
+        @include m.mq(sm) {
+          transform: scaleY(1.0);
         }
       }
     }

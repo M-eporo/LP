@@ -1,9 +1,10 @@
 @use "../default/variables" as v;
 @use "../default/mixin" as m;
 .faq {
-  padding: 400px 4%;
+  padding: clamp(9.375rem, 31.847vw + 1.911rem, 25rem) 4% clamp(9.375rem, 31.847vw + 1.911rem, 25rem);
   position: relative;
   background-color: #d6f1ff;
+  font-family: v.$m-plus-round;
     .custom-shape-divider-top-1765979172 {
       position: absolute;
       top: 0;
@@ -16,7 +17,7 @@
         position: relative;
         display: block;
         width: calc(100% + 1.3px);
-        height: 246px;
+        height: clamp(3.125rem, 24.968vw - 2.727rem, 15.375rem);
       }
       .shape-fill {
         fill: #fef1fc;
@@ -34,7 +35,7 @@
         position: relative;
         display: block;
         width: calc(100% + 1.3px);
-        height: 246px;
+        height: clamp(3.125rem, 24.968vw - 2.727rem, 15.375rem);
       }
       .shape-fill {
         fill: #f0f0f0;
@@ -136,9 +137,13 @@
             border-bottom: 2px solid #000;
             background-color: transparent;
             .accordion-title {
-              font-size: 18px;
+              text-align: left;
+              font-size: 16px;
               font-weight: bold;
-              color: #555;  
+              color: #555;
+              @include m.mq(md) {
+                font-size: 18px;
+              }
             }
             .close-icon {
               color: #000;
