@@ -7,6 +7,31 @@
   background-color: #f0f0f0;
   z-index: 1;
 
+  .line-svg {
+    position: absolute;
+    top: 15%;
+    left: 0;
+    width: 100dvw;
+    height: auto;
+    min-height: 1200px;
+    z-index: 0;
+    //transform: translateY(-50%);
+    
+    &.pc {
+      display: none;
+      @include m.mq(lg) {
+        display: revert;
+      }
+    }
+    &.sp {
+      width: 120dvw;
+      min-height: 1500px;
+      display: revert;
+      @include m.mq(lg) {
+        display: none;
+      }
+    }
+  }
   .feature-svg-1 {
     position: absolute;
     top: -40%;
@@ -19,7 +44,7 @@
     position: relative;
     max-width: 1160px;
     margin: 0 auto;
-
+    z-index: 2;
     .obj {
       position: absolute;
     }
@@ -66,6 +91,7 @@
     }
     
     .cards-container {
+      position: relative;
       margin-top: 64px;
       .cards-head {
         text-align: center;
@@ -212,6 +238,8 @@
           color: v.$red;
         }
       }
+
+      
     }
 
     .feature-bottom {

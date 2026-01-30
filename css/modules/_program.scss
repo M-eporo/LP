@@ -6,6 +6,32 @@
   font-family: v.$m-plus-round;
   background-color: #fafafa;
   z-index: 1;
+
+  .line-svg {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100dvw;
+    height: auto;
+    min-height: 1600px;
+    z-index: 0;
+    //transform: translateY(-50%);
+    
+    &.pc {
+      display: none;
+      @include m.mq(xl) {
+        display: revert;
+      }
+    }
+    &.sp {
+      top: 45%;
+      display: revert;
+      @include m.mq(xl) {
+        display: none;
+      }
+    }
+  }
+
   .container {
     position: relative;
     margin-left: 4%;
@@ -16,7 +42,6 @@
     ;
     border-radius: 80vw 0 0 80vw;
     background: #b3c5db;
-
     @include m.mq(lg) {
       margin-left: 10%;
       border-radius: 100vw 0 0 100vw;
@@ -61,7 +86,7 @@
       }
       .obj.circle-blue {
         position: absolute;
-        top: 50px;
+        top: clamp(6.25rem, 15.306vw + 2.663rem, 10rem);
         left: 0;
         width: 700px;
         filter: blur(2px);
@@ -198,9 +223,11 @@
     max-width: 1160px;
     margin: 160px auto;
     padding: 0 4%;
+    z-index: 1;
     @include m.mq(xl) {
       padding-inline: 0;
     }
+
     .domains-head {
       .text {
         text-align: center;

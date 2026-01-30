@@ -1,11 +1,14 @@
   @use "../default/variables" as v;
   @use "../default/mixin" as m;
   .cta {
+    
     padding: clamp(6.25rem, 6.369vw + 4.757rem, 9.375rem) 4% 100px;
     font-family: v.$m-plus-round;
     background-color: #f0f0f0;
-    border-radius: 0 0 80px 80px;;
+    border-radius: 0 0 80px 80px;
+    
     .container {
+      position: relative;
       max-width: 768px;
       margin: 0 auto;  
       padding: 48px 0;
@@ -14,6 +17,15 @@
       @include m.mq(md) {
         padding: 48px;
       }
+
+      .star {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: clamp(3.125rem, 1.4583rem + 6.9444vw, 6.25rem);
+        transform: translate(0, -50%) rotate(-45deg);
+      }
+      
       .catch {
         text-align: center;
         
