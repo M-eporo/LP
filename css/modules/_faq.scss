@@ -5,6 +5,7 @@
   position: relative;
   background-color: #d6f1ff;
   font-family: v.$m-plus-round;
+  
     .custom-shape-divider-top-1765979172 {
       position: absolute;
       top: 0;
@@ -46,6 +47,7 @@
     position: relative;
     max-width: 768px;
     margin: 0 auto;
+    
     .catch {
       .sp {
           display: revert;
@@ -74,6 +76,7 @@
           border-radius: 100vh;
           background-color: v.$orange;
           transform: translateY(50%);
+          
         }
         &::before {
           left: -0.7em;
@@ -87,40 +90,26 @@
       .faq-text {
         position: relative;
         display: flex;
+        align-items: center;
         gap: 4px;
         width: max-content;
-        margin: 16px auto 0;
+        margin: 0 auto 0;
         font-size: clamp(1.125rem, 0.7672rem + 1.5267vw, 1.5rem);
         font-weight: bold;
         color: v.$dk-gray;
         text-align: center;
-        @include m.mq(sm) {
-          gap: 0;
-        }
-        &::before,
-        &::after {
+        
+        &::before{
           display: inline-block;
           width: 48px;
-          
-          aspect-ratio: 1/1;
+          aspect-ratio: 64/63;
           content: "";
-          @include m.mq(sm) {
-            width: 30px;
-          }
-        }
-        &::before {
-          background: url("../../images/SVG/line-left-orange.svg");
+          background: url("../images/qanda.png");
           background-repeat: no-repeat;
           background-size: contain;
           background-position: center;
+          transform: rotate(-25deg);
         }
-        &::after {
-          background: url("../../images/SVG/line-right-orange.svg");
-          background-repeat: no-repeat;
-          background-size: contain;
-          background-position: center;
-        }
-
       }
     }
     .accordion {

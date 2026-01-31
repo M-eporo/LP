@@ -15,7 +15,6 @@
     height: auto;
     min-height: 1200px;
     z-index: 0;
-    //transform: translateY(-50%);
     
     &.pc {
       display: none;
@@ -349,7 +348,7 @@
                 justify-self: center;
                 align-self: start;
                 margin-top: 4px;
-                background: url("../../images/SVG/chevron_forward.svg");
+                background: url("../images/chevron_forward.svg");
                 background-size: contain;
               }
             }

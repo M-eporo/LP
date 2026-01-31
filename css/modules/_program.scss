@@ -157,12 +157,13 @@
                 padding: 8px;
                 border-bottom: 1px solid #000;
                 text-align: justify;
+                font-size: 18px;
                 .bold {
                   display: inline-block;
                   margin-bottom: 8px;
                   font-weight: bold;
                   color: v.$deep-green;
-                  text-shadow: 1px 1px 1px #fff;
+                  text-shadow: 1px 1px 2px #ddd;
                 }
               }
               .list {

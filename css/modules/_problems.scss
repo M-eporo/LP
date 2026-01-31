@@ -39,13 +39,13 @@
         aspect-ratio: 1/1;
       }
       .problems-title::before {  
-        background: url("../../images/SVG/line-left.svg");
+        background: url("../images/line-left.svg");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
       }
       .problems-title::after {
-        background: url("../../images/SVG/line-right.svg");
+        background: url("../images/line-right.svg");
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;

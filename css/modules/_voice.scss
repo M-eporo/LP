@@ -38,9 +38,9 @@
       width: 100px;
       height: 100px;
       border-radius: 30px;
-      background-image:radial-gradient(circle, #bcd6fd 2px, transparent 2.2px);
+      background-image:radial-gradient(circle, #bcd6fd 1px, transparent 1.2px);
       background-repeat: repeat;
-      background-size: 10px 10px, 10px 10px;
+      background-size: 5px 5px, 5px 5px;
       mask-image: linear-gradient(90deg, transparent, #fff 90%);
       z-index: 1;
     }
@@ -52,13 +52,52 @@
       opacity: 0.6;
     }
     .catch {
+      position: relative;
       .voice-title {
-        font-size: 32px;
+        position: relative;
+        width: max-content;
+        margin: 0 auto;
+        border-bottom: 3px solid #555;
+        font-size: 24px;
         font-weight: bold;
         text-align: center;
         color: v.$dk-gray;
         line-height: 1.7;
         letter-spacing: 0.15em;
+        z-index: 1;
+        @include m.mq(sm) {
+          font-size: 32px;
+        }
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 102%;
+          transform: rotate(25deg);
+          z-index: 0;
+          width: 64px;
+          height: 45px;
+          background-image: url("../images/note-pen.png");
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+      .voice-sub-title {
+        margin-top: 16px;
+        font-size: 16px;
+        font-weight: bold;
+        text-align: center;
+        color: v.$dk-gray;
+        line-height: 1.7;
+        @include m.mq(sm) {
+          font-size: 20px;
+        }
+        .sp {
+          display: revert;
+          @include m.mq(sm) {
+            display: none;
+          }
+        }
       }
     }
     .item-container {
@@ -85,6 +124,7 @@
           background-color: #fff;
           font-size: 14px;
           color: v.$chacoal;
+          box-shadow: 5px 5px 8px rgba(0,0,0,0.3);
           @include m.mq(sm) {
             width: 60%;
             font-size: 16px;
@@ -105,10 +145,14 @@
 
       .item:nth-child(even) {
         flex-direction: row-reverse;
+        .voice-text {
+          box-shadow: -5px 5px 8px rgba(0,0,0,0.3);
+        }
         .voice-text::before {
           left: initial;
           right: -24px;
           transform: translateY(-50%) rotate(90deg);
+          
         }
       }
 
