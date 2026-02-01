@@ -441,6 +441,22 @@ p {
     font-size: 48px;
   }
 }
+.firstview .text-wrapper .main .span-block {
+  display: block;
+}
+.firstview .text-wrapper .main .sp-md {
+  display: inline;
+}
+@media (min-width: 768px) {
+  .firstview .text-wrapper .main .sp-md {
+    display: inline-flex;
+  }
+}
+@media (min-width: 1160px) {
+  .firstview .text-wrapper .main .sp-md {
+    display: inline-flex;
+  }
+}
 .firstview .text-wrapper .main .sp-md {
   display: none;
 }
@@ -453,6 +469,10 @@ p {
   .firstview .text-wrapper .main .sp-md {
     display: none;
   }
+}
+.firstview .text-wrapper .main .char {
+  display: inline-block;
+  will-change: transform, opacity;
 }
 .firstview .text-wrapper .svg-yellow {
   position: absolute;

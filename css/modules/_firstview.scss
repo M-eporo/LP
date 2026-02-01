@@ -53,6 +53,18 @@
                   font-size: 48px;
                 }
             }
+            .span-block {
+                display: block;
+            }
+            .sp-md {
+                display: inline;
+                @include m.mq(md) {
+                    display: inline-flex;
+                }
+                @include m.mq(l) {
+                    display: inline-flex;
+                }
+            }
             .sp-md {
                 display: none;
                 @include m.mq(md) {
@@ -61,6 +73,10 @@
                 @include m.mq(l) {
                     display: none;
                 }
+            }
+            .char {
+                display: inline-block;
+                will-change: transform, opacity;
             }
         }
         .svg-yellow {
