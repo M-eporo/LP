@@ -61,6 +61,14 @@ p {
   z-index: 9999;
 }
 
+.intro-cover {
+  position: fixed;
+  inset: 0;
+  background: #f0f0f0;
+  z-index: 9999;
+  pointer-events: none;
+}
+
 @font-face {
   font-family: "apricotJapanesefont";
   src: url("../../fonts/apricotJapanesefont.woff2") format("woff2"), url("apricotJapanesefont.woff") format("woff");
@@ -489,12 +497,14 @@ p {
 }
 @media (min-width: 768px) {
   .firstview .text-wrapper .svg-yellow {
-    top: 100%;
+    top: 60%;
+    left: -30%;
   }
 }
 @media (min-width: 1160px) {
   .firstview .text-wrapper .svg-yellow {
     top: 50%;
+    left: 0;
   }
 }
 .firstview .splider {

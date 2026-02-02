@@ -7,7 +7,7 @@ const firstViewreSplide = new Splide(".splide.splider", {
   interval: 5000,
   speed: 2000,
   arrows: false,
-  pagination: true,
+  pagination: false,
   classes: {
 		arrows: 'splide__arrows custom-arrows',
 		arrow : 'splide__arrow custom-arrow',

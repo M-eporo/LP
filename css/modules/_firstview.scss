@@ -91,10 +91,12 @@
             left: 0;
             transform: translate(0, -50%);
             @include m.mq(md) {
-                top: 100%
+                top: 60%;
+                left: -30%
             }
             @include m.mq(l) {
                 top: 50%;
+                left: 0;
             }
         }
     }
