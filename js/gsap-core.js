@@ -37,8 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return Array.from(el.querySelectorAll(".char"));
     };
 //Header, Firstview
-    const cover = document.querySelector(".js-intro-cover");
-    const firstview = document.querySelector("#firstview");
+    // const cover = document.querySelector(".js-intro-cover");
+    const firstview = document.querySelector(".firstview .bg");
     const logo = document.querySelector(".header .container .js-logo");
     const navItems = document.querySelectorAll(".header .container .inner .pc-nav .pc-sns .js-sns-item");
     const primaryBtn = document.querySelector(".header .container .inner .js-primary-btn");
@@ -54,9 +54,9 @@ document.addEventListener("DOMContentLoaded", () => {
         WebkitMaskImage: "radial-gradient(circle at center, black 0%, transparent 0%)" 
         }
     );
-    gsap.set(cover, 
-        { autoAlpha: 1 }
-    );
+    // gsap.set(cover, 
+    //     { autoAlpha: 1 }
+    // );
     const pageMainTitle = document.querySelector("#firstview .js-page-main-title");
     const pageSubTitle  = document.querySelector("#firstview .js-page-sub-title");
     const mainChars = wrapChars(pageMainTitle);
@@ -75,15 +75,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const firstviewTl = gsap.timeline();
     firstviewTl.to(
         firstview, {
-            WebkitMaskImage: "radial-gradient(circle at center, black 0%, black 100%, transparent 150%)" ,
-            duration: 1,
+            WebkitMaskImage: "radial-gradient(circle at center, black 0%, black 100%, transparent 110%)" ,
+            duration: 0.8,
             ease: "power2.in",
         }
-    ).to(
-        cover, { 
-            autoAlpha: 0,
-            duration: 0.6 
-        }, "-=0.3"
     ).to(
         logo, {
             autoAlpha: 1,
@@ -126,17 +121,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //Problems Section
     //Svg Line Animation
-    const svgLine__problems = document.querySelector("#problems .js-line-svg .js-path");
+    const linePath__problems = document.querySelector("#problems .js-line-svg .js-path");
     const mainImage__problems = document.querySelector("#problems .container .js-img-wrap");
-    if(!svgLine__problems) return;
+    if(!linePath__problems) return;
 
-    if(svgLine__problems) {
-        const svgLineLength__problems = svgLine__problems.getTotalLength();
-        gsap.set(svgLine__problems, {
-            strokeDasharray:  svgLineLength__problems,
-            strokeDashoffset: svgLineLength__problems
+    if(linePath__problems) {
+        const pathLength__problems = linePath__problems.getTotalLength();
+        gsap.set(linePath__problems, {
+            strokeDasharray:  pathLength__problems,
+            strokeDashoffset: pathLength__problems
         });
-        gsap.to(svgLine__problems, {
+        gsap.to(linePath__problems, {
             scrollTrigger: { 
                 trigger: mainImage__problems,
                 start: "top 70%",
@@ -153,25 +148,229 @@ document.addEventListener("DOMContentLoaded", () => {
         const chars = wrapChars(text);
         gsap.from(chars, {
             scrollTrigger: {
-                markers: true,
                 trigger: "#problems .container .js-text-wrap",
                 start: "top 90%",
                 end: "bottom 30%",
-                toggleActions: "play reverse play reverse"
+                // toggleActions: "play reverse play reverse"
             },
             visibility: "hidden",
-            autoAlpha: 0,
-            duration: 0.5,
+            duration: 0.3,
             stagger: 0.06,
             
         })
     });
 
 //Resolve Section
+    const resolve = document.querySelector(".resolve .bg");
+    gsap.set(resolve, {
+        maskImage: "linear-gradient(180deg, #000 60%, #0000 90%)",
+        WebkitMaskImage: "linear-gradient(180deg, #000 60%, #0000 90%)",
+        maskSize: "100% 0%",
+        WebkitMaskImage: "100% 0%",
+        maskPosition: "top",
+        WebkitMaskPosition: "top",
+    });
+    gsap.to(resolve, {
+        scrollTrigger: {
+            trigger: resolve,
+            start: "top 60%",
+            
+        },
+        maskSize: "100% 100%",
+        WebkitMaskSize: "100% 100%",
+        duration: 2,
+        ease: "power2.out",
+    })
 
+//About Section
+    const about = document.getElementById("about");
+    const parent__about = gsap.utils.selector(about);
+    const aboutTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: about,
+            start: "top 70%",
+        }
+    });
+    const xMove__about = {
+        xPercent: -50,
+        filter: "blur(20px)",
+        duration: 1.5,
+        ease: "power4.out"
+    };
+    const autoAlpha__about = {
+        autoAlpha: 0,
+        duration: 1.5,
+    }
+    aboutTl
+    .from(parent__about(".container .js-catch"), xMove__about)
+    .from(parent__about(".container .js-catch"), autoAlpha__about, "<")
+    .from(parent__about(".container .js-woman-img"), xMove__about, "<")
+    .from(parent__about(".container .js-woman-img"), autoAlpha__about, "<")
+    .from(parent__about(".container .js-text-wrap"), {...xMove__about, xPercent: 50}, "<")
+    .from(parent__about(".container .js-text-wrap"), autoAlpha__about, "<");
 
+//Office Section
+    const office = document.getElementById("office");
+    const parent__office = gsap.utils.selector(office);
+    const texts__office = [parent__office(".container .catch"), parent__office(".container .intro")];
+    const officeTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: office,
+            start: "top 50%",
+        }
+    });
+    officeTl
+    .from(parent__office(".js-office__splide"), {
+        xPercent: -50,
+        autoAlpha: 0,
+        filter: "blur(20px)",
+        duration: 1.5,
+        ease: "power4.out"
+    })
+    .from([...texts__office], {
+        xPercent: 50,
+        autoAlpha: 0,
+        filter: "blur(20px)",
+        duration: 1.5,
+        ease: "power4.out"
+    }, "<");    
 
+//Feature Section
+    const feature = document.getElementById("feature");
+    const container = document.querySelector("#feature .container");
+    const cardsContainer = document.querySelector("#feature .container .js-cards-container");
+    const linePath__feature = document.querySelector("#feature .pc.js-line-svg .js-path");
+    const linePath__feature__sp = document.querySelector("#feature .sp.js-line-svg .js-path");
 
+    //ライン - pc
+    if(!linePath__feature) return;
+    if(linePath__feature) {
+        const pathLength__feature = linePath__feature.getTotalLength();
+        gsap.set(linePath__feature, {
+            strokeDasharray:  pathLength__feature,
+            strokeDashoffset: pathLength__feature
+        });
+        gsap.to(linePath__feature, {
+            scrollTrigger: { 
+                trigger: cardsContainer,
+                start: "top 65%",
+                end: "bottom 40%",
+                scrub: 1,
+            },
+            strokeDashoffset: 0,
+        });
+    }
+    //ライン - sp
+    if(!linePath__feature__sp) return;
+    if(linePath__feature__sp) {
+        const pathLength__feature__sp = linePath__feature__sp.getTotalLength();
+        gsap.set(linePath__feature__sp, {
+            strokeDasharray: pathLength__feature__sp,
+            strokeDashoffset: pathLength__feature__sp,
+        });
+        gsap.to(linePath__feature__sp, {
+            scrollTrigger: {
+                trigger: cardsContainer,
+                start: "top 35%",
+                end: "bottom 0%",
+                scrub: 1,
+            },
+            strokeDashoffset: 0
+        })
+    }
+    //セクションメインタイトル
+    const featureTitle = document.querySelector("#feature .container .catch .js-feature-title");
+    const featureTitleChars = wrapChars(featureTitle);
+    gsap.set(featureTitleChars, {
+        scaleY: 0,
+        willChange: "transform",
+        transformOrigin: "center bottom",
+    });
+    const featureTitleTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: featureTitle,
+            start: "top 80%",
+            // markers: true,
+        },
+    });
+    featureTitleTl
+    .to(featureTitleChars, {
+        scaleY: 1,
+        duration: 1,
+        ease: "back.out(4)",
+        stagger: 0.09,
+    })
+    .to(featureTitle, {
+        "--pseudo-opacity": 1,
+        duration: 1,
+    });
+    //セクションコンテンツ
+    gsap.utils.toArray([cardsContainer, "#feature .container .js-feature-bottom"])
+    .forEach((content) => {
+        gsap.set(content, {
+            autoAlpha: 0,
+            filter: "blur(20px)"
+        });
+        gsap.to(content, {
+            scrollTrigger: {
+                trigger: content,
+                start: "top 70%",
+            },
+            autoAlpha: 1,
+            filter: "blur(0px)",
+            duration: 1.2
+        });
+    })
+    
+//Program Section
+    const programTitle = document.querySelector("#program .container .catch .js-program-title");
+    const programTitleChars = wrapChars(programTitle);
+    gsap.set(programTitleChars, {
+        x: "14rem",
+        autoAlpha: 0,
+        filter: "blur(20px)",
+        willChange: "transform",
+    });
+    gsap.set("#program .container", {
+        xPercent: 100,
+        autoAlpha: 0,
+        filter: "blur(20px)",
+        willChange: "transform",
+    })
+    
+    const programTitleTl = gsap.timeline({
+        scrollTrigger: {
+            trigger: programTitle,
+            start: "top 80%",
+            markers: true,
+            toggleActions: "play reverse play reverse"
+        }
+    });
+    programTitleTl
+    .to("#program .container", {
+        xPercent: 0,
+        duration: 1,
+        ease: "power4.out"
+    })
+    .to("#program .container", {
+        autoAlpha: 1,
+        filter: "blur(0px)",
+        duration: 1,
+    }, "-=0.5")
+    .to(programTitleChars, {
+        x: 0,
+        autoAlpha: 1,
+        filter: "blur(0px)",
+        duration: 1,
+        stagger: 0.06,
+        ease: "power4.out"
+    }, "-=0.2")
+    .to(programTitle, {
+        "--pseudo-opacity": 1,
+        duration: 1,
+    }, ">")
+    
+    
 });
 
 window.addEventListener("load", () => {

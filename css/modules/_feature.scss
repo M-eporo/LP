@@ -69,7 +69,7 @@
         font-family: v.$noto-sans;
         font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
         color: v.$dk-gray; 
-
+        --pseudo-opacity: 0;
         &::before,
         &::after {
           content: "";
@@ -78,6 +78,7 @@
           border-radius: 100vh;
           background-color: v.$blue;
           transform: translateY(50%);
+          opacity: var(--pseudo-opacity);
         }
       }
       .feature-sub-title {

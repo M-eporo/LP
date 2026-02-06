@@ -3,72 +3,75 @@
 .resolve {
   position: relative;
   padding: 10px 0 0;
-  background-color: #ffe3e3;
-  background: url("../images/grinning-children.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-clip: border-box;
-  background-position: 60%;
-  mask-image: linear-gradient(180deg, #000 60%, #0000 90%);
+  background-color: #f0f0f0;
   font-family: v.$m-plus-round;
-
-  .container {
-    position: relative;
-    display: grid;
-    place-items: center;
-    max-width: 1160px;
-    height: calc(100vw * (1280 / 1920));
-    min-height: 650px;
-    margin: 0 auto;
-    z-index: 2;
-    .catch {
-      height: 100%;
-      margin-top: 120px;
-      text-align: center;
-      font-weight: bold;
-      letter-spacing: 0;
-      line-height: 1.6;
-      .text {
+  mask-image: linear-gradient(180deg, #000 60%, #0000 90%);
+  .bg {
+    background-color: #f0f0f0;
+    background-image: url("../images/grinning-children.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-clip: border-box;
+    background-position: 60%;
+    mask-image: linear-gradient(180deg, #000 60%, #0000 90%);
+    mask-repeat: no-repeat;
+    .container {
+      position: relative;
+      display: grid;
+      place-items: center;
+      max-width: 1160px;
+      height: calc(100vw * (1280 / 1920));
+      min-height: 650px;
+      margin: 0 auto;
+      z-index: 2;
+      .catch {
+        height: 100%;
+        margin-top: 120px;
+        text-align: center;
         font-weight: bold;
-        color: v.$red;
-        text-shadow: 0 0 3px rgba(255,255,255);
+        letter-spacing: 0;
         line-height: 1.6;
-        font-size: clamp(1.5rem, 1.1417rem + 1.5287vw, 2.25rem);
-        color: v.$dk-gray;
-      }
-      .text:last-child {
-        margin-top: 16px;
-        font-size: clamp(2.875rem, 2.3376rem + 2.293vw, 4rem);
-        color: v.$dk-gray;
-        line-height: 1.6;
+        .text {
+          font-weight: bold;
+          color: v.$red;
+          text-shadow: 0 0 3px rgba(255,255,255);
+          line-height: 1.6;
+          font-size: clamp(1.5rem, 1.1417rem + 1.5287vw, 2.25rem);
+          color: v.$dk-gray;
+        }
+        .text:last-child {
+          margin-top: 16px;
+          font-size: clamp(2.875rem, 2.3376rem + 2.293vw, 4rem);
+          color: v.$dk-gray;
+          line-height: 1.6;
+        }
       }
     }
-  }
 
-  .custom-shape-divider-top-1766230186 {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-  }
+    .custom-shape-divider-top-1766230186 {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      width: 100%;
+      overflow: hidden;
+      line-height: 0;
+    }
 
-  .custom-shape-divider-top-1766230186 svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 150px;
-  }
+    .custom-shape-divider-top-1766230186 svg {
+      position: relative;
+      display: block;
+      width: calc(100% + 1.3px);
+      height: 150px;
+    }
 
-  .custom-shape-divider-top-1766230186 .line {
-    height: 155px;
+    .custom-shape-divider-top-1766230186 .line {
+      height: 155px;
+    }
+    .custom-shape-divider-top-1766230186 .line .shape-fill {
+      fill: #f0f0f0;
+    }
+    .custom-shape-divider-top-1766230186 .shape-fill {
+      fill: #f0f0f0;
+    }
   }
-  .custom-shape-divider-top-1766230186 .line .shape-fill {
-    fill: #fff;
-  }
-  .custom-shape-divider-top-1766230186 .shape-fill {
-    fill: #f0f0f0;
-  }
-
 }

@@ -2,7 +2,8 @@
 @use "../default/mixin" as m;
 .program {
   position: relative;
-  margin: 160px 0;
+  // margin: 160px 0;
+  padding: 160px 0;
   font-family: v.$m-plus-round;
   background-color: #fafafa;
   z-index: 1;
@@ -60,7 +61,8 @@
         width: max-content;
         font-family: v.$noto-sans;
         font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
-        color: v.$dk-gray; 
+        color: v.$dk-gray;
+        --pseudo-opacity: 0;
         &::after {
           content: "";
           width: 1em;
@@ -68,6 +70,7 @@
           border-radius: 100vh;
           background-color: v.$orange;
           transform: translateY(50%);
+          opacity: var(--pseudo-opacity);
         }
       }
       .program-sub-title {
