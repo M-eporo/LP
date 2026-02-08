@@ -6,7 +6,6 @@
   font-family: v.$m-plus-round;
   background-color: #f0f0f0;
   z-index: 1;
-
   .line-svg {
     position: absolute;
     top: 15%;
@@ -15,7 +14,6 @@
     height: auto;
     min-height: 1200px;
     z-index: 0;
-    
     &.pc {
       display: none;
       @include m.mq(lg) {
@@ -38,7 +36,6 @@
     z-index: -1;
     width: 600px;
   }
-  
   .container {
     position: relative;
     max-width: 1160px;
@@ -57,7 +54,6 @@
         transform: translate(50%, -100%);
       }
     }
-    
     .catch {
       text-align: center;
       .feature-title {
@@ -87,9 +83,7 @@
         font-weight: bold;
         color: v.$dk-gray;
       }
-      
     }
-    
     .cards-container {
       position: relative;
       margin-top: 64px;
@@ -100,13 +94,11 @@
         color: v.$dk-gray;
         letter-spacing: 0.15em;
       }
-    
       .cards {
         counter-reset: card;
         display: grid;
         gap: 84px;
         margin-top: 84px;
-        
         .card {
           counter-increment: card;
           position: relative;
@@ -181,10 +173,8 @@
                   flex: 0 0 max(175px);
                 }
               }
-              
             }
           }
-
           &:nth-child(2) {
             @include m.mq(lg) {
               flex-direction: row-reverse;
@@ -205,7 +195,6 @@
             }
           }
         }
-        
         .card::after {
           content: "0" counter(card);
           line-height: 1;
@@ -225,7 +214,6 @@
             transform: translateY(-50%);
           }
         }
-        
         .card:nth-child(2)::after {
           right: 0;
           color: v.$blue;
@@ -238,10 +226,7 @@
           color: v.$red;
         }
       }
-
-      
     }
-
     .feature-bottom {
       position: relative;
       margin-top: 160px;
@@ -250,7 +235,6 @@
         top: -10%;
         left: -10%;
       }
-
       .bottom-head {
         .text {
           max-width: 800px;
