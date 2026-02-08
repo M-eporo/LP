@@ -10,7 +10,6 @@ html, body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-  //background-color: #f0f0f0;
 }
 a {
   color: #000;
@@ -55,43 +54,7 @@ p {
   top: 16px;
   z-index: 9999;
 }
-.intro-cover{
-  position: fixed;
-  inset: 0;
-  background: #f0f0f0;
-  z-index: 9999;
-  pointer-events: none;
-}
 
-@font-face {
-  font-family: 'apricotJapanesefont';
-  src: url('../../fonts/apricotJapanesefont.woff2') format('woff2'),
-  url('apricotJapanesefont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "APJapanesefontH";
-  src: url("../../fonts/APJapanesefontH.woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "APJapanesefontHT";
-  src: url("../../fonts/APJapanesefontHT.woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Natsume";
-  src: url("../../fonts/Natsume.woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 @font-face {
     font-family: 'Rounded Mplus 1c';
     src: url('../../RoundedMplus1c-Black.woff2') format('woff2');

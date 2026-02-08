@@ -1,12 +1,18 @@
   @use "../default/variables" as v;
   @use "../default/mixin" as m;
   .cta {
-    
+    position: relative;
     padding: clamp(6.25rem, 6.369vw + 4.757rem, 9.375rem) 4% 100px;
     font-family: v.$m-plus-round;
     background-color: #f0f0f0;
     border-radius: 0 0 80px 80px;
-    
+    .path-svg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%; 
+      height: auto; 
+    }
     .container {
       position: relative;
       max-width: 768px;
@@ -25,7 +31,6 @@
         width: clamp(3.125rem, 1.4583rem + 6.9444vw, 6.25rem);
         transform: translate(0, -50%) rotate(-45deg);
       }
-      
       .catch {
         text-align: center;
         
@@ -57,6 +62,7 @@
           font-size: clamp(1rem, 0.5229rem + 2.0356vw, 1.5rem);
           font-weight: bold;
           color: v.$dk-gray;
+          --transform-scale: scale(0) rotate(0deg);
           &::after {
             display: inline-block;
             content: "";
@@ -66,6 +72,9 @@
             background-repeat: no-repeat;
             background-size: contain;
             background-position: center;
+            transform: var(--transform-scale);
+            transform-origin: bottom;
+            will-change: transform;
             @include m.mq(sm) {
               width: 48px;
             }

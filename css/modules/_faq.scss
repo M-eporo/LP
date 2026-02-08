@@ -65,7 +65,6 @@
         font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
         color: v.$dk-gray;
         text-align: center;
-
         &::before,
         &::after {
           position: absolute;
@@ -76,11 +75,9 @@
           border-radius: 100vh;
           background-color: v.$orange;
           transform: translateY(50%);
-          
         }
         &::before {
           left: -0.7em;
-          
         }
         &::after {
           right: -0.7em;
@@ -98,7 +95,7 @@
         font-weight: bold;
         color: v.$dk-gray;
         text-align: center;
-        
+        --transform-scale: scale(0) rotate(0deg);
         &::before{
           display: inline-block;
           width: 48px;
@@ -108,7 +105,9 @@
           background-repeat: no-repeat;
           background-size: contain;
           background-position: center;
-          transform: rotate(-25deg);
+          transform: var(--transform-scale);
+          transform-origin: bottom;
+          will-change: transform;
         }
       }
     }

@@ -65,6 +65,7 @@
         line-height: 1.7;
         letter-spacing: 0.15em;
         z-index: 1;
+        --transform-scale: scale(0) rotate(0deg);
         @include m.mq(sm) {
           font-size: 32px;
         }
@@ -73,13 +74,15 @@
           position: absolute;
           top: 0;
           left: 102%;
-          transform: rotate(25deg);
           z-index: 0;
           width: 64px;
           height: 45px;
           background-image: url("../images/note-pen.png");
           background-repeat: no-repeat;
           background-size: contain;
+          transform: var(--transform-scale);
+          transform-origin: bottom;
+          will-change: transform;
         }
       }
       .voice-sub-title {

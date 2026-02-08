@@ -61,42 +61,6 @@ p {
   z-index: 9999;
 }
 
-.intro-cover {
-  position: fixed;
-  inset: 0;
-  background: #f0f0f0;
-  z-index: 9999;
-  pointer-events: none;
-}
-
-@font-face {
-  font-family: "apricotJapanesefont";
-  src: url("../../fonts/apricotJapanesefont.woff2") format("woff2"), url("apricotJapanesefont.woff") format("woff");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "APJapanesefontH";
-  src: url("../../fonts/APJapanesefontH.woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "APJapanesefontHT";
-  src: url("../../fonts/APJapanesefontHT.woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Natsume";
-  src: url("../../fonts/Natsume.woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
 @font-face {
   font-family: "Rounded Mplus 1c";
   src: url("../../RoundedMplus1c-Black.woff2") format("woff2");
@@ -2051,9 +2015,17 @@ p {
   text-align: center;
   font-size: 18px;
   font-weight: bold;
+  letter-spacing: 0.1em;
   color: #fafafa;
   cursor: pointer;
   box-shadow: 0px 5px 0px 0px rgba(0, 0, 0, 0.5);
+  transition: all 0.6s;
+}
+@media (hover: hover) and (pointer: fine) {
+  .cv .container .content-wrap .btn:hover {
+    transform: translateY(10px);
+    box-shadow: none;
+  }
 }
 .cv .container .svg-tri {
   position: absolute;
@@ -2173,6 +2145,7 @@ p {
   line-height: 1.7;
   letter-spacing: 0.15em;
   z-index: 1;
+  --transform-scale: scale(0) rotate(0deg);
 }
 @media (min-width: 600px) {
   .voice .container .catch .voice-title {
@@ -2184,13 +2157,15 @@ p {
   position: absolute;
   top: 0;
   left: 102%;
-  transform: rotate(25deg);
   z-index: 0;
   width: 64px;
   height: 45px;
   background-image: url("../images/note-pen.png");
   background-repeat: no-repeat;
   background-size: contain;
+  transform: var(--transform-scale);
+  transform-origin: bottom;
+  will-change: transform;
 }
 .voice .container .catch .voice-sub-title {
   margin-top: 16px;
@@ -2384,6 +2359,7 @@ p {
   font-weight: bold;
   color: #555;
   text-align: center;
+  --transform-scale: scale(0) rotate(0deg);
 }
 .faq .container .catch .faq-text::before {
   display: inline-block;
@@ -2394,7 +2370,9 @@ p {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  transform: rotate(-25deg);
+  transform: var(--transform-scale);
+  transform-origin: bottom;
+  will-change: transform;
 }
 .faq .container .accordion {
   margin: 60px auto 0;
@@ -2445,10 +2423,18 @@ p {
 }
 
 .cta {
+  position: relative;
   padding: clamp(6.25rem, 6.369vw + 4.757rem, 9.375rem) 4% 100px;
   font-family: "M PLUS Rounded 1c", sans-serif;
   background-color: #f0f0f0;
   border-radius: 0 0 80px 80px;
+}
+.cta .path-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
 }
 .cta .container {
   position: relative;
@@ -2500,6 +2486,7 @@ p {
   font-size: clamp(1rem, 0.5229rem + 2.0356vw, 1.5rem);
   font-weight: bold;
   color: #555;
+  --transform-scale: scale(0) rotate(0deg);
 }
 .cta .container .catch .cta-text::after {
   display: inline-block;
@@ -2510,6 +2497,9 @@ p {
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
+  transform: var(--transform-scale);
+  transform-origin: bottom;
+  will-change: transform;
 }
 @media (min-width: 600px) {
   .cta .container .catch .cta-text::after {
