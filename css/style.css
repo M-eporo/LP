@@ -1286,8 +1286,8 @@ p {
   padding: 46px 0;
   border-radius: 36px;
   background-color: #eee;
-  box-shadow: 0px 0px 150px 5px rgba(255, 195, 195, 0.8) inset, 0px 0px 15px 7px rgba(255, 195, 195, 0.8);
-  border-radius: 10px;
+  box-shadow: 0px 0px 150px 5px rgba(255, 255, 255, 0.8) inset, 0px 0px 15px 7px rgba(255, 255, 255, 0.8);
+  border-radius: 90px;
 }
 @media (min-width: 768px) {
   .feature .container .feature-bottom .content-wrap {
@@ -1318,7 +1318,7 @@ p {
   margin: 0 auto;
   padding: 16px 16px;
   border-radius: 100vh;
-  background-color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.6);
   text-align: center;
   font-size: 18px;
   font-weight: bold;
@@ -1362,13 +1362,13 @@ p {
   margin-top: 12px;
 }
 .feature .container .feature-bottom .content-wrap .item:nth-child(2) .title {
-  background-color: #2379E3;
+  background-color: rgba(35, 121, 227, 0.6);
 }
 .feature .container .feature-bottom .content-wrap .item:nth-child(4) .title {
-  background-color: #55DD96;
+  background-color: rgba(85, 221, 150, 0.6);
 }
 .feature .container .feature-bottom .content-wrap .item:nth-child(5) .title {
-  background-color: #ECAEFF;
+  background-color: rgba(236, 174, 255, 0.6);
 }
 .feature .container .feature-bottom .content-wrap .item.left-top {
   grid-area: lt;
@@ -1633,7 +1633,7 @@ p {
 .program .domains {
   position: relative;
   max-width: 1160px;
-  margin: 160px auto;
+  margin: 160px auto 0;
   padding: 0 4%;
   z-index: 1;
 }
@@ -1865,25 +1865,26 @@ p {
   z-index: -1;
 }
 .program .domains .obj.square-green {
-  width: 200px;
-  top: 10%;
+  width: 70px;
+  top: 15%;
 }
 .program .domains .obj.square-orange {
+  width: 100px;
   top: 0%;
   right: 15%;
 }
 .program .domains .obj.square-red {
-  width: 250px;
+  width: 170px;
   top: 40%;
   right: 10%;
 }
 .program .domains .obj.square-blue {
-  width: 80px;
+  width: 110px;
   top: 75%;
   left: 0;
 }
 .program .domains .obj.square-pink {
-  width: 200px;
+  width: 70px;
   top: 90%;
   right: 5%;
 }
@@ -2362,6 +2363,9 @@ p {
   --transform-scale: scale(0) rotate(0deg);
 }
 .faq .container .catch .faq-text::before {
+  position: absolute;
+  top: 10px;
+  left: -50px;
   display: inline-block;
   width: 48px;
   aspect-ratio: 64/63;
@@ -2373,6 +2377,13 @@ p {
   transform: var(--transform-scale);
   transform-origin: bottom;
   will-change: transform;
+}
+@media (min-width: 600px) {
+  .faq .container .catch .faq-text::before {
+    position: relative;
+    top: revert;
+    left: revert;
+  }
 }
 .faq .container .accordion {
   margin: 60px auto 0;
@@ -2455,6 +2466,7 @@ p {
   right: 0;
   width: clamp(3.125rem, 1.4583rem + 6.9444vw, 6.25rem);
   transform: translate(0, -50%) rotate(-45deg);
+  will-change: transform;
 }
 .cta .container .catch {
   text-align: center;

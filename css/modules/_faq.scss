@@ -97,6 +97,9 @@
         text-align: center;
         --transform-scale: scale(0) rotate(0deg);
         &::before{
+          position: absolute;
+          top: 10px;
+          left: -50px;
           display: inline-block;
           width: 48px;
           aspect-ratio: 64/63;
@@ -108,6 +111,11 @@
           transform: var(--transform-scale);
           transform-origin: bottom;
           will-change: transform;
+          @include m.mq(sm) {
+            position: relative;
+            top: revert;
+            left: revert;
+          }
         }
       }
     }

@@ -110,7 +110,6 @@ document.addEventListener("DOMContentLoaded", () => {
     //Svg Line Animation
     const linePath__problems = document.querySelector("#problems .js-line-svg .js-path");
     const mainImage__problems = document.querySelector("#problems .container .js-img-wrap");
-    if(!linePath__problems) return;
 
     if(linePath__problems) {
         const pathLength__problems = linePath__problems.getTotalLength();
@@ -121,9 +120,10 @@ document.addEventListener("DOMContentLoaded", () => {
         gsap.to(linePath__problems, {
             scrollTrigger: { 
                 trigger: mainImage__problems,
-                start: "top 70%",
-                end: "top 30%",
+                start: "top 60%",
+                end: "bottom 90%",
                 scrub: 1,
+                onLeave: self => self.disable(false, true),
             },
             strokeDashoffset: 0,
         });
@@ -221,14 +221,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }, "<");    
 
 //Feature Section
-    const feature = document.getElementById("feature");
-    const container = document.querySelector("#feature .container");
     const cardsContainer = document.querySelector("#feature .container .js-cards-container");
     const linePath__feature = document.querySelector("#feature .pc.js-line-svg .js-path");
     const linePath__feature__sp = document.querySelector("#feature .sp.js-line-svg .js-path");
 
     //ライン - pc
-    if(!linePath__feature) return;
     if(linePath__feature) {
         const pathLength__feature = linePath__feature.getTotalLength();
         gsap.set(linePath__feature, {
@@ -241,12 +238,13 @@ document.addEventListener("DOMContentLoaded", () => {
                 start: "top 65%",
                 end: "bottom 40%",
                 scrub: 1,
+                onLeave: self => self.disable(false,true),
             },
             strokeDashoffset: 0,
+            
         });
     }
     //ライン - sp
-    if(!linePath__feature__sp) return;
     if(linePath__feature__sp) {
         const pathLength__feature__sp = linePath__feature__sp.getTotalLength();
         gsap.set(linePath__feature__sp, {
@@ -259,6 +257,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 start: "top 35%",
                 end: "bottom 0%",
                 scrub: 1,
+                onLeave: self => self.disable(false, true),
             },
             strokeDashoffset: 0
         })
@@ -378,7 +377,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const linePath__program__sp = document.querySelector("#program .sp.js-line-svg .js-path");
 
     //ライン - pc
-    if(!linePath__program) return;
     if(linePath__program) {
         const pathLength__program = linePath__program.getTotalLength();
         gsap.set(linePath__program, {
@@ -391,12 +389,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 start: "top 55%",
                 end: "bottom 40%",
                 scrub: 1,
+                onLeave: self => self.disable(false,true),
             },
             strokeDashoffset: 0,
         });
     }
     //ライン - sp
-    if(!linePath__program__sp) return;
     if(linePath__program__sp) {
         const pathLength__program__sp = linePath__program__sp.getTotalLength();
         gsap.set(linePath__program__sp, {
@@ -407,8 +405,10 @@ document.addEventListener("DOMContentLoaded", () => {
             scrollTrigger: {
                 trigger: "#program .domains",
                 start: "top 40%",
-                end: "bottom 0%",
+                end: "bottom 40%",
                 scrub: 1,
+                onLeave: self => self.disable(false,true),
+                markers: true,
             },
             strokeDashoffset: 0,
         })
@@ -536,18 +536,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     
     ctaStarTl
-    .to(star, { autoAlpha: 0.7, duration: 0.5, ease: "power1.out"})
+    .to(star, { autoAlpha: 0.7, duration: 0.5 })
     .to(star, {
         motionPath: {
             path: "#motionPath-star",
             align: "#motionPath-star",
             alignOrigin: [0.5, 0.5],
-            autoRotate: true,
-            start: 0.1,
-            end: 0.8
+            autoRotate: false,
+            start: 0.2,
+            end: 0.9
         },
-        duration: 4.5,
-        ease: "power3.Out"
+        rotationZ: 720,
+        rotationX: -720,
+        duration: 3.5,
+        ease: "power2.Out"
     }, "-=0.5")
     .to(star, { autoAlpha: 0, duration: 0.5, ease: "power1.out" }, "-=1")
 

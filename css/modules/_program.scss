@@ -225,7 +225,7 @@
   .domains {
     position: relative;
     max-width: 1160px;
-    margin: 160px auto;
+    margin: 160px auto 0;
     padding: 0 4%;
     z-index: 1;
     @include m.mq(xl) {
@@ -499,25 +499,26 @@
     }
 
     .obj.square-green {
-      width: 200px;
-      top: 10%;
+      width: 70px;
+      top: 15%;
     }
     .obj.square-orange {
+      width: 100px;
       top: 0%;
       right: 15%;
     }
     .obj.square-red {
-      width: 250px;
+      width: 170px;
       top: 40%;
       right: 10%
     }
     .obj.square-blue {
-      width: 80px;
+      width: 110px;
       top: 75%;
       left: 0;
     }
     .obj.square-pink {
-      width: 200px;
+      width: 70px;
       top: 90%;
       right: 5%;
     }
