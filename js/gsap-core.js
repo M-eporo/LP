@@ -408,7 +408,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 end: "bottom 40%",
                 scrub: 1,
                 onLeave: self => self.disable(false,true),
-                markers: true,
             },
             strokeDashoffset: 0,
         })

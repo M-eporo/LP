@@ -60,10 +60,9 @@
                 }
             }
         }
-
         .splide.office__splide {
             max-width: 100%;
-            padding: 84px min(10.56vw,152px) 60px 40px;
+            padding: 84px min(10.56vw,152px) 60px 10px;
             border-radius: 0 100vh 100vh 0;
             background: url("../images/office.jpg");
             background-repeat: no-repeat;
@@ -72,6 +71,12 @@
             filter: grayscale(20%);
             z-index: 1;
             @include m.mq(sm) {
+                padding: 64px min(10.56vw,152px) 60px 50px;
+            }
+            @media (min-width: 700px) {
+                padding: 64px min(5.56vw,152px) 60px 10px;
+            }
+            @include m.mq(md) {
                 padding: 84px min(10.56vw,152px) 60px 50px;
             }
             .splide__track {
@@ -84,13 +89,23 @@
                             display: flex;
                             flex-direction: column;
                             justify-content: space-between;
-                            width: 350px;
                             height: 270px;
-                            padding: 16px 0 16px 10px;
+                            padding: 16px 0 16px clamp(1.5rem, 20.444vw - 3.292rem, 4.375rem);
+                            // @include m.mq(sm) {
+                            //     display: grid;
+                            //     justify-items: start;
+                            //     justify-content: center;
+                            //     padding: 16px 12px 16px 12px;
+                            // }
+                            @media (min-width: 701px) {
+                                display: flex;
+                                flex-direction: column;
+                                justify-content: space-between;
+                                padding: 16px 12px 16px 12px;
+                            }
                             dt {
                                 position: relative;
-                                // border-bottom: 1px solid v.$dk-gray;
-                                font-size: clamp(1.125rem, 0.9464rem + 0.7619vw, 1.375rem);
+                                font-size: clamp(1.125rem, 0.9464rem + 0.7619vw, 1.25rem);
                                 font-weight: bold;
                                 color: v.$chacoal;
                                 text-shadow: 2px 2px 1px #fff;
@@ -101,6 +116,14 @@
                                     width: 2px;
                                     height: 194px;
                                     background-color: v.$red;
+                                }
+                                .feature-word {
+                                    padding-left: 0.5em;
+                                    font-size: 14px;
+                                    color: v.$red;
+                                    @include m.mq(sm) {
+                                        font-size: 16px;
+                                    }
                                 }
                             }
                             dd {

@@ -63,11 +63,11 @@ programSplide.mount();
 const officeSplide = new Splide(".splide.office__splide", {
   perPage: 3,
   perMove: 2,
-  gap: "24px",
   autoplay: false,
   wheel: false,
   rewind: true,
   omitEnd: true,
+  arrows: false,  
   classes: {
     prev: 'splide__arrow--prev custom-prev',
 		pagination: 'splide__pagination custom-pagination',
@@ -82,6 +82,11 @@ const officeSplide = new Splide(".splide.office__splide", {
       trimSpace: true,
     },
     768: {
+      perPage: 2,
+      perMove: 1,
+      omitEnd: false,
+    },
+    700: {
       perPage: 1,
       perMove: 1,
       omitEnd: false,
