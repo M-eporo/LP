@@ -120,7 +120,7 @@
       .box-container {
         padding: 36px 0;
         .splide__arrow--prev.custom-prev {
-          left: -1.5em;
+          left: -2.5em;
         }
         .splide__pagination.custom-pagination {
           bottom: -1.5em;
@@ -523,29 +523,5 @@
       right: 5%;
     }
   }
-  // @include m.mq(xl) {
-  //   .domains {
-  //     padding-inline: 0;
-  //     .sp {
-  //       display: none;
-  //     }
-  //   }
-  // }
-  // @include m.mq(lg) {
-  //   .sp-lg {
-  //     display: none;
-  //   }
-  // }
-  // @include m.mq(sm) {
-  //   .domains {
-  //     .domain-wrap {
-  //       transform: scale(1.0);
-  //     }
-  //   }
-  //   .sp-sm {
-  //     display: none;
-  //   }
-  // }
-
 
 }
