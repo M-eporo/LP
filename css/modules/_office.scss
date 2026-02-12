@@ -156,6 +156,10 @@
             }
             .splide__pagination.custom-pagination {
                 gap: 12px;
+                left: -100px;
+                @include m.mq(sm) {
+                    left: 0;
+                }
                 .splide__pagination__page.custom-pagination-page {
                     width: 14px;
                     height: 14px;

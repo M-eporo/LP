@@ -144,6 +144,13 @@
           background-color: #fff;
           clip-path: polygon(50% 0, 0% 100%, 100% 100%);
         }
+
+        img {
+          transform: scaleY(1.4);
+          @include m.mq(sm) {
+            transform: scaleY(1.0);
+          }
+        }
       }
 
       .item:nth-child(even) {

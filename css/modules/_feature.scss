@@ -60,7 +60,7 @@
         position: relative;
         display: inline-flex;
         align-items: center;
-        gap: 12px;
+        gap: 3px;
         width: max-content;
         font-family: v.$noto-sans;
         font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
@@ -75,6 +75,12 @@
           background-color: v.$blue;
           transform: translateY(50%);
           opacity: var(--pseudo-opacity);
+        }
+        &::before {
+          margin-right: 5px;
+        }
+        &::after {
+          margin-left: 5px;
         }
       }
       .feature-sub-title {
