@@ -12,6 +12,7 @@ function toggleMask() {
     hamburger.setAttribute("aria-label", "メニューを閉じる");
     mask.removeAttribute("hidden");
   } else if(isOpen === "true") {
+    
     hamburger.setAttribute("aria-expanded", "false");
     hamburger.setAttribute("aria-label", "メニューを開く");
     mask.removeAttribute("hidden", "");

@@ -20,6 +20,7 @@
         flex-direction: column-reverse;
         justify-content: center;
         padding: 114px 3% 0px;
+        background: radial-gradient(circle at center, black 0%, transparent 0%);
         @include m.mq(md) {
             display: revert;
             min-height: 600px;
@@ -49,7 +50,7 @@
                     font-weight: bold;
                     color: #feaa2d;
                     text-shadow: 1px 1px 2px #fff;
-                    
+                    opacity: 0;
                     @include m.mq(xxl) {
                     font-size: 64px;
                     }
@@ -59,7 +60,7 @@
                     font-weight: bold;
                     color: v.$red;
                     text-shadow: 1px 1px 2px #fff;
-                    
+                    opacity: 0;
                     @include m.mq(xxl) {
                     font-size: 48px;
                     }

@@ -40,7 +40,6 @@
     position: relative;
     max-width: 1160px;
     margin: 0 auto;
-    z-index: 2;
     .obj {
       position: absolute;
     }
@@ -274,8 +273,7 @@
         border-radius: 36px;
         background-color: v.$ivory;
         box-shadow: 0px 0px 150px 5px rgba(255, 255, 255, 0.8) inset,
-        0px 0px 15px 7px rgba(255, 255, 255, 0.8)
-        ;
+        0px 0px 15px 7px rgba(255, 255, 255, 0.8);
         border-radius: 90px;
         
         @include m.mq(md) {
@@ -307,7 +305,7 @@
             margin: 0 auto;
             padding: 16px 16px;
             border-radius: 100vh;
-            background-color: #ff6b6b99;
+            background-color: #faa1a1;
             text-align: center;
             font-size: 18px;
             font-weight: bold;
@@ -351,30 +349,50 @@
 
           &:nth-child(2) {
             .title {
-              background-color: #2379E399;
+              background-color: #75a9e8;
             }
           }
           &:nth-child(4) {
             .title {
-              background-color: #55DD9699;
+              background-color: #93e5ba;
             }
           }
           &:nth-child(5) {
             .title {
-              background-color: #ECAEFF99;
+              background-color: #eec8f9;
             }
           }
         }
         .item.left-top {
+          position: relative;
           grid-area: lt;
+          
+          .title {
+            position: relative;
+            z-index: 1;
+            .dog-wrap {
+              position: absolute;
+              top: -40px;
+              left: -15px;
+              transform-origin: bottom center;
+              transform: scale(0) rotate(-33deg) ;
+              width: 70px;
+              z-index: -1;
+              .dog-svg {
+                width: 100%;
+                height: auto;
+                display: block;
+              }
+            }
+          }
         }
         .item.left-bottom {
           grid-area: lb;
           margin-top: 16px;
         }
         .item.center {
+          display: none;
           grid-area: ct;
-          display: flex;
           flex-direction: row;
           justify-content: center;
           align-items: center;
@@ -386,6 +404,13 @@
               width: 45%;
               aspect-ratio: 418 / 616;
             }
+          }
+          @include m.mq(md) {
+            display: revert;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
           }
         }
         .item.right-top {

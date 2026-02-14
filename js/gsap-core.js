@@ -1,28 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
-    // 1文字ずつspan化 - <br>保持
+
     const wrapChars = (el) => {
         if (!el) return [];
-        // すでに処理済みなら二重にしない
         if (el.dataset.charsWrapped === "1") {
             return Array.from(el.querySelectorAll(".char"));
         }
         el.dataset.charsWrapped = "1";
-        // 子ノードを走査して、テキストノードだけを分解
         const nodes = Array.from(el.childNodes);
         const frag = document.createDocumentFragment();
         nodes.forEach((node) => {
             if (node.nodeType === Node.TEXT_NODE) {
-            // 改行やスペースも含めて1文字ずつ
             Array.from(node.textContent).forEach((ch) => {
                 const span = document.createElement("span");
                 span.className = "char";
-                // 半角スペースが潰れないように
                 span.textContent = ch === " " ? "\u00A0" : ch;
                 frag.appendChild(span);
             });
             } else if (node.nodeType === Node.ELEMENT_NODE) {
-            // <br> など要素ノードはそのまま残す
             frag.appendChild(node);
             }
         });
@@ -30,8 +25,6 @@ document.addEventListener("DOMContentLoaded", () => {
       el.appendChild(frag);
       return Array.from(el.querySelectorAll(".char"));
     };
-
-
     const commonAnimFrom = {
         autoAlpha: 0, filter: "blur(10px)", y: 10
     };
@@ -39,22 +32,19 @@ document.addEventListener("DOMContentLoaded", () => {
         autoAlpha: 1, filter: "blur(0px)", y: 0, duration: 0.6
     };
 
-
 //Header, Firstview
-    const firstview = document.querySelector(".firstview .bg");
     const logo = document.querySelector(".header .container .js-logo");
-    const hamburgerBtn = document.querySelector(".header .js-hamburger-btn");
     const navItems = document.querySelectorAll(".header .container .inner .pc-nav .pc-sns .js-sns-item");
     const primaryBtn = document.querySelector(".header .container .inner .js-primary-btn");
     const headerItems = [...navItems, primaryBtn];
-    //Header Animation Set
+    const hamburgerBtn = document.querySelector(".header .js-hamburger-btn");
     gsap.set([logo, hamburgerBtn, ...headerItems], {
         autoAlpha: 0,
         x: -20,
         filter: "blur(20px)",
     });
-    //Firstview Animation Set
-    gsap.set(firstview, { 
+    gsap.set("#firstview .bg", { 
+        maskImage: "radial-gradient(circle at center, black 0%, transparent 0%)",
         WebkitMaskImage: "radial-gradient(circle at center, black 0%, transparent 0%)" 
         }
     );
@@ -62,8 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const pageSubTitle  = document.querySelector("#firstview .js-page-sub-title");
     const mainChars = wrapChars(pageMainTitle);
     const subChars  = wrapChars(pageSubTitle);
-
-    //Main Title Animation Set
     gsap.set([mainChars, subChars], {
         autoAlpha: 0,
         y: 5,
@@ -80,7 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
     let mm = gsap.matchMedia();
     mm.add("(min-width: 1024px)", () => {
         const firstviewTl = gsap.timeline();
-        firstviewTl.to(firstview, {
+        firstviewTl.to("#firstview .bg", {
+            maskImage: "radial-gradient(circle at center, black 0%, black 100%, transparent 110%)",
             WebkitMaskImage: "radial-gradient(circle at center, black 0%, black 100%, transparent 110%)" ,
             duration: 1,
             ease: "power2.in",
@@ -108,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.out",
             duration: 0.8,
         }, ">-1"
+        ).to(pageMainTitle, { opacity: 1 }, "<"
         ).to(subChars, {
             autoAlpha: 1,
             y: 0,
@@ -117,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.out",
             duration: 0.8,
         }, "-=1"
+        ).to(pageSubTitle, { opacity: 1 }, "<"
         ).to("#problems .container .js-catch", {
             autoAlpha: 1,
             y: 0,
@@ -126,7 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
     mm.add("(max-width: 1023px)", () => {
         const firstviewTl = gsap.timeline();
-        firstviewTl.to(firstview, {
+        firstviewTl.to("#firstview .bg", {
+            maskImage: "radial-gradient(circle at center, black 0%, black 100%, transparent 110%)",
             WebkitMaskImage: "radial-gradient(circle at center, black 0%, black 100%, transparent 110%)" ,
             duration: 1,
             ease: "power2.in",
@@ -153,6 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.out",
             duration: 0.8,
         }, ">-1"
+        ).to(pageMainTitle, { opacity: 1 }, "<"
         ).to(subChars, {
             autoAlpha: 1,
             y: 0,
@@ -162,6 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.out",
             duration: 0.8 ,
         }, "-=1"
+        ).to(pageSubTitle, { opacity: 1 }, "<"
         ).to("#problems .container .js-catch", {
             autoAlpha: 1,
             y: 0,
@@ -180,7 +174,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 //Problems Section
     mm.add("(min-width: 600px)", () => {
-        //Svg Line Animation
         const linePath__problems = document.querySelector("#problems .js-line-svg .js-path");
         const mainImage__problems = document.querySelector("#problems .container .js-img-wrap");
         const pathLength__problems = linePath__problems.getTotalLength();
@@ -198,8 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             strokeDashoffset: 0,
         });
-        
-        //Text Animation
         const text__problems = document.querySelectorAll("#problems .container .text-wrap .js-text");   
         const chars = gsap.utils.toArray(text__problems).flatMap((text) => {
             return wrapChars(text);
@@ -216,7 +207,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }, ">");
     });
     mm.add("(max-width: 599px)", () => {
-        //Svg Line Animation
         const linePath__problems = document.querySelector("#problems .js-line-svg .js-path");
         const mainImage__problems = document.querySelector("#problems .container .js-img-wrap");
         const pathLength__problems = linePath__problems.getTotalLength();
@@ -234,8 +224,6 @@ document.addEventListener("DOMContentLoaded", () => {
             },
             strokeDashoffset: 0,
         });
-        
-        //Text Animation
         const text__problems_first = document.querySelector("#problems .container .text-wrap .js-text:first-child"); 
         const text__problems_last = document.querySelector("#problems .container .text-wrap .js-text:last-child"); 
         const firstChars = wrapChars(text__problems_first);
@@ -280,7 +268,6 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 2,
         ease: "power2.out",
     });
-
 //About Section
     mm.add("(min-width: 1024px)", () => {
         const aboutTl = gsap.timeline({
@@ -308,7 +295,6 @@ document.addEventListener("DOMContentLoaded", () => {
         .from(("#about .container .js-text-wrap"), {...xMove__about, xPercent: 50}, "<")
         .from(("#about .container .js-text-wrap"), autoAlpha__about, "<");
     });
-
     mm.add("(max-width: 1023px)", () => {
         const aboutTitle = document.querySelector("#about .container .catch .js-about-title");
         const aboutTitleChars = wrapChars(aboutTitle);
@@ -324,7 +310,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 start: "top 80%",
             },
         });
-
         aboutTl
         .to(aboutTitleChars, {
             scaleY: 1,
@@ -369,12 +354,9 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 1.5,
         ease: "power4.out"
     }, "<");    
-
 //Feature Section
     const linePath__feature = document.querySelector("#feature .pc.js-line-svg .js-path");
     const linePath__feature__sp = document.querySelector("#feature .sp.js-line-svg .js-path");
-
-    //ライン - pc
     const pathLength__feature = linePath__feature.getTotalLength();
     gsap.set(linePath__feature, {
         strokeDasharray:  pathLength__feature,
@@ -383,14 +365,13 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.to(linePath__feature, {
         scrollTrigger: { 
             trigger: "#feature .container .js-cards-container",
-            start: "top 65%",
+            start: "top 40%",
             end: "bottom 40%",
             scrub: 1,
             onLeave: self => self.disable(false,true),
         },
         strokeDashoffset: 0,
     });
-    //ライン - sp
     const pathLength__feature__sp = linePath__feature__sp.getTotalLength();
     gsap.set(linePath__feature__sp, {
         strokeDasharray: pathLength__feature__sp,
@@ -406,7 +387,6 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         strokeDashoffset: 0
     });
-    //セクションメインタイトル
     const featureTitle = document.querySelector("#feature .container .catch .js-feature-title");
     const featureTitleChars = wrapChars(featureTitle);
     gsap.set(featureTitleChars, {
@@ -438,7 +418,6 @@ document.addEventListener("DOMContentLoaded", () => {
         { autoAlpha: 0, filter: "blur(10px)" },
         { autoAlpha: 1, filter: "blur(0px)", duration: 0.6 }, "-=0.2"
     )
-    //ボトムセクションコンテンツ
     gsap.set("#feature .container .js-feature-bottom", {
         autoAlpha: 0,
         filter: "blur(10px)"
@@ -452,9 +431,28 @@ document.addEventListener("DOMContentLoaded", () => {
         filter: "blur(0px)",
         duration: 1
     });
-    
+
+    mm.add("(max-width: 767px)", () => {
+        gsap.set("#feature .container .feature-bottom .content-wrap .item.left-top .title .js-dog", {
+            transformOrigin: "bottom center",
+            scaleY: 0,
+            scaleX: 1,
+            rotation: -33,
+        });
+        gsap.to("#feature .container .feature-bottom .content-wrap .item.left-top .title .js-dog", {
+            scrollTrigger: {
+                trigger: "#feature .container .feature-bottom .item.left-top",
+                markers: true,
+                start: "top 80%",
+                end: "top 0"
+            },
+            scaleY: 1,
+            rotation: -33,
+            duration: 0.8,
+            ease: "back.out(4)"
+        });
+    });
 //Program Section
-    //First Section
     const programTitle = document.querySelector("#program .container .catch .js-program-title");
     const programTitleChars = wrapChars(programTitle);
     gsap.set(programTitleChars, {
@@ -522,12 +520,8 @@ document.addEventListener("DOMContentLoaded", () => {
         ease: "power3.out",
         duration: 0.6,
     }, "-=0.8");
-
-    //Second Section
     const linePath__program = document.querySelector("#program .pc.js-line-svg .js-path");
     const linePath__program__sp = document.querySelector("#program .sp.js-line-svg .js-path");
-
-    //ライン - pc
     const pathLength__program = linePath__program.getTotalLength();
     gsap.set(linePath__program, {
         strokeDasharray:  pathLength__program,
@@ -543,7 +537,6 @@ document.addEventListener("DOMContentLoaded", () => {
         },
         strokeDashoffset: 0,
     });
-    //ライン - sp
     const pathLength__program__sp = linePath__program__sp.getTotalLength();
     gsap.set(linePath__program__sp, {
         strokeDasharray: pathLength__program__sp,
@@ -573,7 +566,6 @@ document.addEventListener("DOMContentLoaded", () => {
         { rotation: 720, autoAlpha: 0, filter: "blur(20px)"},
         { rotation: 0, autoAlpha: 1, filter: "blur(0px)", duration: 1.5, ease: "power4.out" }
     )
-    
     const objs = gsap.utils.toArray("#program .domains .obj");
     const paramsForObjs = objs.map((_, i) => ({
         phase: (i + 1)  * 0.8,
@@ -598,7 +590,6 @@ document.addEventListener("DOMContentLoaded", () => {
             stagger: 1
         });
     }
-
 //Voice Section
     const voiceTl = gsap.timeline({
         scrollTrigger: {
@@ -626,7 +617,6 @@ document.addEventListener("DOMContentLoaded", () => {
         repeatDelay: 0.6,
         ease: "power2.inOut"
     })
-
 //Faq Section
     const faqTl = gsap.timeline({
         scrollTrigger: {
@@ -654,7 +644,6 @@ document.addEventListener("DOMContentLoaded", () => {
         repeatDelay: 0.6,
         ease: "power2.inOut"
     });
-
 //Cta Section
     const star = document.querySelector("#cta .star");
     const starPath = document.querySelector(".cta #motionPath-star");
@@ -679,7 +668,6 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.fromTo(star, {autoAlpha: 0},{autoAlpha: 1})
         }
     });
-    
     ctaStarTl
     .to(star, { autoAlpha: 0.7, duration: 0.5 })
     .to(star, {
@@ -691,13 +679,11 @@ document.addEventListener("DOMContentLoaded", () => {
             start: 0.2,
             end: 0.9
         },
-        rotationZ: 720,
-        rotationX: -720,
         duration: 3.5,
         ease: "power2.Out"
-    }, "-=0.5")
-    .to(star, { autoAlpha: 0, duration: 0.5, ease: "power1.out" }, "-=1")
-
+    }, "-=0.5"
+    ).to(star, { rotationZ: 860, rotationX: -360, duration: 3}, "<"
+    ).to(star, { autoAlpha: 0, duration: 0.5, ease: "power1.out" }, "-=1");
     const ctaTl = gsap.timeline({
         scrollTrigger: {
             trigger: "#cta",
@@ -724,6 +710,19 @@ document.addEventListener("DOMContentLoaded", () => {
         repeatDelay: 0.6,
         ease: "power2.inOut"
     });
+
+
+    gsap.set("#dog-tail", { transformOrigin: "bottom",rotation: -20})
+    const dogTl = gsap.timeline({
+        repeat: -1,
+        yoyo: true
+    })
+    .to("#dog-tail", {
+        rotation: 20,
+        transformOrigin: "bottom",
+        ease: "sine.inOut"
+    })
+    
 });
 
 window.addEventListener("load", () => {
