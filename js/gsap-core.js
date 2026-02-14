@@ -48,10 +48,15 @@ document.addEventListener("DOMContentLoaded", () => {
         WebkitMaskImage: "radial-gradient(circle at center, black 0%, transparent 0%)" 
         }
     );
+    const mainSplide = document.querySelector("#firstview .bg .splide");
+    gsap.set(mainSplide, {
+        opacity: 0, 
+    });
     const pageMainTitle = document.querySelector("#firstview .js-page-main-title");
     const pageSubTitle  = document.querySelector("#firstview .js-page-sub-title");
     const mainChars = wrapChars(pageMainTitle);
     const subChars  = wrapChars(pageSubTitle);
+
     gsap.set([mainChars, subChars], {
         autoAlpha: 0,
         y: 5,
@@ -74,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 1,
             ease: "power2.in",
         }
+        ).to(mainSplide, { opacity: 1 }, "<"  
         ).to(logo, {
             autoAlpha: 1,
             x: 0,
@@ -123,6 +129,7 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 1,
             ease: "power2.in",
         }
+        ).to(mainSplide, { opacity: 1 }, "<"
         ).to(logo, {
             autoAlpha: 1,
             x: 0,
@@ -228,7 +235,6 @@ document.addEventListener("DOMContentLoaded", () => {
         const text__problems_last = document.querySelector("#problems .container .text-wrap .js-text:last-child"); 
         const firstChars = wrapChars(text__problems_first);
         const lastChars = wrapChars(text__problems_last);
-        console.log(lastChars);
         const problemsTextTl = gsap.timeline({
             scrollTrigger: {
                 trigger: "#problems .container .js-text-wrap",
@@ -298,7 +304,6 @@ document.addEventListener("DOMContentLoaded", () => {
     mm.add("(max-width: 1023px)", () => {
         const aboutTitle = document.querySelector("#about .container .catch .js-about-title");
         const aboutTitleChars = wrapChars(aboutTitle);
-        console.log(aboutTitleChars)
         gsap.set(aboutTitleChars, {
             scaleY: 0,
             willChange: "transform",

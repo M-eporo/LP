@@ -115,6 +115,7 @@
         .splider {
             position: relative;
             max-width: 900px;
+            opacity: 0;
             @include m.mq(md) {
                 margin: 0 auto;
                 min-height: 600px;
