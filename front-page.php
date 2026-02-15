@@ -1,127 +1,4 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="format-detection" content="telephone=no"/>
-  <title>明石でカウンセリング・療育・相談支援を探すならこころ相談研修センター</title>
-  <meta name="description" content="こころ相談研修センターでは、兵庫県明石市大久保・西明石にて、カウンセリング・放課後等デイサービスなどの療育サービスを行っております。神戸など近隣への出張も行っておりますので、お悩みの際は一度ご相談ください。"/>
-  <meta name="robots" content="noindex, nofollow">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="明石でカウンセリング・療育・相談支援なら｜こころ相談研修センター">
-  <meta property="og:description" content="発達支援・子育て・療育のご相談を専門家が丁寧にサポートします。まずはご相談から。">
-  <meta property="og:url" content="https://lp.cocotoko.com/">
-  <meta property="og:site_name" content="こころ相談研修センター">
-  <meta property="og:locale" content="ja_JP">
-  <meta property="og:image" content="https://lp.cocotoko.com/assets/images/ogp.jpg">
-
-  <!-- X (Twitter) -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="明石でカウンセリング・療育・相談支援なら｜こころ相談研修センター">
-  <meta name="twitter:description" content="発達支援・子育て・療育のご相談を専門家が丁寧にサポートします。まずはご相談から。">
-  <meta name="twitter:image" content="https://lp.cocotoko.com/assets/images/ogp.jpg">
-  <link rel="icon" href="./images/favicon.png" type="image/png">
-  <link rel="stylesheet" href="./css/vendors/reset.css">
-  <link rel="stylesheet" href="./css/vendors/splide.min.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer"
-/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c&family=Mochiy+Pop+One&family=Noto+Sans+JP:wght@100..900&family=Rampart+One&family=Roboto:ital,wght@0,100..900;1,100..900&family=RocknRoll+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./css/style.css">
-</head>
-<body id="page-top">
-  <a class="skip-link" href="#main">本文へスキップ</a>
-  <header class="header">
-    <div class="container">
-      <a href="https://cocotoko.com/" class="logo js-logo"  target="_blank" rel="noopener no-referrer" aria-label="公式ホームページ（新しいタブで開きます）">
-        <span>一般社団法人</span>
-        <span>こころ相談研修センター</span>
-      </a>
-      <div class="inner">
-        <nav class="pc-nav" aria-label="SNSリンク">
-          <ul class="pc-sns">
-            <li class="sns-item js-sns-item">
-              <a href="https://www.youtube.com/@%E3%81%93%E3%81%93%E3%82%8D%E7%9B%B8%E8%AB%87%E7%A0%94%E4%BF%AE%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC/featured" target="_blank" rel="noopener no-referrer" aria-label="YouTube（新しいタブで開きます）">
-                <img src="./images/youtube.svg" width="32" height="32" alt="YouTube公式チャンネル">
-              </a>
-            </li>
-            <li class="sns-item js-sns-item">
-              <a href="" target="_blank" rel="noopener no-referrer" aria-label="facebook（新しいタブで開きます）">
-                <img src="./images/facebook.svg" width="32" height="32" alt="facebook公式アカウント">
-              </a>
-            </li>
-            <li class="sns-item js-sns-item">
-              <a href="https://www.instagram.com/feel_since2017/" target="_blank" rel="noopener no-referrer"aria-label="instagram（新しいタブで開きます）">
-                <img src="./images/instagram.svg" width="32" height="32" alt="Instagram公式アカウント">
-              </a>
-            </li>
-            <li class="sns-item js-sns-item">
-              <a href="https://www.tiktok.com/@feel_since17?_r=1&_t=ZS-91Sf9nEGpXt" target="_blank" rel="noopener no-referrer"aria-label="tik tok（新しいタブで開きます）">
-                <img src="./images/tik_tok.svg" width="32" height="32" alt="tiktok公式アカウント">
-              </a>
-            </li>
-            <li class="sns-item js-sns-item">
-              <a href="https://x.com/feel202504?s=11" target="_blank" rel="noopener no-referrer"aria-label="x（新しいタブで開きます）">
-                <img src="./images/x.svg" width="32" height="32" alt="X公式アカウント">
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <a class="primary-btn js-primary-btn" href="#cta" aria-label="お問合せフォームへ移動">
-          お問い合わせ
-        </a>
-      </div>
-    </div>
-    <button class="hamburger-btn js-hamburger-btn" type="button" aria-controls="sp-menu" aria-expanded="false" aria-label="メニューを開く">
-      <div class="btn-area js-btn-area">
-        <span></span><span></span><span></span>
-      </div>
-    </button>
-    <div class="mask js-mask" id="sp-menu" hidden>
-      <a href="https://cocotoko.com/" class="logo"  target="_blank" rel="noopener no-referrer" aria-label="公式ホームページ（新しいタブで開きます）">
-        <span>一般社団法人</span>
-        <span>こころ相談研修センター</span>
-      </a>
-      <div class="wrap">
-        <nav class="sp-nav" aria-label="SNSリンク">
-          <p class="text">最新のお知らせや活動の様子は<br class="sp-600">公式SNSでも発信しています。</p>
-          <ul class="sp-sns">
-            <li class="sns-item">
-              <a href="https://www.youtube.com/@%E3%81%93%E3%81%93%E3%82%8D%E7%9B%B8%E8%AB%87%E7%A0%94%E4%BF%AE%E3%82%BB%E3%83%B3%E3%82%BF%E3%83%BC/featured" target="_blank" rel="noopener no-referrer">
-                <img src="./images/youtube.svg" width="32" height="32" alt="YouTube公式チャンネル">
-              </a>
-            </li>
-            <li class="sns-item">
-              <a href="" target="_blank" rel="noopener no-referrer">
-                <img src="./images/facebook.svg" width="32" height="32" alt="facebook公式アカウント">
-              </a>
-            </li>
-            <li class="sns-item">
-              <a href="https://www.instagram.com/feel_since2017/" target="_blank" rel="noopener no-referrer">
-                <img src="./images/instagram.svg" width="32" height="32" alt="Instagram公式アカウント">
-              </a>
-            </li>
-            <li class="sns-item">
-              <a href="https://www.tiktok.com/@feel_since17?_r=1&_t=ZS-91Sf9nEGpXt" target="_blank" rel="noopener no-referrer">
-                <img src="./images/tik_tok.svg" width="32" height="32" alt="tiktok公式アカウント">
-              </a>
-            </li>
-            <li class="sns-item">
-              <a href="https://x.com/feel202504?s=11" target="_blank" rel="noopener no-referrer">
-                <img src="./images/x.svg" width="32" height="32" alt="X公式アカウント">
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <a class="primary-btn" href="#cta" aria-label="お問い合わせフォームへ移動">
-          お問い合わせ
-        </a>
-      </div>
-    </div>
-  </header>
+<?php get_header(); ?>
   <main id="main">
   <section id="firstview" class="firstview">
     <div class="bg">
@@ -152,7 +29,14 @@
                     <rect width="100%" height="100%" fill="url(#fadeGrad1)" />
                   </mask>
                 </defs>
-                <image clip-path="url(#clippath1)" mask="url(#fadeMask1)" href="./images/family.png" width="1105" height="1060"  preserveAspectRatio="xMidYMid meet" />
+                <image 
+                  clip-path="url(#clippath1)" 
+                  mask="url(#fadeMask1)" 
+                  href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/family.png" 
+                  xlink:href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/family.png"
+                  width="1105" height="1060" 
+                  preserveAspectRatio="xMidYMid meet" 
+                />
               </svg>
             </div>
             <div class="splide__slide">
@@ -170,11 +54,17 @@
                     <rect width="100%" height="100%" fill="url(#fadeGrad2)" />
                   </mask>
                 </defs>
-                  <image clip-path="url(#clippath2)" mask="url(#fadeMask2)" href="./images/children-dash.png" width="1105" height="1060"  preserveAspectRatio="xMidYMid meet" />
+                  <image
+                  clip-path="url(#clippath2)"
+                  mask="url(#fadeMask2)" 
+                  href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/children-dash.png"
+                  xlink:href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/children-dash.png"
+                  width="1105" height="1060"
+                  preserveAspectRatio="xMidYMid meet" />
               </svg>
             </div>
             <div class="splide__slide">
-              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="_レイヤー_1" viewBox="0 0 1105 1060">
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1105 1060">
                 <defs>
                   <clipPath id="clippath3">
                     <path class="cls-1" d="M1094.6,540.6c-18.4,132.8-32.77,262.97-64,312-96.09,150.85-285.6,184.8-484,196.8-151.48,9.16-323.2-44-411.2-149.6C58.69,807.75,8.29,670.14,3.4,540.6-3,371,71.97,226.63,161,135,253.45,39.85,429,4.6,550.71,4.6s334.24,44.81,427.09,144c85.14,90.96,135.25,258.86,116.8,392Z"/>
@@ -188,15 +78,21 @@
                     <rect width="100%" height="100%" fill="url(#fadeGrad3)" />
                   </mask>
                 </defs>
-                <image clip-path="url(#clippath3)" mask="url(#fadeMask3)" href="./images/girl-with-pen.png" width="1105" height="1060"  preserveAspectRatio="xMidYMid meet"/>
+                <image
+                  clip-path="url(#clippath3)"
+                  mask="url(#fadeMask3)"
+                  href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/girl-with-pen.png"
+                  xlink:href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/girl-with-pen.png"
+                  width="1105" height="1060"
+                  preserveAspectRatio="xMidYMid meet"/>
               </svg>
             </div>
           </div>
         </div>
-        <svg class="svg-blue" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="_レイヤー_1" viewBox="0 0 100 100" >
+        <svg class="svg-blue" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" >
           <ellipse cx="50" cy="50" rx="45" ry="45" fill="#9CC4FF" />
         </svg>
-        <svg class="svg-orange" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="_レイヤー_1" viewBox="0 0 100 100" >
+        <svg class="svg-orange" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" >
           <ellipse cx="50" cy="50" rx="45" ry="45" fill="#ff8719" />
         </svg>
       </div>
@@ -209,7 +105,7 @@
         <h2 class="problems-title">こんなお悩みはありませんか？</h2>
       </div>
       <div class="img-wrap js-img-wrap">
-        <img class="main-img js-main-img" src="./images/problems-img.png" alt="友達との関わりがうまくいか
+        <img class="main-img js-main-img" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/problems-img.png" alt="友達との関わりがうまくいか
         ない、言葉の発達がゆっくり、集団行動が苦手、家庭での対応に悩む様子を表したカラフルな円のイラスト">
       </div>
       <div class="text-wrap js-text-wrap">
@@ -219,9 +115,9 @@
     </div>
     <svg class="line-svg js-line-svg" xmlns="http://www.w3.org/2000/svg" width="2720.77" height="575.45" viewBox="0 0 2720.77 575.45" preserveAspectRatio="xMidYMid slice"><defs><style>.cls-1{fill:transparent;stroke:#fcfcfc;stroke-linecap:round;stroke-miterlimit:10;stroke-width:150px;}</style></defs><path class="cls-1 js-path" d="M0,125.3c431.14,0,581.54,366.84,967.85,366.84,433.38,0,584.31-417.15,874.7-417.15,376.99,0,237.62,425.45,878.22,425.45"/></svg>
   </section>
-  <a class="circle-btn" href="#cta" aria-label="お問い合せフォームへ移動">
+  <a class="circle-btn" href="#cta" aria-label="無料相談フォームへ移動">
     まずは<br>
-    お問合せ
+    無料相談!!
     <svg class="triangle" width="10" height="20" aria-hidden="true">
       <polygon points="0,0 10,0 5,20" fill="#ffffff"/>
     </svg>
@@ -249,7 +145,7 @@
       <div class="catch js-catch">
         <h2 class="about-title js-about-title">About Us</h2>
         <p class="about-sub-title js-about-sub-title">こころ相談研修センターとは</p>
-        <img src="./images/obj-triangle-blue.svg" alt="" class="obj triangle-blue js-triangle-blue">
+        <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/obj-triangle-blue.svg" alt="" class="obj triangle-blue js-triangle-blue">
       </div>
       <div class="text-wrap js-text-wrap">
         <div class="text-head js-text-head">
@@ -276,7 +172,7 @@
           <p class="js-last-fadein">カウンセリングから、各種検査、学校園等や行政との連携、安全・安心な居場所支援まで様々なお悩み・不安を解決するための包括的な支援サービスをご提供しております。</p>
         </div>
       </div>
-      <img src="./images/woman-with-pc.png" alt="発達支援や相談サービスを行う専門スタッフ" width="1920" height="1080" class="img woman js-woman-img">
+      <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/woman-with-pc.png" alt="発達支援や相談サービスを行う専門スタッフ" width="1920" height="1080" class="img woman js-woman-img">
     </div>
   </section>
   <section id="office" class="office">
@@ -416,7 +312,7 @@
       <path class="cls-3 js-path" d="M1238.71,116.57C557.48,550.42,76.79,293.11,76.79,776.8c0,513.31,1035.69,411.69,1035.69,899.08,0,649.85-575.08,258.46-1200.92,963.69"/>
     </svg>
     <div class="container">
-      <img class="obj line-yellow"src="./images/line-yellow.svg" alt="">
+      <img class="obj line-yellow" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/line-yellow.svg" alt="">
       <div class="catch">
         <h2 class="feature-title js-feature-title">Feature</h2>
         <p class="feature-sub-title js-feature-sub-title">サポートの特徴</p>
@@ -426,7 +322,7 @@
         <div class="cards">
           <div class="card js-mogura-scroll-start">
             <div class="img-wrap">
-              <img src="./images/children-width-guts-pose.jpg" width="1920" height="1281" alt="安心した環境で学習に取り組む子どもたちの様子">
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/children-width-guts-pose.jpg" width="1920" height="1281" alt="安心した環境で学習に取り組む子どもたちの様子">
             </div><!-- /.icon -->
             <div class="content">
               <h4 class="title">子どもとfeel <span>-療育-</span></h4>
@@ -454,7 +350,7 @@
                         .mogura-9{fill:#482916;}
                       </style>
                     </defs>
-                    <g id="_レイヤー_1-2">
+                    <g>
                       <path class="mogura-5" d="M356.65,34.72c-1.79,1.57-3.96.74-5.96.94-5.05-9.43-8.41-19.47-10.7-29.88-.52-2.34-.95-5.16,2.12-5.72,2.9-.53,3.1,2.21,3.5,4.38,1.99,10.7,5.78,20.76,11.04,30.27Z"/>
                       <path class="mogura-3" d="M367.5,32.82c-1.48,2.35-3.81,1.85-6,1.8,1.69-9.18,4.03-18.18,7.55-26.84.74-1.83,1.5-4.26,4.07-3.4,2.93.99,1.91,3.5,1.11,5.49-2.99,7.44-4.95,15.17-6.73,22.95Z"/>
                       <path class="mogura-1" d="M386.66,33.78c-2.11.76-4.23,1.63-6.27-.18,2.18-4.07,4.7-7.92,7.71-11.42,1.12-1.3,2.57-2.39,4.28-1.16,2.01,1.44,1.12,3.14,0,4.72-1.91,2.68-3.81,5.36-5.72,8.04Z"/>
@@ -478,7 +374,7 @@
           </div><!-- /.card -->
           <div class="card">
             <div class="img-wrap">
-              <img src="./images/baby-with-mother.jpg" width="1920" height="1280" alt="保護者と子どもが安心して相談している様子">            
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/baby-with-mother.jpg" width="1920" height="1280" alt="保護者と子どもが安心して相談している様子">            
             </div><!-- /.icon -->
             <div class="content">
               <h4 class="title">大人とfeel <span>-家庭-</span></h4>
@@ -494,7 +390,7 @@
           </div><!-- /.card -->
           <div class="card">
             <div class="img-wrap">
-              <img src="./images/woman-with-pc2.jpg" width="1920" height="1280" alt="子どもや家庭への支援内容を考えるスタッフの様子">            
+              <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/woman-with-pc2.jpg" width="1920" height="1280" alt="子どもや家庭への支援内容を考えるスタッフの様子">            
             </div><!-- /.icon -->
             <div class="content">
               <h4 class="title">社会の懸け橋としてのfeel <span>-環境調整-</span></h4>
@@ -509,7 +405,7 @@
         </div>
       </div><!-- /.card-container -->
       <div class="feature-bottom js-feature-bottom">
-        <img class="obj line-blue" src="./images/line-blue.svg" alt="">
+        <img class="obj line-blue" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/line-blue.svg" alt="">
         <div class="bottom-head">
           <h3 class="text">お子さまの可能性を広げる<br class="sp-900">最適なアプローチを
           <br>専門的視点から提供する<br class="sp-900">「早期療育」の価値</h3>
@@ -529,7 +425,7 @@
                               .dog-4{fill:none;stroke:#3e3a39;stroke-linecap:round;stroke-linejoin:round;stroke-width:6.95px;}
                           </style>
                       </defs>
-                      <g id="_レイヤー_1-2">
+                      <g>
                           <path class="dog-2" d="M261.35,507.94c-3.88,50.77,1.33,121.44-6.46,144.87-7.82,23.42-97.62,19.52-109.35,3.91-11.7-15.63,35.17-31.24,46.87-46.86,11.7-15.63-16.37-63.53-24.93-131.8,0,0-18.17-50.1-18.17-109.83,0,0,68.19-156.37,281.62-162.14,157.88-4.26,282.93,18.36,302.94,102.4,21.34,89.6-17.9,195.7-21.48,213.34-8.85,43.61-10.37,125.71-18.17,149.13-7.82,23.43-97.62,19.52-109.35,3.91-11.7-15.61,35.17-31.24,46.87-46.86,11.7-15.61-4.7-54.09-4.7-106.19h-26.56c-3.88,50.77,1.33,121.45-6.46,144.87-7.82,23.43-97.62,19.52-109.32,3.91-11.73-15.63,35.14-31.24,46.84-46.86,11.7-15.63-6.73-67.79-23.81-106.19l-148.38,4.26c-3.91,50.77-10.37,125.71-18.19,149.13-7.79,23.43-97.59,19.52-109.33,3.91-11.7-15.61,35.14-31.24,46.87-46.86,11.7-15.61-4.7-54.09-4.7-106.19l-12.65-13.9Z"/>
                           <path id="dog-tail" class="dog-2" d="M663.29,349.57c-55.29-69.1,98.79-62.2,43.91-252.46-28.7-99.5,124.4,95.14,69.52,190.26-54.88,95.14-84.15,98.79-113.43,62.2Z"/>
                           <path class="dog-3" d="M150.8,394.75c64,0,192.58-60.11,243.96-214.25,0,0,37.72,49.03,13.09,109.62-47.63,117.11-136.83,117.62-179.49,121.9-30.03,3-77.55-17.27-77.55-17.27Z"/>
@@ -559,8 +455,8 @@
             </ul>
           </div>
           <div class="item center">
-            <img src="./images/man-with-heart.png" width="458" height="634" alt="思いやりの気持ちを大切にする男性のイラスト">
-            <img src="./images/woman-with-heart.png" width="418" height="616" alt="やさしく寄り添う支援者の女性イラスト">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/man-with-heart.png" width="458" height="634" alt="思いやりの気持ちを大切にする男性のイラスト">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/woman-with-heart.png" width="418" height="616" alt="やさしく寄り添う支援者の女性イラスト">
           </div>
           <div class="item right-top">
             <h4 class="title">学校園での環境調整</h4>
@@ -589,7 +485,7 @@
           <p class="program-sub-title js-program-sub-title">成長段階に合わせた多彩なプログラム</p>
       </div><!-- /.catch -->
       <div class="inner">
-        <img class="obj circle-blue js-circle-blue" src="./images/obj-circle-blue.svg" alt="">
+        <img class="obj circle-blue js-circle-blue" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/obj-circle-blue.svg" alt="">
         <div class="intro js-intro">
           <p class="intro-text">一人ひとりの個性に寄り添い、「できる」という自信を未来へ繋ぐ。お子さまの発達について、一人で不安を抱えていませんか？私たちは、お子さまが本来持っている「可能性」を信じ、遊びや学びを通じて社会で生きる力を育みます。幼児期から学童期、そしてご家族へのサポートまで、切れ目のない包括的な支援プログラムで、ご家族全員の笑顔があふれる毎日を全力で応援します。</p>
         </div>
@@ -601,7 +497,7 @@
                   <div class="box">
                     <div class="content">
                       <h4 class="heading">幼児向けプログラム (0〜6歳)</h4>
-                      <img class="thumbnail" src="./images/girl-with-origami.jpg" width="640" height="427" alt="テーブルで折り紙を楽しんでいる女の子">
+                      <img class="thumbnail" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/girl-with-origami.jpg" width="640" height="427" alt="テーブルで折り紙を楽しんでいる女の子">
                       <p class="text"><span class="bold">「できた！」が増える<br>一生の土台づくり</span><br>早期の適切な関わりは、お子さまの自信に繋がります。遊びの中にある様々な「学び」を大切にし、集団生活をおこなう上での根幹となる基盤を専門チームが共に育みます。</p>
                       <ul class="list">
                         <li class="list-item">
@@ -628,7 +524,7 @@
                   <div class="box">
                     <div class="content">
                       <h4 class="heading">小中高生向けプログラム (7歳～)</h4>
-                      <img class="thumbnail" src="./images/elementary-school-students.jpg" width="1920" height="1280" alt="スタッフと一緒に学習に取り組む学童期の子どもたち">
+                      <img class="thumbnail" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/elementary-school-students.jpg" width="1920" height="1280" alt="スタッフと一緒に学習に取り組む学童期の子どもたち">
                       <p class="text"><span class="bold">個性を強みに<br>自立への一歩を支える</span><br>家庭とも学校とも違う、第三の安心できる居場所として。学習支援や対人スキルの向上を通じ「自分で考え行動する力」を養い、社会へ羽ばたく自信をサポートします。
                       </p>
                       <ul class="list">
@@ -656,7 +552,7 @@
                   <div class="box">
                     <div class="content">
                       <h4 class="heading">保護者向けサポート</h4>
-                      <img class="thumbnail" src="./images/mother-in-pickingup.jpg" width="1920" height="1280" alt="保護者へのサポートを行うスタッフと親子の様子">
+                      <img class="thumbnail" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/mother-in-pickingup.jpg" width="1920" height="1280" alt="保護者へのサポートを行うスタッフと親子の様子">
                       <p class="text"><span class="bold">ひとりで悩まない<br>家族に寄り添うパートナー</span><br>お子さまの成長を一番に願うからこそ、お悩みは尽きません。私たちはご家族の伴走者として、具体的な関わり方のコツを共有し、心にゆとりを持てる毎日を支えます。</p>
                       <ul class="list">
                         <li class="list-item">
@@ -769,22 +665,22 @@
           </li>
         </ul>
       </div>
-      <img class="obj square-green" src="./images/obj-square-green.svg" alt="">
-      <img class="obj square-orange" src="./images/obj-square-orange.svg" alt="">
-      <img class="obj square-red" src="./images/obj-square-red.svg" alt="">
-      <img class="obj square-blue" src="./images/obj-square-blue.svg" alt="">
-      <img class="obj square-pink" src="./images/obj-square-pink.svg" alt="">
+      <img class="obj square-green" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/obj-square-green.svg" alt="">
+      <img class="obj square-orange" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/obj-square-orange.svg" alt="">
+      <img class="obj square-red" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/obj-square-red.svg" alt="">
+      <img class="obj square-blue" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/obj-square-blue.svg" alt="">
+      <img class="obj square-pink" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/obj-square-pink.svg" alt="">
     </div>
   </section><!-- /#program.program -->
   <section id="cv" class="cv">
     <div class="container">
       <div class="content-wrap">
         <div class="text-wrap">
-          <p class="em-text">まずは<span class="em">お気軽にご相談</span>ください<span class="em">!!</span></p>
+          <p class="em-text">まずは<span class="em">無料でご相談</span>ください<span class="em">!!</span></p>
           <p class="middle">
           様々なお悩みをお持ちの保護者様から多くのご相談をいただいています。早期対応がお子さまの成長や保護者様にとって大変重要です。<br>
           ほんの小さなお悩みでも、「こんなこと相談してもいいのかな」と悩まれている方も。経験豊富な心理士が親身にご相談に応じます。</p>
-          <p>お問い合わせはボタンをクリック!!</p>
+          <p>まずはお気軽にご相談ください!</p>
         </div>
         <a class="btn" href="#cta" aria-label="お問い合わせフォームへ移動">ご相談はこちらから</a>
         <div class="animal-wrap panda js-panda">
@@ -799,7 +695,7 @@
                 .panda-3{fill:none;stroke:#3e3a39;}
               </style>
             </defs>
-            <g id="_レイヤー_1-2">
+            <g>
               <path class="panda-2" d="M536.97,523.5c36.21,166.84-51.91,248.73-258,255.17-206.09,6.44-308.17-104.87-264-269.79,50.49-188.61,173.83-354.93,264-348.49,90.16,6.44,218.31,180.33,258,363.11Z"/>
               <path class="panda-1" d="M14.97,508.88c52-173,173.83-354.93,264-348.49,90.16,6.44,199.81,167.23,253.07,362.97L14.97,508.88Z"/>
               <path class="panda-2" d="M363.6,31.14C276.05.35,75.71-2,18.23,184.74c-57.49,186.75,165.76,250.51,273.89,243.35,40.13-2.66,245.07-30.95,235.43-215.01-5.44-103.89-115.48-164.91-163.96-181.94Z"/>
@@ -817,10 +713,10 @@
           </svg>
         </div>
       </div>
-      <img class="svg-tri" src="./images/cv-triangle.svg" alt="">
-      <img class="svg-tri svg-tri2" src="./images/cv-triangle.svg" alt="">
-      <img class="svg-tri svg-tri3" src="./images/cv-triangle.svg" alt="">
-      <img class="svg-tri svg-tri4" src="./images/cv-triangle.svg" alt="">
+      <img class="svg-tri" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/cv-triangle.svg" alt="">
+      <img class="svg-tri svg-tri2" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/cv-triangle.svg" alt="">
+      <img class="svg-tri svg-tri3" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/cv-triangle.svg" alt="">
+      <img class="svg-tri svg-tri4" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/cv-triangle.svg" alt="">
     </div>
   </section>
   <section id="voice" class="voice">
@@ -832,31 +728,31 @@
       <div class="item-container">
         <div class="item">
           <div class="icon">
-            <img src="./images/family-satisfied.png" width="573" height="536" alt="">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/family-satisfied.png" width="573" height="536" alt="">
           </div>
           <p class="voice-text">先生方がとても優しく、いつもあたたかく見守ってくださるので安心して通えています。最初は行くのを嫌がり泣いていましたが、先生方が丁寧に接してくださり、今では泣かずに通えるようになりました。</p>
         </div><!-- /.item -->
         <div class="item">
           <div class="icon">
-            <img src="./images/woman-with-sp.png" width="573" height="536" alt="">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/woman-with-sp.png" width="573" height="536" alt="">
           </div><!-- /.icon -->
           <p class="voice-text">LINEでいつでも相談できる環境が整っているので、不安なことはすぐに聞けるのがとても心強いです。</p>
         </div><!-- /.item -->
         <div class="item">
           <div class="icon">
-            <img src="./images/woman-impressed.png" width="573" height="536" alt="">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/woman-impressed.png" width="573" height="536" alt="">
           </div><!-- /.icon -->
           <p class="voice-text">親子共々ご丁寧に対応くださり感謝しかありません。悩んだときは、その都度先生方が寄り添ってすぐに解決に導いてくださいます。</p>
         </div><!-- /.item -->
         <div class="item">
           <div class="icon">
-            <img src="./images/man-woman-satisfied.png" width="573" height="536" alt="">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/man-woman-satisfied.png" width="573" height="536" alt="">
           </div><!-- /.icon -->
           <p class="voice-text">子育てがうまくいかなくて心折れることもたくさんありましたが、保護者会に参加して、自分1人じゃないんだなと前向きになれました。</p>
         </div><!-- /.item -->
         <div class="item">
           <div class="icon">
-            <img src="./images/woman-recommending.png" width="573" height="536" alt="">
+            <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/woman-recommending.png" width="573" height="536" alt="">
           </div><!-- /.icon -->
           <p class="voice-text">全員が有資格者で、研修なども定期的に行っているので安心して通えています。悩んでいることに対して、すぐにアドバイス、実践してくれて助かっています。</p>
         </div><!-- /.item -->
@@ -884,7 +780,7 @@
           <li class="accordion-item js-list-item" data-open="closed">
             <button class="accordion-header" aria-expanded="false" aria-controls="faq-a1">
               <span class="accordion-title">児童発達支援や放課後等デイサービスって何をするところですか？</span>
-              <img class="close-icon js-icon" data-open="closed" src="./images/close_bk.svg" width="36" height="36" alt="" aria-hidden="true"/>
+              <img class="close-icon js-icon" data-open="closed" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/close_bk.svg" width="36" height="36" alt="" aria-hidden="true"/>
             </button>
             <ul id="faq-a1" class="inner-list js-inner-list" data-open="closed" hidden>
               <li class="inner-list-item js-inner-list-item">発達に支援が必要なお子さまを対象に、成長や生活をサポートするための福祉サービスです。児童発達支援は未就学のお子さま、放課後等デイサービスは6 ~ 18歳までのお子さまがご利用いただけます。</li>
@@ -893,7 +789,7 @@
           <li class="accordion-item js-list-item" data-open="closed">
             <button class="accordion-header" aria-expanded="false" aria-controls="faq-a2">
               <span class="accordion-title">療育事業所を利用するにはどのような手続きが必要ですか？</span>
-              <img class="close-icon js-icon" data-open="closed" src="./images/close_bk.svg" width="36" height="36" alt="" />
+              <img class="close-icon js-icon" data-open="closed" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/close_bk.svg" width="36" height="36" alt="" />
             </button>
             <ul id="faq-a2" class="inner-list js-inner-list" data-open="closed" hidden>
               <li class="inner-list-item js-inner-list-item">・まずはお子さまと一緒に当事業所へ見学<br>・通所をご検討いただけましたら市役所に申請書を提出<br>・市役所および相談支援事業所との面談<br>・市役所から受給者証の発行<br>・療育事業所とご契約</li>
@@ -902,7 +798,7 @@
           <li class="accordion-item js-list-item" data-open="closed">
             <button class="accordion-header" aria-expanded="false" aria-controls="faq-a3">
               <span class="accordion-title">送迎サービスはありますか？</span>
-              <img class="close-icon js-icon" data-open="closed" src="./images/close_bk.svg" width="36" height="36" alt="" aria-hidden="true" />
+              <img class="close-icon js-icon" data-open="closed" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/close_bk.svg" width="36" height="36" alt="" aria-hidden="true" />
             </button>
             <ul id="faq-a3" class="inner-list js-inner-list" data-open="closed" hidden>
               <li class="inner-list-item js-inner-list-item">feel西明石事業所では送迎サービスを行っております。送迎場所などの詳細については、見学時にご説明させていただきます。</li>
@@ -911,7 +807,7 @@
           <li class="accordion-item js-list-item" data-open="closed">
             <button class="accordion-header" aria-expanded="false" aria-controls="faq-a4">
               <span class="accordion-title">スタッフはどのような資格を持っていますか？</span>
-              <img class="close-icon js-icon" data-open="closed" src="./images/close_bk.svg" width="36" height="36" alt="" aria-hidden="true" />
+              <img class="close-icon js-icon" data-open="closed" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/close_bk.svg" width="36" height="36" alt="" aria-hidden="true" />
             </button>
             <ul id="faq-a4" class="inner-list js-inner-list" data-open="closed" hidden>
               <li class="inner-list-item js-inner-list-item">全スタッフが有資格者です。臨床心理士、公認心理師、保育士、教員免許など、様々な資格を保有したスタッフが多数在籍しています。
@@ -920,7 +816,7 @@
           <li class="accordion-item js-list-item" data-open="closed">
             <button class="accordion-header" aria-expanded="false" aria-controls="faq-a5">
               <span class="accordion-title">子育て相談はできますか？</span>
-              <img class="close-icon js-icon" data-open="closed" src="./images/close_bk.svg" width="36" height="36" alt="" aria-hidden="true" />
+              <img class="close-icon js-icon" data-open="closed" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/close_bk.svg" width="36" height="36" alt="" aria-hidden="true" />
             </button>
             <ul id="faq-a5" class="inner-list js-inner-list" data-open="closed" hidden>
               <li class="inner-list-item js-inner-list-item">当事業所をご利用でない方も子育て相談を受け付けております。当事業所をご利用の方は、対面だけでなくZOOMやLINEなどのオンラインツールもご利用いただけます。</li>
@@ -929,7 +825,7 @@
           <li class="accordion-item js-list-item" data-open="closed">
             <button class="accordion-header" aria-expanded="false" aria-controls="faq-a6">
               <span class="accordion-title">開所時間ピッタリに行かないといけませんか？</span>
-              <img class="close-icon js-icon" data-open="closed" src="./images/close_bk.svg" width="36" height="36" alt="" aria-hidden="true" />
+              <img class="close-icon js-icon" data-open="closed" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/close_bk.svg" width="36" height="36" alt="" aria-hidden="true" />
             </button>
             <ul id="faq-a6" class="inner-list js-inner-list" data-open="closed" hidden>
               <li class="inner-list-item js-inner-list-item">開所時間に必ずお越しいただく必要はありません。ご家庭や学校園の生活に合わせてご利用ください。なお、個別療育は30分間の実施をお約束しております。30分以上ご利用いただけるお時間でご来所ください。</li>
@@ -954,84 +850,18 @@
       <path id="motionPath-star" class="cls-star path-star" d="M.43,458.81s151.38-248.89,535.38-248.89,594.62,333.35,942.46,326.89C1857.59,529.76,1842.92.5,1444.12.5c-450.46,0-401.38,552.46,13.08,552.46s463.23-186.92,463.23-186.92"/>
     </svg>
     <div id="cta" class="container">
-      <img class="star" src="./images/obj-star.svg" alt="">
+      <img class="star" src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/obj-star.svg" alt="">
       <div class="catch js-catch">
         <h2 class="cta-title">Contact</h2>
-        <p class="cta-text js-cta-text">お気軽にご相談ください</p>
+        <p class="cta-text js-cta-text">まずは無料相談から始めましょう</p>
       </div><!-- /.catch -->
-      <form action="" class="form">
-        <div class="form-group">
-          <div class="label">
-            <label for="name">お名前</label>
-            <span class="required" aria-hidden="true">必須</span>
-          </div><!-- /.label -->
-          <input class="input" type="text" name="name" id="name" required autocomplete="name">
-        </div><!-- /.form-group -->
-        <div class="form-group">
-          <div class="label">
-            <label for="furigana">ふりがな</label>
-            <span class="required" aria-hidden="true">必須</span>
-          </div><!-- /.label -->
-          <input class="input" type="text" name="furigana" id="furigana" required>
-        </div><!-- /.form-group -->
-        <div class="form-group">
-          <div class="label">
-            <label for="email">メールアドレス</label>
-            <span class="required" aria-hidden="true">必須</span>
-          </div><!-- /.label -->
-          <input class="input" type="email" name="email" id="email" required autocomplete="email">
-        </div><!-- /.form-group -->
-        <div class="form-group">
-          <div class="label">
-            <label for="email-check">メールアドレス(確認用)</label>
-            <span class="required" aria-hidden="true">必須</span>
-          </div><!-- /.label -->
-          <input class="input" type="email" name="email-check" id="email-check" required autocomplete="email">
-        </div><!-- /.form-group -->
-        <div class="form-group">
-          <div class="label">
-            <label for="tel">お電話番号</label>
-            <span class="required" aria-hidden="true">必須</span>
-          </div><!-- /.label -->
-          <input class="input" type="tel" name="tel" id="tel" required autocomplete="tel">
-        </div><!-- /.form-group -->
-        <div class="form-group">
-          <div class="label">
-            <label for="desc">メッセージ・お悩み事</label>
-            <span class="required" aria-hidden="true">必須</span>
-          </div><!-- /.label -->
-          <textarea  class="textarea" name="desc" id="desc" required></textarea>
-        </div><!-- /.form-group -->
-        <div class="form-group privacy">
-          <div class="privacy-box" role="region" aria-label="プライバシーポリシー">
-            <p class="privacy-title">プライバシーポリシー</p>
-            <p class="privacy-text">
-              当サイトは、お客様の個人情報について、お客様の承諾が無い限り第三者に開示、提供を一切いたしません。
-              お客様から個人情報をご提供していただき、お客様へのサービスにご利用させていただく場合があります。
-              その目的以外には利用いたしません。そして、ご提供いただいた個人情報を取り扱うにあたり管理責任者を置き、
-              適切な管理を行っております。
-            </p>
-          </div>
-          <div class="agree">
-            <input type="checkbox" name="privacy_agree" id="privacy_agree" required>
-            <label for="privacy_agree">プライバシーポリシーに同意します</label>
-          </div>
-        </div>
-        <button type="submit" class="submit-btn">確認する</button>
-      </form><!-- /.form -->
+      <?php if(have_posts()): ?>
+        <?php while(have_posts()) : the_post(); ?>
+          
+          <?php the_content(); ?>
+        <?php endwhile; ?>
+      <?php endif; ?>
     </div><!-- /.container -->
   </section><!-- /#cta.cts -->
   </main>
-  <footer class="footer">
-    <small>&copy; 2026 こころ相談研修センター All rights reserved.</small>
-  </footer>
-  <script src="./js/splide.min.js"></script>
-  <script src="./js/splide.js"></script>
-  <script src="./js/accordion.js"></script>
-  <script src="./js/hamburger.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/MotionPathPlugin.min.js"></script>
-  <script src="./js/gsap-core.js"></script>
-</body>
-</html>
+<?php get_footer(); ?>
