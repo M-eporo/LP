@@ -16,6 +16,7 @@
     padding: 160px 0 160px;
     z-index: 3;
     .content-wrap {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -73,7 +74,13 @@
           box-shadow: none;
         }
       }
-
+      .animal-wrap.panda {
+        bottom: 7px;
+        left: calc(50% + 115px);
+        transform-origin: bottom center;
+        transform: translate(-50%, 0) scale(1);
+        z-index: -1;
+      }
     }
     .svg-tri {
       position: absolute;

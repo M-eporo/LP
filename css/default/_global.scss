@@ -54,7 +54,15 @@ p {
   top: 16px;
   z-index: 9999;
 }
-
+.animal-wrap {
+  position: absolute;
+  width: 70px;
+}
+.animal-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 @font-face {
     font-family: 'Rounded Mplus 1c';
     src: url('../../RoundedMplus1c-Black.woff2') format('woff2');

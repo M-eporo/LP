@@ -1,6 +1,7 @@
 @use "../default/variables" as v;
 @use "../default/mixin" as m;
 .voice {
+  position: relative;
   padding: 0 4%;
   background-color: #fef1fc;
   font-family: v.$m-plus-round;
@@ -13,24 +14,20 @@
     overflow: hidden;
     line-height: 0;
     transform: rotate(180deg);
-}
-
-.custom-shape-divider-bottom-1765980372 svg {
+  }
+  .custom-shape-divider-bottom-1765980372 svg {
     position: relative;
     display: block;
     width: calc(100% + 1.3px);
     height: 100px;
-}
-
-.custom-shape-divider-bottom-1765980372 .shape-fill {
-    fill: #fef1fc;
-}
-
+  }
+  .custom-shape-divider-bottom-1765980372 .shape-fill {
+      fill: #fef1fc;
+  }
   .container {
     max-width: 900px;
     margin: 0 auto;
     padding: 160px 0;
-
     .mesh {
       position: absolute;
       top: 0;
@@ -115,7 +112,6 @@
         align-items: center;
         min-width: 150px;
         gap: 32px;
-        
         .icon {
           max-width: 100px;
           min-width: 15%;
@@ -144,7 +140,6 @@
           background-color: #fff;
           clip-path: polygon(50% 0, 0% 100%, 100% 100%);
         }
-
         img {
           transform: scaleY(1.4);
           @include m.mq(sm) {
@@ -152,7 +147,6 @@
           }
         }
       }
-
       .item:nth-child(even) {
         flex-direction: row-reverse;
         .voice-text {
@@ -162,10 +156,8 @@
           left: initial;
           right: -24px;
           transform: translateY(-50%) rotate(90deg);
-          
         }
       }
-
       .item:nth-child(1) img {
         transform: scaleY(1.4);
         @include m.mq(sm) {

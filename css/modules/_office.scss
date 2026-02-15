@@ -19,12 +19,10 @@
                 position: relative;
                 display: inline-flex;
                 align-items: center;
-                gap: 12px;
                 width: max-content;
                 font-family: v.$noto-sans;
                 font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
                 color: v.$dk-gray; 
-
                 &::before,
                 &::after {
                     content: "";
@@ -32,7 +30,14 @@
                     height: 3px;
                     border-radius: 100vh;
                     background-color: v.$yellow;
-                    transform: translateY(50%) rotate(-45deg);
+                    transform: translateY(50%) rotate(-55deg);
+                }
+                .animal-wrap.giraffe {
+                    width: 90px;
+                    left: 110%;
+                    bottom: 12px;
+                    transform-origin: bottom center;
+                    transform: translate(-50%,0);
                 }
             }
             .office-sub-title {

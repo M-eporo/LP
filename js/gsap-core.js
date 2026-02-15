@@ -338,6 +338,11 @@ document.addEventListener("DOMContentLoaded", () => {
     })
 //Office Section
     const texts__office = ["#office .container .catch", "#office .container .intro"];
+    gsap.set("#office .container .office-title .js-giraffe", {
+        transformOrigin: "bottom center",
+        scaleY: 0,
+        scaleX: 1,
+    });
     const officeTl = gsap.timeline({
         scrollTrigger: {
             trigger: "#office",
@@ -358,7 +363,14 @@ document.addEventListener("DOMContentLoaded", () => {
         filter: "blur(20px)",
         duration: 1.5,
         ease: "power4.out"
-    }, "<");    
+    }, "<")
+    .to("#office .container .office-title .js-giraffe", {
+        scaleY: 1,
+        rotation: 0,
+        duration: 0.6,
+        ease: "back.out(4)"
+    })
+
 //Feature Section
     const linePath__feature = document.querySelector("#feature .pc.js-line-svg .js-path");
     const linePath__feature__sp = document.querySelector("#feature .sp.js-line-svg .js-path");
@@ -437,25 +449,63 @@ document.addEventListener("DOMContentLoaded", () => {
         duration: 1
     });
 
-    mm.add("(max-width: 767px)", () => {
-        gsap.set("#feature .container .feature-bottom .content-wrap .item.left-top .title .js-dog", {
-            transformOrigin: "bottom center",
-            scaleY: 0,
-            scaleX: 1,
-            rotation: -33,
-        });
-        gsap.to("#feature .container .feature-bottom .content-wrap .item.left-top .title .js-dog", {
+    gsap.set("#feature .container .feature-bottom .content-wrap .item.left-top .title .js-dog", {
+        transformOrigin: "bottom center",
+        scaleY: 0,
+        scaleX: 1,
+        rotation: -33,
+    });
+    gsap.to("#feature .container .feature-bottom .content-wrap .item.left-top .title .js-dog", {
+        scrollTrigger: {
+            trigger: "#feature .container .feature-bottom .item.left-top",
+            start: "top 80%",
+            end: "top 0"
+        },
+        scaleY: 1,
+        rotation: -33,
+        duration: 0.8,
+        ease: "back.out(4)"
+    });
+    gsap.set("#feature .container .cards > .card:nth-child(1) .js-mogura", {
+        transformOrigin: "bottom center",
+        scaleY: 0,
+        scaleX: 1,
+    });
+    mm.add("(min-width: 1024px)", () => {
+        gsap.to("#feature .container .cards > .card:nth-child(1) .js-mogura", {
             scrollTrigger: {
-                trigger: "#feature .container .feature-bottom .item.left-top",
-                markers: true,
-                start: "top 80%",
-                end: "top 0"
+                trigger: "#feature .container .cards .js-mogura-scroll-start",
+                start: "top 60%",
+                end: "top 0%",
             },
             scaleY: 1,
-            rotation: -33,
-            duration: 0.8,
+            duration: 0.6,
             ease: "back.out(4)"
-        });
+        })
+    });
+    mm.add("(min-width: 600px)", () => {
+        gsap.to("#feature .container .cards > .card:nth-child(1) .js-mogura", {
+            scrollTrigger: {
+                trigger: "#feature .container .cards .js-mogura-scroll-start",
+                start: "top 30%",
+                end: "top 0%",
+            },
+            scaleY: 1,
+            duration: 0.6,
+            ease: "back.out(4)"
+        })
+    });
+    mm.add("(max-width: 599px)", () => {
+        gsap.to("#feature .container .cards > .card:nth-child(1) .js-mogura", {
+            scrollTrigger: {
+                trigger: "#feature .container .cards .js-mogura-scroll-start",
+                start: "top 0%",
+                end: "top 0%",
+            },
+            scaleY: 1,
+            duration: 0.6,
+            ease: "back.out(4)"
+        })
     });
 //Program Section
     const programTitle = document.querySelector("#program .container .catch .js-program-title");
@@ -595,6 +645,23 @@ document.addEventListener("DOMContentLoaded", () => {
             stagger: 1
         });
     }
+    gsap.set("#program .domains .list-wrap .js-lion", {
+        transformOrigin: "bottom center",
+        scaleY: 0,
+        scaleX: 1,
+    })
+    gsap.to("#program .domains .list-wrap .js-lion", {
+        scrollTrigger: {
+                trigger: "#program .domains .list-wrap",
+                start: "top 60%",
+                end: "top 0%",
+            },
+            scaleY: 1,
+            duration: 0.6,
+            ease: "back.out(4)"
+    })
+//Cv Section
+
 //Voice Section
     const voiceTl = gsap.timeline({
         scrollTrigger: {
@@ -718,16 +785,53 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
     gsap.set("#dog-tail", { transformOrigin: "bottom",rotation: -20})
-    const dogTl = gsap.timeline({
+    gsap.to("#dog-tail", {
+        rotation: 20,
+        ease: "sine.inOut",
         repeat: -1,
         yoyo: true
     })
-    .to("#dog-tail", {
-        rotation: 20,
-        transformOrigin: "bottom",
-        ease: "sine.inOut"
-    })
-    
+    gsap.set(["#whisker-top-r", "#whisker-bottom-r"], { transformOrigin: "left", rotation: 0});
+    gsap.set(["#whisker-top-l", "#whisker-bottom-l"], { transformOrigin: "right", rotation: 0});
+    gsap.to(["#whisker-top-r", "#whisker-bottom-r", "#whisker-top-l", "#whisker-bottom-l"], {
+        rotation: gsap.utils.random(-40, 40),
+        duration: gsap.utils.random(0.3, 0.7),
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        repeatRefresh: true
+    });
+
+    gsap.set("#panda-arm-r", { transformOrigin: "top right", rotation: 150, x: -5, y: 25 });
+    gsap.to("#panda-arm-r", {
+        rotation: 130,
+        duration: 1,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+    });
+    gsap.set(["#giraffe-horn-l", "#giraffe-horn-r"], {
+        scaleY: 1,
+        rotate: -5,
+        transformOrigin: "bottom"
+    });
+    gsap.to(["#giraffe-horn-l", "#giraffe-horn-r"], {
+        scaleY: 1.4,
+        rotate: gsap.utils.random(-5, 5),
+        duration: 0.8,
+        ease: "sine.inOut",
+        repeat: -1,
+        yoyo: true,
+        repeatRefresh: true
+    });
+    gsap.set("#lion-hair", { transformOrigin: "center", rotation: 0 })
+    gsap.to("#lion-hair", { 
+        rotation: 360,
+        ease: "sine.inOut",
+        duration: 5,
+        repeat: -1,
+        yoyo: true,
+    });
 });
 
 window.addEventListener("load", () => {

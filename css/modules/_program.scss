@@ -163,7 +163,7 @@
                 padding: 8px;
                 border-bottom: 1px solid #000;
                 text-align: justify;
-                font-size: 18px;
+                font-size: 16px;
                 .bold {
                   display: inline-block;
                   margin-bottom: 8px;
@@ -376,8 +376,17 @@
     }
 
     .list-wrap {
+      position: relative;
       max-width: 760px;
       margin: 0 auto;
+      .animal-wrap.lion {
+        top: -12px;
+        left: 70%;
+        transform: translate(-50%, 0) scaleY(0);
+        @include m.mq(sm) {
+          left: 50%;
+        }
+      }
       .list {
         counter-reset: list;
         .list-item {
