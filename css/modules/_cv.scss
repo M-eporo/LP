@@ -33,7 +33,7 @@
           font-size: clamp(1rem, 0.8807rem + 0.5089vw, 1.125rem);
           font-weight: bold;
           span{
-            font-size: clamp(1.625rem, 0.4323rem + 5.0891vw, 2.875rem);
+            font-size: clamp(1.5rem, 0.188rem + 5.598vw, 2.875rem);
           }
         }
         p {
@@ -42,8 +42,12 @@
           line-height: 2.4;
 
           &:last-child {
-            font-size: clamp(1.25rem, 0.7729rem + 2.0356vw, 1.75rem);
+            font-size: clamp(1.125rem, 0.5286rem + 2.5445vw, 1.75rem);
             font-weight: bold;
+            .em {
+              font-size: clamp(1.5rem, 0.188rem + 5.598vw, 2.875rem);
+              font-weight: bold;
+            }
           }
         }
         .middle {

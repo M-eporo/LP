@@ -2140,7 +2140,7 @@ p {
   font-weight: bold;
 }
 .cv .container .content-wrap .text-wrap .em-text span {
-  font-size: clamp(1.625rem, 0.4323rem + 5.0891vw, 2.875rem);
+  font-size: clamp(1.5rem, 0.188rem + 5.598vw, 2.875rem);
 }
 .cv .container .content-wrap .text-wrap p {
   font-size: clamp(1rem, 0.8807rem + 0.5089vw, 1.125rem);
@@ -2148,7 +2148,11 @@ p {
   line-height: 2.4;
 }
 .cv .container .content-wrap .text-wrap p:last-child {
-  font-size: clamp(1.25rem, 0.7729rem + 2.0356vw, 1.75rem);
+  font-size: clamp(1.125rem, 0.5286rem + 2.5445vw, 1.75rem);
+  font-weight: bold;
+}
+.cv .container .content-wrap .text-wrap p:last-child .em {
+  font-size: clamp(1.5rem, 0.188rem + 5.598vw, 2.875rem);
   font-weight: bold;
 }
 .cv .container .content-wrap .text-wrap .middle {
@@ -2616,6 +2620,13 @@ p {
   left: 0;
   width: 100%;
   height: auto;
+}
+@media (min-width: 1024px) {
+  .cta .path-svg {
+    left: 50%;
+    width: 1050px;
+    transform: translate(-50%, 0);
+  }
 }
 .cta .container {
   position: relative;

@@ -12,6 +12,11 @@
       left: 0;
       width: 100%; 
       height: auto; 
+      @include m.mq(lg) {
+        left: 50%;
+        width: 1050px;
+        transform: translate(-50%, 0);
+      }
     }
     .container {
       position: relative;

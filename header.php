@@ -6,12 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="format-detection" content="telephone=no"/>
     <?php if(is_404()): ?>
-        <meta name="robots" content="noindex, nofollow">
-    <?php else: ?>
+        <meta name="robots" content="noindex, follow">
+    <?php endif: ?>
         <meta name="description" content="<?php echo esc_attr( get_bloginfo('description') ); ?>"/>
-        
-        <meta name="robots" content="noindex, nofollow">
-
         <meta property="og:type" content="website">
         <meta property="og:title" content="明石でカウンセリング・療育・相談支援なら｜こころ相談研修センター">
         <meta property="og:description" content="発達支援・子育て・療育のご相談を専門家が丁寧にサポートします。まずは無料相談から。">
@@ -19,13 +16,11 @@
         <meta property="og:site_name" content="こころ相談研修センター">
         <meta property="og:locale" content="ja_JP">
         <meta property="og:image" content="https://lp.cocotoko.com/assets/images/ogp.jpg">
-
         <!-- X (Twitter) -->
         <meta name="twitter:card" content="summary_large_image">
         <meta name="twitter:title" content="明石でカウンセリング・療育・相談支援なら｜こころ相談研修センター">
         <meta name="twitter:description" content="発達支援・子育て・療育のご相談を専門家が丁寧にサポートします。まずは無料相談から。">
         <meta name="twitter:image" content="https://lp.cocotoko.com/assets/img/ogp.jpg">
-    <?php endif; ?>
     <?php wp_head(); ?>
 </head>
 <body id="<?php echo is_404() ? 'page-404' : 'page-top'; ?>" <?php body_class(); ?>>
@@ -46,7 +41,7 @@
                 </a>
                 </li>
                 <li class="sns-item js-sns-item">
-                <a href="" target="_blank" rel="noopener no-referrer" aria-label="facebook（新しいタブで開きます）">
+                <a href="https://www.facebook.com/share/19sXZXXwuT/?mibextid=wwXIfr" target="_blank" rel="noopener no-referrer" aria-label="facebook（新しいタブで開きます）">
                     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/facebook.svg" width="32" height="32" alt="facebook公式アカウント">
                 </a>
                 </li>
@@ -92,7 +87,7 @@
                 </a>
                 </li>
                 <li class="sns-item">
-                <a href="" target="_blank" rel="noopener no-referrer">
+                <a href="https://www.facebook.com/share/19sXZXXwuT/?mibextid=wwXIfr" target="_blank" rel="noopener no-referrer">
                     <img src="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/img/facebook.svg" width="32" height="32" alt="facebook公式アカウント">
                 </a>
                 </li>
