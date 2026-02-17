@@ -72,6 +72,11 @@ p {
   display: block;
 }
 
+.grecaptcha-badge {
+  bottom: clamp(9.5rem, 24.936vw + 3.656rem, 15.625rem) !important;
+  z-index: 999 !important;
+}
+
 @font-face {
   font-family: "Rounded Mplus 1c";
   src: url("../../RoundedMplus1c-Black.woff2") format("woff2");
