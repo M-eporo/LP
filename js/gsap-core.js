@@ -52,6 +52,9 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.set(mainSplide, {
         opacity: 0, 
     });
+    const yellowMist = document.querySelector("#firstview .bg .text-wrapper .svg-yellow");
+    gsap.set(yellowMist, { opacity: 0});
+
     const pageMainTitle = document.querySelector("#firstview .js-page-main-title");
     const pageSubTitle  = document.querySelector("#firstview .js-page-sub-title");
     const mainChars = wrapChars(pageMainTitle);
@@ -79,7 +82,8 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 1,
             ease: "power2.in",
         }
-        ).to(mainSplide, { opacity: 1 }, "<"  
+        ).to(mainSplide, { opacity: 1 }, "<"
+        ).to(yellowMist, { opacity: 0.5 }, "<"
         ).to(logo, {
             autoAlpha: 1,
             x: 0,
@@ -130,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
             ease: "power2.in",
         }
         ).to(mainSplide, { opacity: 1 }, "<"
+        ).to(yellowMist, { opacity: 0.5 }, "<"
         ).to(logo, {
             autoAlpha: 1,
             x: 0,

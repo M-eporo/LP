@@ -97,11 +97,11 @@
                 height: 300px;
                 filter: blur(29px);
                 mask-image: radial-gradient(circle at center, #000, transparent 80%);
-                opacity: 0.5;
                 z-index: 0;
                 top: 0%;
                 left: 0;
                 transform: translate(0, -50%);
+                opacity: 0;
                 @include m.mq(md) {
                     top: 60%;
                     left: -30%
