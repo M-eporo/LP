@@ -73,8 +73,13 @@ p {
 }
 
 .grecaptcha-badge {
-  bottom: clamp(9.5rem, 24.936vw + 3.656rem, 15.625rem) !important;
+  bottom: clamp(8.75rem, 15.267vw + 5.172rem, 12.5rem) !important;
   z-index: 999 !important;
+}
+@media (min-width: 1024px) {
+  .grecaptcha-badge {
+    bottom: 250px;
+  }
 }
 
 @font-face {
