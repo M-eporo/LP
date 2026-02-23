@@ -482,13 +482,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 trigger: "#feature .container .cards .js-mogura-scroll-start",
                 start: "top 60%",
                 end: "top 0%",
+                markers: true,
             },
             scaleY: 1,
             duration: 0.6,
             ease: "back.out(4)"
         })
     });
-    mm.add("(min-width: 600px)", () => {
+    mm.add("(max-width: 1023px)", () => {
         gsap.to("#feature .container .cards > .card:nth-child(1) .js-mogura", {
             scrollTrigger: {
                 trigger: "#feature .container .cards .js-mogura-scroll-start",
