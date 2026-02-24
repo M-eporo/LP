@@ -64,8 +64,13 @@ p {
   display: block;
 }
 .grecaptcha-badge {
-  bottom: clamp(9.5rem, 24.936vw + 3.656rem, 15.625rem) !important;
+  bottom: clamp(8.75rem, 15.267vw + 5.172rem, 12.5rem) !important;
   z-index: 999 !important;
+}
+@media (min-width: 768px) {
+  .grecaptcha-badge {
+    bottom: 250px  !important;
+  }
 }
 @font-face {
     font-family: 'Rounded Mplus 1c';
