@@ -156,7 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
             stagger: 0.05,
             ease: "power2.out",
             duration: 0.8,
-        }, ">-1"
+        }, ">-0.2"
         ).to(pageMainTitle, { opacity: 1 }, "<"
         ).to(subChars, {
             autoAlpha: 1,
