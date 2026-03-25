@@ -139,7 +139,10 @@
           margin: 16px 0;
           line-height: 2.0;
         }
-
+        p:first-child {
+          margin-top: 42px;
+        }
+ 
         .p-em {
           font-size: 18px;
           font-weight: bold;

@@ -845,6 +845,9 @@ p {
   margin: 16px 0;
   line-height: 2;
 }
+.about .container .text-wrap .text-content p:first-child {
+  margin-top: 42px;
+}
 .about .container .text-wrap .text-content .p-em {
   font-size: 18px;
   font-weight: bold;
