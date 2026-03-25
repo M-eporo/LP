@@ -39,7 +39,6 @@
         left: 0%;
       }
     }
-    
     .catch {
       position: relative;
       .about-title {
@@ -50,6 +49,9 @@
         gap: 3px;
         font-family: v.$noto-sans;
         font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
+        font-weight: bold;
+        line-height: 1.5;
+        letter-spacing: normal;
         color: v.$dk-gray; 
         --pseudo-opacity: 0;
         &::before,
@@ -72,6 +74,8 @@
       .about-sub-title {
         font-size: clamp(1.125rem, 0.5rem + 2.6667vw, 1.5rem);
         font-weight: bold;
+        line-height: 1.7;
+        letter-spacing: 0.15em;
         color: v.$dk-gray;
         text-align: center;
       }

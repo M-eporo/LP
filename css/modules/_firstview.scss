@@ -3,17 +3,8 @@
 
 .firstview {
     position: relative;
-    // display: flex;
-    // flex-direction: column-reverse;
-    // justify-content: center;
-    // padding: 114px 3% 0px;
     background-color: #f0f0f0;
     font-family: v.$m-plus-round;
-    // @include m.mq(md) {
-    //     display: revert;
-    //     min-height: 600px;
-    //     padding: 114px 3% 0px;
-    // }
     .bg {
         position: relative;
         display: flex;
@@ -48,11 +39,13 @@
                 .main-title {
                     font-size: clamp(2rem, 1.1627rem + 3.8278vw, 3rem);
                     font-weight: bold;
+                    line-height: 1.5;
                     color: #feaa2d;
                     text-shadow: 1px 1px 2px #fff;
                     opacity: 0;
                     @include m.mq(xxl) {
                     font-size: 64px;
+                    line-height: 1.5;
                     }
                 }
                 .text {

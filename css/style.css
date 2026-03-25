@@ -82,55 +82,6 @@ p {
     bottom: 250px !important;
   }
 }
-@font-face {
-  font-family: "Rounded Mplus 1c";
-  src: url("../../RoundedMplus1c-Black.woff2") format("woff2");
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Rounded Mplus 1c";
-  src: url("../../RoundedMplus1c-ExtraBold.woff2") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Rounded Mplus 1c";
-  src: url("../../'RoundedMplus1c-Bold.woff2'") format("woff2");
-  font-weight: bold;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Rounded Mplus 1c";
-  src: url("../../RoundedMplus1c-Light.woff2") format("woff2");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Rounded Mplus 1c";
-  src: url("../../RoundedMplus1c-Medium.woff2") format("woff2");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Rounded Mplus 1c";
-  src: url("../../RoundedMplus1c-Regular.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-@font-face {
-  font-family: "Rounded Mplus 1c";
-  src: url("../../RoundedMplus1c-Thin.woff2") format("woff2");
-  font-weight: 100;
-  font-style: normal;
-  font-display: swap;
-}
 .header {
   position: absolute;
   background-color: transparent;
@@ -172,8 +123,8 @@ p {
   font-weight: bold;
 }
 .header .container .logo span:first-child {
-  font-size: clamp(1rem, 0.9403rem + 0.2548vw, 1.125rem);
-  font-family: "Noto Sans JP", sans-serif;
+  font-size: clamp(0.875rem, 0.7556rem + 0.5096vw, 1.125rem);
+  font-family: "M PLUS Rounded 1c", sans-serif;
   color: #90A4AE;
 }
 .header .container .logo span + span {
@@ -313,8 +264,8 @@ p {
   font-weight: bold;
 }
 .header .mask .logo span:first-child {
-  font-size: clamp(1rem, 0.9403rem + 0.2548vw, 1.125rem);
-  font-family: "Noto Sans JP", sans-serif;
+  font-size: clamp(0.875rem, 0.7556rem + 0.5096vw, 1.125rem);
+  font-family: "M PLUS Rounded 1c", sans-serif;
   color: #90A4AE;
 }
 .header .mask .logo span + span {
@@ -425,6 +376,7 @@ p {
 .firstview .bg .text-wrapper .main .main-title {
   font-size: clamp(2rem, 1.1627rem + 3.8278vw, 3rem);
   font-weight: bold;
+  line-height: 1.5;
   color: #feaa2d;
   text-shadow: 1px 1px 2px #fff;
   opacity: 0;
@@ -432,6 +384,7 @@ p {
 @media (min-width: 1440px) {
   .firstview .bg .text-wrapper .main .main-title {
     font-size: 64px;
+    line-height: 1.5;
   }
 }
 .firstview .bg .text-wrapper .main .text {
@@ -798,6 +751,9 @@ p {
   gap: 3px;
   font-family: "Noto Sans JP", sans-serif;
   font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: normal;
   color: #555;
   --pseudo-opacity: 0;
 }
@@ -819,6 +775,8 @@ p {
 .about .container .catch .about-sub-title {
   font-size: clamp(1.125rem, 0.5rem + 2.6667vw, 1.5rem);
   font-weight: bold;
+  line-height: 1.7;
+  letter-spacing: 0.15em;
   color: #555;
   text-align: center;
 }
@@ -955,6 +913,9 @@ p {
   width: max-content;
   font-family: "Noto Sans JP", sans-serif;
   font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0;
   color: #555;
 }
 .office .container .catch .office-title::before, .office .container .catch .office-title::after {
@@ -965,17 +926,20 @@ p {
   background-color: #fdef2e;
   transform: translateY(50%) rotate(-55deg);
 }
-.office .container .catch .office-title .animal-wrap.giraffe {
+.office .container .catch .office-title .animal-svg {
+  position: absolute;
   width: 90px;
   left: 110%;
   bottom: 12px;
   transform-origin: bottom center;
-  transform: translate(-50%, 0);
+  transform: translate(-50%, 0) scaleY(0);
 }
 .office .container .catch .office-sub-title {
   text-align: center;
   font-size: clamp(1.125rem, 0.5rem + 2.6667vw, 1.5rem);
   font-weight: bold;
+  line-height: 1.7;
+  letter-spacing: 0.15em;
   color: #555;
 }
 .office .container .intro {
@@ -1185,6 +1149,9 @@ p {
   width: max-content;
   font-family: "Noto Sans JP", sans-serif;
   font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0;
   color: #555;
   --pseudo-opacity: 0;
 }
@@ -1207,6 +1174,8 @@ p {
   text-align: center;
   font-size: clamp(1.125rem, 0.5rem + 2.6667vw, 1.5rem);
   font-weight: bold;
+  line-height: 1.7;
+  letter-spacing: 0.15em;
   color: #555;
 }
 .feature .container .cards-container {
@@ -1636,6 +1605,9 @@ p {
   width: max-content;
   font-family: "Noto Sans JP", sans-serif;
   font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
+  font-weight: bold;
+  line-height: 1.5;
+  letter-spacing: 0;
   color: #555;
   --pseudo-opacity: 0;
 }
@@ -1654,8 +1626,9 @@ p {
 .program .container .catch .program-sub-title {
   font-size: clamp(1.125rem, 0.5rem + 2.6667vw, 1.5rem);
   font-weight: bold;
+  line-height: 1.7;
+  letter-spacing: 0.15em;
   color: #555;
-  letter-spacing: 0.13em;
 }
 .program .container .inner {
   max-width: 1160px;

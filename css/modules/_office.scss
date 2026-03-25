@@ -22,6 +22,9 @@
                 width: max-content;
                 font-family: v.$noto-sans;
                 font-size: clamp(3rem, 1.3333rem + 7.1111vw, 4rem);
+                font-weight: bold;
+                line-height: 1.5;
+                letter-spacing: 0;
                 color: v.$dk-gray; 
                 &::before,
                 &::after {
@@ -32,18 +35,21 @@
                     background-color: v.$yellow;
                     transform: translateY(50%) rotate(-55deg);
                 }
-                .animal-wrap.giraffe {
+                .animal-svg {
+                    position: absolute;
                     width: 90px;
                     left: 110%;
                     bottom: 12px;
                     transform-origin: bottom center;
-                    transform: translate(-50%,0);
+                    transform: translate(-50%,0) scaleY(0);
                 }
             }
             .office-sub-title {
                 text-align: center;
                 font-size: clamp(1.125rem, 0.5rem + 2.6667vw, 1.5rem);
                 font-weight: bold;
+                line-height: 1.7;
+                letter-spacing: 0.15em;
                 color: v.$dk-gray;
             }
         }

@@ -28,7 +28,6 @@
     height: 114px;
     padding: 0 4%;
     margin: 0 auto;
-    
     .logo {
       position:relative;
       display: grid;
@@ -38,9 +37,10 @@
         letter-spacing: 0.2em;
         font-weight: bold;
       }
+      //
       span:first-child {
-        font-size: clamp(1rem, 0.9403rem + 0.2548vw, 1.125rem);
-        font-family: v.$noto-sans;
+        font-size: clamp(0.875rem, 0.7556rem + 0.5096vw, 1.125rem);
+        font-family: v.$m-plus-round;
         color: v.$logo-sub-color;
       }
       span + span {
@@ -79,7 +79,6 @@
     }
     }
   }
-
   .hamburger-btn {
     position: fixed;
     top: 36px;
@@ -100,7 +99,6 @@
       display: none;
     }
     & span {
-      
       display: block;
       width: calc(100% - 4px);
       height: 3px;
@@ -118,7 +116,6 @@
         top: 26px;
       }
     }
-
     .btn-area {
       display: grid;
       place-items: center;
@@ -131,7 +128,6 @@
       }
     }
   }	
-  
   .hamburger-btn.open span {
     z-index: 100;
   }
@@ -148,7 +144,6 @@
     transform-origin: center;
     transform: translateY(-11px) rotate(-45deg);	
   }
-
   .mask {
     position: fixed;
     top: 0;
@@ -164,7 +159,6 @@
     @include m.mq(lg) {
       display: none;
     }
-
     .logo {
       position:relative;
       display: grid;
@@ -178,8 +172,8 @@
         font-weight: bold;
       }
       span:first-child {
-        font-size: clamp(1rem, 0.9403rem + 0.2548vw, 1.125rem);
-        font-family: v.$noto-sans;
+        font-size: clamp(0.875rem, 0.7556rem + 0.5096vw, 1.125rem);
+        font-family: v.$m-plus-round;
         color: v.$logo-sub-color;
       }
       span + span {
@@ -188,8 +182,6 @@
         color: v.$header-color;
       }
     }
-
-    
     .wrap {
       display: block;
       
@@ -235,9 +227,6 @@
         }
       }
     }
-    
-
-    
   }
   .mask.open {
     opacity: 1;

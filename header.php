@@ -7,7 +7,7 @@
     <meta name="format-detection" content="telephone=no"/>
     <?php if(is_404()): ?>
         <meta name="robots" content="noindex, follow">
-    <?php endif: ?>
+    <?php endif; ?>
         <meta name="description" content="<?php echo esc_attr( get_bloginfo('description') ); ?>"/>
         <meta property="og:type" content="website">
         <meta property="og:title" content="明石でカウンセリング・療育・相談支援なら｜こころ相談研修センター">
