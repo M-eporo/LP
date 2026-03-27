@@ -133,6 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
             duration: 1,
             ease: "power2.in",
         }
+        
         ).to(mainSplide, { opacity: 1 }, "<"
         ).to(yellowMist, { opacity: 0.5 }, "<"
         ).to(logo, {
